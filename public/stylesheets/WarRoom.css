@@ -105,6 +105,7 @@ div#draft_live {
 form#login_form {
     border: 1px solid #ccc;
     padding: 3px;
+    text-align:center;
 }
 
 form#login_form_label {
