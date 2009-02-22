@@ -1,5 +1,12 @@
 require 'digest/sha1'
 class User < ActiveRecord::Base
+
+  # WarRoom specific stuff
+  has_many :pick
+  has_one :user
+  validates_uniqueness_of :draft_order, :on => :create, :message => "must be unique"
+  validates_numericality_of :draft_order
+
   # Virtual attribute for the unencrypted password
   attr_accessor :password
 
@@ -68,16 +75,16 @@ class User < ActiveRecord::Base
   end
 
   protected
-    # before filter 
-    def encrypt_password
-      return if password.blank?
-      self.salt = Digest::SHA1.hexdigest("--#{Time.now.to_s}--#{login}--") if new_record?
-      self.crypted_password = encrypt(password)
-    end
+  # before filter
+  def encrypt_password
+    return if password.blank?
+    self.salt = Digest::SHA1.hexdigest("--#{Time.now.to_s}--#{login}--") if new_record?
+    self.crypted_password = encrypt(password)
+  end
       
-    def password_required?
-      crypted_password.blank? || !password.blank?
-    end
+  def password_required?
+    crypted_password.blank? || !password.blank?
+  end
     
     
 end
