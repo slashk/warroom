@@ -127,3 +127,11 @@ form#login_form_label {
 	margin: 15px;
 	padding: 5px;
 }
+
+.roweven {
+    background-color: #fff;
+}
+
+.rowodd {
+    background-color: lightgrey;
+}
