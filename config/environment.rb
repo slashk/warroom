@@ -73,3 +73,6 @@ Rails::Initializer.run do |config|
   # Please note that observers generated using script/generate observer need to have an _observer suffix
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
 end
+
+POSITIONS = ['C','1B','2B','SS','3B','OF','SP','RP']
+NLTEAMS = ['ARI','ATL','ChC','CIN','FLA','HOU','LAD','MIL','NYM','PHI','PIT','SD','SF','STL','WAS']
