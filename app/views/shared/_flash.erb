@@ -1,8 +1,10 @@
-    <div id="flash">
-      <% if flash[:notice] -%>
-        <div id="notice"><%= flash[:notice] %></div>
-      <% end -%>
-      <% if flash[:error] -%>
-        <div id="error"><%= flash[:error] %></div>
-      <% end -%>
-    </div>
+<div id="flash">
+  <% unless flash.nil? -%>
+    <% if flash[:notice] -%>
+      <div id="notice"><%= flash[:notice] %></div>
+    <% end -%>
+    <% if flash[:error] -%>
+      <div id="error"><%= flash[:error] %></div>
+    <% end -%>
+  <% end -%>
+</div>
