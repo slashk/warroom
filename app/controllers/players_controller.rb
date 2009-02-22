@@ -1,8 +1,14 @@
 class PlayersController < ApplicationController
+  before_filter :login_required
+
   # GET /players
   # GET /players.xml
   def index
-    @players = Player.find(:all)
+    if logged_in?
+      @players = Player.find(:all)
+    else
+      redirect_to :controller => :session
+    end
 
     respond_to do |format|
       format.html # index.html.erb
