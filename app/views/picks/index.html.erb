@@ -1,0 +1,24 @@
+<h1>Listing picks</h1>
+
+<table>
+  <tr>
+    <th>Player</th>
+    <th>Team</th>
+    <th>Pick number</th>
+  </tr>
+
+<% for pick in @picks %>
+  <tr>
+    <td><%=h pick.player_id %></td>
+    <td><%=h pick.team_id %></td>
+    <td><%=h pick.pick_number %></td>
+    <td><%= link_to 'Show', pick %></td>
+    <td><%= link_to 'Edit', edit_pick_path(pick) %></td>
+    <td><%= link_to 'Destroy', pick, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New pick', new_pick_path %>

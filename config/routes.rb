@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :players
+
+  map.resources :picks
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
