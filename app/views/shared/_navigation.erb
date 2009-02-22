@@ -1,12 +1,12 @@
 <div id="asshead">
   <table width="100%">
-    <% if logged_in? && draft_started? %>
+    <% if logged_in? && draft_started? -%>
       <%=  periodically_call_remote :url => {:controller => 'draftadmin' ,:action => 'ticker'},
         :update => :update_cell,
         :frequency => 15,
         :condition => 1,
         :complete => visual_effect(:highlight, 'update_cell') %>
-    <% end %>
+    <% end -%>
 
     <tr><td><img src="/images/assy.gif" width=30 height=30 alt="ASS Logo" title="$Id$"> Draft<strong>Day</strong></td>
       <td style="text-align:left;">
@@ -15,7 +15,7 @@
 
       <td style="text-align:right;">
         <% if logged_in? %>
-          <%= "Welcome #{session[:user].login} [#{session[:user].role}] !" %>
+          <%= "Welcome #{current_user.login} [#{current_user.role}] !" %>
           [ <%= link_to "logout", :controller => "user", :action => "logout" %>  ]<br />
           <%= link_to "Players", :controller => "playeradmin", :action => "live" %>
           <%= link_to "Picks", :controller => "draftadmin", :action => "live"    %>
