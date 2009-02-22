@@ -1,6 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.connect '/', :controller => "players"
   map.resources :users
-  map.resource :session
+#  map.resource :session
+  map.resource :session, :controller => "session"
   map.resources :players
   map.resources :picks
   #map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil
