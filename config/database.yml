@@ -38,7 +38,7 @@ test:
 production:
   adapter: mysql
   encoding: utf8
-  database: WarRoom_dev_production
+  database: WarRoom_dev_prod
   pool: 5
   username: root
   password:
