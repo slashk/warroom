@@ -7,17 +7,17 @@ class CreatePlayers < ActiveRecord::Migration
       t.string :pos
       t.string :status
       t.integer :rank, :default => 1300
-      t.real :IP
+      t.float :IP
       t.integer :W
       t.integer :SV
       t.integer :K
-      t.real :ERA
-      t.real :WHIP
+      t.float :ERA
+      t.float :WHIP
       t.integer :R
       t.integer :HR
       t.integer :RBI
       t.integer :SB
-      t.real :AVG
+      t.float :AVG
       t.integer :orank
       t.integer :AB
       t.integer :prank
@@ -26,14 +26,13 @@ class CreatePlayers < ActiveRecord::Migration
       t.integer :pW
       t.integer :pSV
       t.integer :pK
-      t.real :pERA
-      t.real :pWHIP
+      t.float :pERA
+      t.float :pWHIP
       t.integer :pR
       t.integer :pHR
       t.integer :pRBI
       t.integer :pSB
-      t.real :pAVG
-
+      t.float :pAVG
 
       t.timestamps
     end
