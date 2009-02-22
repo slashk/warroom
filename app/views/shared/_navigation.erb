@@ -1,4 +1,4 @@
-<div class="asshead">
+<div id="asshead">
   <table width="100%">
     <% if logged_in? && draft_started? %>
       <%=  periodically_call_remote :url => {:controller => 'draftadmin' ,:action => 'ticker'},
