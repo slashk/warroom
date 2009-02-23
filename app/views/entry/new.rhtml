@@ -1,5 +1,6 @@
 <%=
-  observe_field('', :url => 'http://example.com/books/edit/1', :with => 'title')
+  observe_field('player_id', :url => {:controller => 'players', :action => 'show'},
+    :update => 'draftee', :with => 'player_id')
 %>
 <h1>Round #<%= @round %> </h1>
 <h2>Overall Pick #<%= @pick.pick_number -%> </h2>
@@ -9,3 +10,5 @@
   <dt>Pick Number</dt><dd><%= p.text_field :pick_number, :size => 5 -%></dd>
   <%= submit_tag "Create" %>
 <% end %>
+
+<div id="draftee"></div>

@@ -12,7 +12,7 @@ class EntryController < ApplicationController
 
   def create
     @pick = Pick.new(params[:pick])
-    @pick.save ?  flash[:notice] = 'Player was successfully created.' :  flash[:error] = 'Error in saving your pick'
+    @pick.save ? flash[:notice] = 'Player was successfully created.' :  flash[:error] = 'Error in saving your pick'
     redirect_to :action => 'new'
   end
 

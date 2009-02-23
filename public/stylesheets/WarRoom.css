@@ -154,3 +154,9 @@ form#login_form_label {
 .nosort {
     cursor:default;
 }
+
+#draftee {
+    background-color: lightblue;
+    color: maroon;
+    border-style: none;
+}
