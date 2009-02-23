@@ -21,4 +21,18 @@ class ApplicationController < ActionController::Base
     Picks.count > 0
   end
 
+  # find the team who is currently on the clock
+  def find_team_on_clock
+    pick_number = Pick.count
+    t = User.find_by_draft_order(whose_pick((pick_number+1), DRAFT))
+    #return t.short_name
+  end
+  
+  # find the time of the last pick 
+  # usually used in the view to calculate how long someone is taking to pick
+  # use like this <%= time_ago_in_words(find_last_pick_time(), true) %>
+  def find_last_pick_time
+    last_pick_time = Pick.find(:first, :order => "pick_number desc").created_at
+  end
+
 end
