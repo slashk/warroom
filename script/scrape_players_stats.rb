@@ -3,6 +3,7 @@
 require 'rubygems'
 require 'net/http'
 require 'hpricot'
+require 'cgi'
 
 # NOTES
 # there are a lot of gotchas on parsing/scraping yahoo! stats
@@ -11,6 +12,12 @@ require 'hpricot'
 # 
 
 DEBUG = ARGV[0].to_i
+
+class String
+  def escape_single_quotes
+    self.gsub(/[']/, '\\\\\'')
+  end
+end
 
 def get_player_page(s, p, c)
   req = nil
@@ -22,7 +29,7 @@ def get_player_page(s, p, c)
   res = Net::HTTP.start(url.host, url.port) {|http|
     http.request(req, url.query)
   }
-#  puts res if DEBUG > 0
+  #  puts res if DEBUG > 0
 end
 
 def distill_hitters_page(res)
@@ -51,7 +58,7 @@ def distill_hitters_page(res)
       hab =~ /(.*)\/(.*)/
       hit = $1
       ab = $2
-      player = { 'yahoo' => yahoo_ref,
+      player = { 'yahoo_ref' => yahoo_ref,
         'orank' => x[5].inner_html,
         'rank' => x[6].inner_html,
         'H' => hit,
@@ -62,7 +69,7 @@ def distill_hitters_page(res)
         'SB' => x[12].inner_html,
         'team' => team,
         'pos' => pos,
-        'player' => name,
+        'player' => name.escape_single_quotes,
         'AVG' => x[13].inner_html }
       p << player
     end
@@ -91,18 +98,18 @@ def distill_pitchers_page(res)
       pos = $2
       team = $1
       pos.gsub!(/\,/," ")
-      player = { 'yahoo' => yahoo_ref,
+      player = { 'yahoo_ref' => yahoo_ref,
         'orank' => x[5].inner_html,
         'rank' => x[6].inner_html,
-        'IP' => x[7].inner_html,
-        'W' => x[8].inner_html,
-        'SV' => x[9].inner_html,
-        'K' => x[10].inner_html,
-        'ERA' => x[11].inner_html,
+        'IP' => x[8].inner_html,
+        'W' => x[9].inner_html,
+        'SV' => x[10].inner_html,
+        'K' => x[11].inner_html,
+        'ERA' => x[12].inner_html,
         'team' => team,
         'pos' => pos,
-        'player' => name,
-        'WHIP' => x[12].inner_html }
+        'player' => name.escape_single_quotes,
+        'WHIP' => x[13].inner_html }
       p << player
     end
   end  
