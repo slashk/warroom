@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
-  map.connect '/', :controller => "players"
+  map.connect '/', :controller => "players", :action => 'index'
   map.resources :users
-#  map.resource :session
+  # map.resource :session
   map.resource :session, :controller => "session"
   map.resources :players
   map.resources :picks

@@ -1,32 +1,32 @@
 <div id="asshead">
+  <% if draft_started? -%>
+    <%=  periodically_call_remote :url => {:controller => 'draftadmin' ,:action => 'ticker'},
+      :update => :update_cell,
+      :frequency => 15,
+      :condition => 1,
+      :complete => visual_effect(:highlight, 'update_cell') %>
+  <% end -%>
   <table width="100%">
-    <% if logged_in? && draft_started? -%>
-      <%=  periodically_call_remote :url => {:controller => 'draftadmin' ,:action => 'ticker'},
-        :update => :update_cell,
-        :frequency => 15,
-        :condition => 1,
-        :complete => visual_effect(:highlight, 'update_cell') %>
-    <% end -%>
-
-    <tr><td><img src="/images/assy.gif" width=30 height=30 alt="ASS Logo" title="$Id$"> Draft<strong>Day</strong></td>
+    <tr>
+      <td>
+        <img src="/images/assy.gif" width=30 height=30 alt="ASS Logo" title="$Id$"> Draft<strong>Day</strong>
+      </td>
       <td style="text-align:left;">
         <div id="update_cell"></div>
       </td>
-
       <td style="text-align:right;">
         <% if logged_in? %>
           <%= "Welcome #{current_user.login} [#{current_user.role}] !" %>
-          [ <%= link_to "logout", :controller => "user", :action => "logout" %>  ]<br />
-          <%= link_to "Players", :controller => "player" %>
-          <%= link_to "Picks", :controller => "draftadmin", :action => "live"    %>
+          [<%= link_to "logout", :controller=>'session', :action => 'destroy', :id => current_user %>]<br />
+          <%= link_to "Players", :controller => "players" %>
+          <%= link_to "Picks", :controller => "picks" %>
           <% if is_admin? then -%>
             <%= link_to "Entry", :controller => "entry", :action => "new"  %>
-            <%= link_to "Commish", :controller => "draftadmin", :action => "list" %>
-            <%= link_to "Projection", :controller => "playeradmin", :action => "summary" %>
-            <%= link_to "Teams", :controller => "teamadmin", :action => "list" %>
-            <%= link_to "Users", :controller => "user", :action => "list" %>
+            <%= link_to "Commish", :controller => "picks", :action => "list" %>
+            <%= link_to "Users", :controller => "users" %>
           <% end %>
-
         <% end %>
-  </td></tr></table>
+      </td>
+    </tr>
+  </table>
 </div>
