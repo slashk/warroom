@@ -1,10 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
   map.connect '/', :controller => "players", :action => 'index'
   map.resources :users
-  # map.resource :session
   map.resource :session, :controller => "session"
   map.resources :players
   map.resources :picks
+  map.connect '/entry', :controller => 'entry', :action => 'new'
   #map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil
   #map.signup '/signup', :controller => 'users', :action => 'new'
   map.login '/login', :controller => 'session', :action => 'new'

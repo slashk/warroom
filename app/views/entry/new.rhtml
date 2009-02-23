@@ -1,0 +1,11 @@
+<%=
+  observe_field('', :url => 'http://example.com/books/edit/1', :with => 'title')
+%>
+<h1>Round #<%= @round %> </h1>
+<h2>Overall Pick #<%= @pick.pick_number -%> </h2>
+<% form_for(:pick, :url => {:action => 'create'}) do |p| %>
+  <dt>Player</dt><dd><%= p.text_field :player_id , :size => 5 -%></dd>
+  <dt>Team</dt><dd><%= p.collection_select(:team_id, @teams, :id, :short_name) %></dd>
+  <dt>Pick Number</dt><dd><%= p.text_field :pick_number, :size => 5 -%></dd>
+  <%= submit_tag "Create" %>
+<% end %>
