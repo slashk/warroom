@@ -4,11 +4,8 @@ class PlayersController < ApplicationController
   # GET /players
   # GET /players.xml
   def index
-    if logged_in?
-      @players = Player.find(:all)
-    else
-      redirect_to :controller => :session
-    end
+    @players = Player.undrafted(:order => "orank asc", :limit => 150)
+    @teams = User.find(:all, :order => "draft_order asc")
 
     respond_to do |format|
       format.html # index.html.erb

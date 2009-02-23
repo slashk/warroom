@@ -1,0 +1,4 @@
+Show by franchise:
+<% for franchise in franchiseSearchBar %>
+  <%= link_to_remote franchise.short_name, :url => {:action => 'searchbyfranchise', :team => franchise.id}, :update => "search_hits" %>
+<% end %>

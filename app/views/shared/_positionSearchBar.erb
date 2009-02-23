@@ -1,0 +1,9 @@
+Show by position:
+<%  POSITIONS.each do |position| -%>
+  <%= link_to_remote position, :url => {:action => 'search', :fieldPosition => position}, :update => "search_hits" %>
+<%  end -%>
+<%= link_to_remote 'Batters', :url => {:action => 'search', :fieldPosition => "BATTERS"}, :update => "search_hits" %>
+<%=   link_to_remote 'Pitchers', :url => {:action => 'search', :fieldPosition => "PITCHERS"}, :update => "search_hits" %>
+<%= link_to_remote 'Top 100', :url => {:action => 'search'}, :update => "search_hits" %>
+<%= link_to_remote 'ALL', :url => {:action => 'search', :fieldPosition => "ALL", :limits => '1000'}, :update => "search_hits"%>
+<br />

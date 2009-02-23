@@ -3,9 +3,9 @@
 body { background-color: #fff; color: #333; }
 
 h2 {
-	background-color: lightblue;
-	font-family: verdana, arial, helvetica, sans-serif;
-	font-style: normal;
+    background-color: lightblue;
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-style: normal;
 }
 
 body { background-color: #fff; color: #333; }
@@ -113,26 +113,44 @@ form#login_form_label {
 }
 
 #error {
-	color: white;
-	font-weight: bold;
-	font-size: large;
-	background-color: red;
-	margin-top: 15px;
-	padding: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+    background-color: red;
+    margin-top: 15px;
+    padding: 5px;
 }
 
 #notice {
-	color: white;
-	font-size: large;
-	background-color: green;
-	margin: 15px;
-	padding: 5px;
+    color: white;
+    font-size: large;
+    background-color: green;
+    margin: 15px;
+    padding: 5px;
 }
+
+/* tablesort styles */
 
 .roweven {
     background-color: #fff;
 }
 
 .rowodd {
-    background-color: lightgrey;
+    background-color: #eee;
+}
+
+.sortasc {
+    background-color:#DDFFAC;
+    background-image:url(/images/up.gif);
+    background-repeat: no-repeat;
+}
+
+.sortdesc {
+    background-color:#B9DDFF;
+    background-image:url(/images/down.gif);
+    background-repeat: no-repeat;
+}
+
+.nosort {
+    cursor:default;
 }

@@ -17,7 +17,7 @@
         <% if logged_in? %>
           <%= "Welcome #{current_user.login} [#{current_user.role}] !" %>
           [ <%= link_to "logout", :controller => "user", :action => "logout" %>  ]<br />
-          <%= link_to "Players", :controller => "playeradmin", :action => "live" %>
+          <%= link_to "Players", :controller => "player" %>
           <%= link_to "Picks", :controller => "draftadmin", :action => "live"    %>
           <% if is_admin? then -%>
             <%= link_to "Entry", :controller => "entry", :action => "new"  %>
