@@ -7,6 +7,6 @@ class Player < ActiveRecord::Base
   # player by franchise
   # player by pos
   # player by team
-  named_scope :undrafted, :joins => 'LEFT JOIN picks ON players.id=picks.player_id', :include => [:pick]
+  named_scope :undrafted, :joins => 'LEFT JOIN picks ON players.id=picks.player_id' #, :include => [:pick]
 
 end
