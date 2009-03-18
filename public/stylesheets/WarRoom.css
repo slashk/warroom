@@ -21,7 +21,11 @@ pre {
     font-size: 11px;
 }
 
-a { color: #000; }
+a { 
+        color: blue;
+        text-decoration: none;
+    font-weight: bold;
+}
 a:visited { color: #666; }
 a:hover { color: #fff; background-color:#000; }
 
@@ -29,6 +33,22 @@ a:hover { color: #fff; background-color:#000; }
     padding: 2px;
     background-color: red;
     display: table;
+}
+
+th {
+
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-color: silver;
+    border-bottom-color: silver;
+    border-left-color: silver;
+    border-right-color: silver;
 }
 
 #errorExplanation {
