@@ -3,7 +3,7 @@
     <td width="75%">
       <%= render :partial => 'shared/positionSearchBar' %>
       <%= render :partial => 'shared/teamSearchBar' %>
-      <%#= render :partial => 'shared/franchiseSearchBar' %>
+      <%= render :partial => 'shared/franchiseSearchBar' unless @teams.nil? || @teams.size < 2 %>
     </td>
     <td>
       <label for="searchtext"><font size="1"><b>Search:</b></font></label>

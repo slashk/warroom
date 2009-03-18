@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :draft_order, :on => :create, :message => "must be unique"
   validates_numericality_of :draft_order
 
+  #named_scopes
+  named_scope :draftorder, {:order => "draft_order asc"}
+
   # Virtual attribute for the unencrypted password
   attr_accessor :password
 

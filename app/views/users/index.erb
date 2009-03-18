@@ -1,0 +1,23 @@
+<h1>Teams</h1>
+
+<table>
+<tr>
+  <th align="left">Login</th>
+  <th align="left">Password</th>
+  <th align="left">Email</th>
+  <th align="left">Team Name</th>
+  <th align="left">Role</th>
+  <th></th>
+</tr>
+
+<% for user in @teams %>
+    <tr class="ListLine<%= cycle("1", "0") %>">
+      <td align="left"><%=h user.login  %></td>
+      <td align="left"><%=h user.password  %></td>
+      <td align="left"><%=h user.email  %></td>
+      <td align="left"><%=h user.team unless user.team.nil? %></td>
+      <td align="left"><%=h user.role  %></td>
+      <td><%= link_to 'Edit', :action => 'edit', :id => user.id %></td>
+        </tr>
+  <% end %>
+</table>
