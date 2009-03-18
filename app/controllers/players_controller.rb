@@ -4,7 +4,7 @@ class PlayersController < ApplicationController
   # GET /players
   # GET /players.xml
   def index
-    @players = Player.undrafted(:order => "orank asc", :limit => 150)
+    @players = Player.undrafted.byrank
     @teams = User.find(:all, :order => "draft_order asc")
 
     respond_to do |format|
@@ -87,12 +87,26 @@ class PlayersController < ApplicationController
   end
 
   def searchbyname
-    @phrase = params[:searchtext]
-    @searchphrase = "%" + @phrase + "%"
-    @players = Player.find(:all,
-      :conditions => [ "picks.id IS NULL AND players.player LIKE ?", @searchphrase],
-      :include => [:pick],
-      :joins => 'LEFT JOIN picks ON players.id=picks.player_id')
+    @players = Player.undrafted.byrank.byname(params[:searchtext])
+    render :partial => "search"
+  end
+
+  def searchbyteam
+    @players = Player.undrafted.byrank.find_all_by_team(params[:team])
+    render :partial => "search"
+  end
+
+  def searchbypos
+    case params[:fieldPosition]
+    when "BATTERS"
+      @players = Player.undrafted.batters.byrank
+    when "PITCHERS"
+      @players = Player.undrafted.pitchers.byrank
+    when "ALL"
+      @players = Player.undrafted(:order => "orank asc")
+    else
+      @players = Player.undrafted.byrank.bypos(params[:fieldPosition])
+    end
     render :partial => "search"
   end
 

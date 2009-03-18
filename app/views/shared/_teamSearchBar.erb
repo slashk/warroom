@@ -1,5 +1,5 @@
 Show by team:
 <% NLTEAMS.each do |t| %>
-  <%= link_to_remote t, :url => {:action => 'search', :team => t }, :update => "search_hits" %>
+  <%= link_to_remote t, :url => {:action => 'searchbyteam', :team => t }, :update => "search_hits" %>
 <% end %>
 <br />
