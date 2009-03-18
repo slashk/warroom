@@ -1,58 +1,58 @@
 <table width="100%" cellpadding=0 cellspacing=0 id="players" class="sortable">
   <tr>
-    <th align="left" class="nosort">ID</th>
-    <th align="left">Player</th>
-    <th align="center">Team</th>
-    <th align="center">Rank</th>
-    <th align="center">O-Rank</th>
-    <th align="center">P-Rank</th>
-    <th align="center">Pos</th>
-    <th align="center">Depth</th>
-    <th align="right">R</th>
-    <th align="right">HR</th>
-    <th align="right">RBI</th>
-    <th align="right">SB</th>
-        <th align="right">AVG</th>
-    <th align="right">IP</th>
-    <th align="right">W</th>
-    <th align="right">SV</th>
-    <th align="right">K</th>
-    <th align="right">ERA</th>
-    <th align="right">WHIP</th>
+    <th align="left" class="nosort noedit">ID</th>
+    <th align="left" class="noedit">Player</th>
+    <th align="center" class="noedit">Team</th>
+    <th align="center" class="noedit">Rank</th>
+    <th align="center" class="noedit">O-Rank</th>
+    <th align="center" class="noedit">P-Rank</th>
+    <th align="center" class="noedit">Pos</th>
+    <th align="center" class="noedit">Depth</th>
+    <th align="right" class="noedit">R</th>
+    <th align="right" class="noedit">HR</th>
+    <th align="right" class="noedit">RBI</th>
+    <th align="right" class="noedit">SB</th>
+    <th align="right" class="noedit">AVG</th>
+    <th align="right" class="noedit">IP</th>
+    <th align="right" class="noedit">W</th>
+    <th align="right" class="noedit">SV</th>
+    <th align="right" class="noedit">K</th>
+    <th align="right" class="noedit">ERA</th>
+    <th align="right" class="noedit">WHIP</th>
     <% if is_admin? %>
       <th align="right">&nbsp;</th>
     <% end %>
-</tr>
-
-<% if @players.empty? %>
-  Player <%=h @phrase %> not found!
-<% else %>
-<% for player in @players %>
-  <tr>
-    <td align="left">
-    <%= is_admin? ? link_to(player.id, :action => 'edit', :id => player) :  player.id %>
-    </td>
-    <td align="left"><a href="http://sports.yahoo.com/mlb/players/<%=h player.yahoo_ref %>" target="_blank"><%=h player.player  %></a></td>
-    <td align="center"><%=h player.team.upcase  %></td>
-    <td align="center"><%=h player.rank  %></td>
-    <td align="center"><%=h player.orank  %></td>
-    <td align="center"><%=h player.prank  if (player.prank!=nil && is_admin?)%></td>
-    <td align="center"><%=h player.pos  %></td>
-    <td align="center"><%=h player.depth  if (player.depth!=nil && is_admin?) %> </td>
-    <td align="right"><%=h player.R  %></td>
-    <td align="right"><%=h player.HR  %></td>
-    <td align="right"><%=h player.RBI  %></td>
-    <td align="right"><%=h player.SB  %></td>
-    <td align="right"><%= ba(player.AVG) if (player.AVG!=nil)  %></td>
-    <td align="right"><%=h player.IP  %></td>
-    <td align="right"><%=h player.W  %></td>
-    <td align="right"><%=h player.SV  %></td>
-    <td align="right"><%=h player.K  %></td>
-    <td align="right"><%=h sprintf("%.2f",player.ERA) if (player.ERA!=nil) %></td>
-    <td align="right"><%=h sprintf("%.2f",player.WHIP) if (player.WHIP!=nil)  %></td>
   </tr>
-<% end %>
-</table>  
+
+  <% if @players.empty? %>
+    Player <%=h @phrase %> not found!
+  <% else %>
+    <% for player in @players %>
+      <tr>
+        <td align="left">
+          <%= is_admin? ? link_to(player.id, :action => 'edit', :id => player) :  player.id %>
+        </td>
+        <td align="left"><a href="http://sports.yahoo.com/mlb/players/<%=h player.yahoo_ref %>" target="_blank"><%=h player.player  %></a></td>
+        <td align="center"><%=h player.team.upcase  %></td>
+        <td align="center"><%=h player.rank  %></td>
+        <td align="center"><%=h player.orank  %></td>
+        <td align="center"><%=h player.prank  if (player.prank!=nil && is_admin?)%></td>
+        <td align="center"><%=h player.pos  %></td>
+        <td align="center"><%=h player.depth  if (player.depth!=nil && is_admin?) %> </td>
+        <td align="right"><%=h player.R  %></td>
+        <td align="right"><%=h player.HR  %></td>
+        <td align="right"><%=h player.RBI  %></td>
+        <td align="right"><%=h player.SB  %></td>
+        <td align="right"><%= ba(player.AVG) if (player.AVG!=nil)  %></td>
+        <td align="right"><%=h player.IP  %></td>
+        <td align="right"><%=h player.W  %></td>
+        <td align="right"><%=h player.SV  %></td>
+        <td align="right"><%=h player.K  %></td>
+        <td align="right"><%=h sprintf("%.2f",player.ERA) if (player.ERA!=nil) %></td>
+        <td align="right"><%=h sprintf("%.2f",player.WHIP) if (player.WHIP!=nil)  %></td>
+      </tr>
+    <% end %>
+  </table>
 
 <% end %>
 <p><i>Found <%=h @players.size %> players.</i></p>

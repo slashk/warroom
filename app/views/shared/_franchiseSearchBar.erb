@@ -3,5 +3,5 @@ Show by franchise:
   <%= link_to_remote franchise.short_name,
     :url => {:action => 'searchbyfranchise', :team => franchise.id},
     :update => "search_hits", 
-    :complete => "TableKit.reload('players', {editable:false, stripe: true});"  %>
+    :complete => "TableKit.reload('players', {editable : false, stripe: true});"  %>
 <% end %>
