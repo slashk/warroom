@@ -85,4 +85,15 @@ class PlayersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def searchbyname
+    @phrase = params[:searchtext]
+    @searchphrase = "%" + @phrase + "%"
+    @players = Player.find(:all,
+      :conditions => [ "picks.id IS NULL AND players.player LIKE ?", @searchphrase],
+      :include => [:pick],
+      :joins => 'LEFT JOIN picks ON players.id=picks.player_id')
+    render :partial => "search"
+  end
+
 end
