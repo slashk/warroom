@@ -7,4 +7,6 @@ function initPlayerPage(){
 
     // make sorts desending as default
     TableKit.options.defaultSortDirection = -1;
+    TableKit.options.editable = false;
+    TableKit.options.resizable = false;
 }
