@@ -2,11 +2,11 @@
 module ApplicationHelper
 
   def draft_started?
-    false
+    Pick.count > 0
   end
 
   def is_admin?
-    true
+    current_user.role.match('admin')
   end
 
   def ba(average)

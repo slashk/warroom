@@ -5,7 +5,7 @@ class PlayersController < ApplicationController
   # GET /players.xml
   def index
     @players = Player.undrafted.byrank
-    @teams = User.draftorder.all
+    @teams = User.draftorder
 
     respond_to do |format|
       format.html # index.html.erb
