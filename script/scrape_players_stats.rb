@@ -9,7 +9,6 @@ require 'cgi'
 # there are a lot of gotchas on parsing/scraping yahoo! stats
 # batter and pitching stats are displayed differently and at different URLs
 # some stats are combined in one table cell and need further regex parsing
-# 
 
 DEBUG = ARGV[0].to_i
 
@@ -71,6 +70,10 @@ def distill_hitters_page(res)
         'pos' => pos,
         'player' => name.escape_single_quotes,
         'AVG' => x[13].inner_html }
+      if player['rank'].match('-')
+        player['rank'] = '1500'
+#        puts "#{player['player']} had a zero rank"
+      end
       p << player
     end
   end  
@@ -110,6 +113,10 @@ def distill_pitchers_page(res)
         'pos' => pos,
         'player' => name.escape_single_quotes,
         'WHIP' => x[13].inner_html }
+      if player['rank'].match('-')
+        player['rank'] = '1500'
+#        puts "#{player['player']} had a zero rank"
+      end
       p << player
     end
   end  
@@ -132,18 +139,18 @@ def spit(players, format)
   categories = ["orank", "yahoo_ref", "player", "team", "pos", "rank", "IP", "W", "SV", "K", "ERA", "WHIP", "R", "HR", "RBI", "SB", "AVG", "AB"]
   case format
   when 'sql'
-    print "INSERT DELAYED INTO players ("
-    print categories.sort.join(",").to_s
-    print ") VALUES "
+    stats = Array.new
     players.each do |p|
-      print "("
       s = Array.new
       categories.sort.each do |c|
         s << "'" + p[c].to_s + "'"
       end
-      print s.join(",")
-      puts "),"
+    stats << "(#{s.join(",")})"
     end
+    print "INSERT DELAYED INTO players ("
+    print categories.sort.join(",").to_s
+    print ") VALUES "
+    print stats.join(',')
   end
 end
 
