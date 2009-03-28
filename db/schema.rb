@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090222173139) do
+ActiveRecord::Schema.define(:version => 20090328212202) do
 
   create_table "picks", :force => true do |t|
     t.integer  "player_id",   :null => false
@@ -20,12 +20,12 @@ ActiveRecord::Schema.define(:version => 20090222173139) do
   end
 
   create_table "players", :force => true do |t|
-    t.integer  "yahoo_ref",  :default => 0
+    t.integer  "yahoo_ref",    :default => 0
     t.string   "player"
     t.string   "team"
     t.string   "pos"
     t.string   "status"
-    t.integer  "rank",       :default => 1300
+    t.integer  "rank",         :default => 1300
     t.float    "IP"
     t.integer  "W"
     t.integer  "SV"
@@ -52,6 +52,14 @@ ActiveRecord::Schema.define(:version => 20090222173139) do
     t.integer  "pRBI"
     t.integer  "pSB"
     t.float    "pAVG"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "previousTeam"
+  end
+
+  create_table "retainees", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "player_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
