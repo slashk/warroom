@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :retainees
+
   map.connect '/', :controller => "players", :action => 'index'
   map.resources :users
   map.resource :session, :controller => "session"
