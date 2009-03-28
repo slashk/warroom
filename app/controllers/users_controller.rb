@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   # Be sure to include AuthenticationSystem in Application Controller instead
   include AuthenticatedSystem
-  before_filter :login_required, :is_admin?
+  before_filter :login_required
   
   # render new.rhtml
   def new
@@ -10,6 +10,15 @@ class UsersController < ApplicationController
   def index
     @teams = User.draftorder.all
   end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def show
+    @user = User.find(params[:id])
+  end
+
 
   def create
     cookies.delete :auth_token
@@ -25,6 +34,17 @@ class UsersController < ApplicationController
       flash[:notice] = "Thanks for signing up!"
     else
       render :action => 'new'
+    end
+  end
+
+  def update
+    @user = User.find(params[:id])
+
+    if @user.update_attributes(params[:user])
+      flash[:notice] = 'User was successfully updated.'
+      redirect_to :action => :index
+    else
+      render :action => "edit"
     end
   end
 
