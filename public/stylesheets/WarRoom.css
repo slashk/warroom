@@ -186,8 +186,8 @@ span.player {
 }
 
 .retaineesSelected {
-    width: 200px;
-    height: 200px;
+    width: 90%;
+    min-height: 200px;
     background-color: lightblue;
     padding: 5px;
     border: black;
@@ -195,4 +195,14 @@ span.player {
 
 .retaineesSelectedHighlighted {
     background-color: yellow;
+}
+
+.final-roster {
+    width: 65%;
+    float: left;
+}
+
+.retainees {
+    width: 35%;
+    float: right;
 }

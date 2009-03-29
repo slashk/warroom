@@ -1,15 +1,21 @@
-<h1>Edit Retainees</h1>
-
-<%#= debug(@retainees) %>
-
-<div id="old-players" class="retaineesSelected" >
-  <%= render :partial => "players", :collection => @players unless @players.nil? %>
+<div id="retainee-instructions">
+  <p>
+    You may retain 3 batters and 3 pitchers from your 2008 Final Roster.
+    To retain a player, drag him from your 2008 Final Roster into the 2009 Retainees box.
+    Your 2008 Final Roster is sorted in Yahoo! player rank order (top ranked players at the top).
+  </p>
+</div>
+<div id ="last-year" class="final-roster">
+  <h1>2008 Final Roster</h1>
+  <div id="old-players" class="retaineesSelected" >
+    <%= render :partial => "players", :collection => @players unless @players.nil? %>
+  </div>
 </div>
 
-<div id="retainees">
-  <h1>Retainees</h1>
+<div id="retainees" class="retainees">
+  <h1>2009 Retainees</h1>
   <div id="selected" class="retaineesSelected" >
-      <%= render(:partial => "selectedPlayers", :collection => @retainees) unless @retainees.nitems < 1 %>
+    <%= render(:partial => "selectedPlayers", :collection => @retainees) unless @retainees.nitems < 1 %>
   </div>
   <%= drop_receiving_element('selected',
     #:onDrop => "function(element) { $('selected').innerHTML = element.innerHTML; }",
