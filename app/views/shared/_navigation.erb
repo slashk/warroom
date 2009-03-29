@@ -19,10 +19,10 @@
           <%= "Welcome #{current_user.login} [#{current_user.role}] !" %>
           [<%= link_to "logout", :controller=>'session', :action => 'destroy', :id => current_user %>]<br />
           <%= link_to "Players", :controller => "players" %>
+          <%= link_to "Retainees", :controller => 'retainees' %>
           <%= link_to "Picks", :controller => "picks" %>
           <% if is_admin? then -%>
             <%= link_to "Entry", :controller => "entry", :action => "new"  %>
-            <%= link_to "Commish", :controller => "picks", :action => "list" %>
             <%= link_to "Users", :controller => "users" %>
           <% end %>
         <% end %>
