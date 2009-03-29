@@ -1,20 +1,21 @@
-<h1>Editing retainee</h1>
+<h1>Edit Retainees</h1>
 
-<% form_for(@retainee) do |f| %>
-  <%= f.error_messages %>
+<%#= debug(@retainees) %>
 
-  <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </p>
-  <p>
-    <%= f.label :player_id %><br />
-    <%= f.text_field :player_id %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
-<% end %>
+<div id="old-players" class="retaineesSelected" >
+  <%= render :partial => "players", :collection => @players unless @players.nil? %>
+</div>
 
-<%= link_to 'Show', @retainee %> |
-<%= link_to 'Back', retainees_path %>
+<div id="retainees">
+  <h1>Retainees</h1>
+  <div id="selected" class="retaineesSelected" >
+      <%= render(:partial => "selectedPlayers", :collection => @retainees) unless @retainees.nitems < 1 %>
+  </div>
+  <%= drop_receiving_element('selected',
+    #:onDrop => "function(element) { $('selected').innerHTML = element.innerHTML; }",
+    :accept => "player",
+    :hoverclass => "retaineesSelectedHighlighted",
+    :with   => "'id=' + (element.id.split('_').last())",
+    :url => {:controller => "retainees", :action => "add_player_to_retainee_list"})
+%>
+</div>

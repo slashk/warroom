@@ -1,0 +1,10 @@
+<%= content_tag :span,
+  link_to_remote("#{selectedPlayers.player} (#{selectedPlayers.pos})" + image_tag('cancel.png', :border => 0, :size => "16x16"),
+  :url => { :action => "remove_player_from_retainee_list" },
+  :with   => "'id=' + #{selectedPlayers.id}"),
+  :id => "selectedPlayer_#{selectedPlayers.id}",
+  :class => "player"
+%>
+<% javascript_tag do -%>
+  Effect.Fade('<%= "player_#{selectedPlayers.id}" %>')
+<% end -%>

@@ -180,3 +180,19 @@ form#login_form_label {
     color: maroon;
     border-style: none;
 }
+
+span.player {
+    cursor: -moz-grab;
+}
+
+.retaineesSelected {
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+    padding: 5px;
+    border: black;
+}
+
+.retaineesSelectedHighlighted {
+    background-color: yellow;
+}

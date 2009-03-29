@@ -8,8 +8,8 @@
 
 <% for retainee in @retainees %>
   <tr>
-    <td><%=h retainee.user_id %></td>
-    <td><%=h retainee.player_id %></td>
+    <td><%=h retainee.user.team %></td>
+    <td><%=h retainee.player.player %></td>
     <td><%= link_to 'Show', retainee %></td>
     <td><%= link_to 'Edit', edit_retainee_path(retainee) %></td>
     <td><%= link_to 'Destroy', retainee, :confirm => 'Are you sure?', :method => :delete %></td>

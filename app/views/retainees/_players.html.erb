@@ -1,0 +1,2 @@
+<%= content_tag :span, "#{players.player} (#{players.pos})", :id => "player_#{players.id}", :class => "player" %>
+<%= draggable_element("player_#{players.id}", :revert=>true) %>
