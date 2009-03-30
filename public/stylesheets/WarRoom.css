@@ -182,7 +182,8 @@ form#login_form_label {
 }
 
 span.player {
-    cursor: -moz-grab;
+    /* cursor: -moz-grab; */
+    cursor: move;
 }
 
 .retaineesSelected {
