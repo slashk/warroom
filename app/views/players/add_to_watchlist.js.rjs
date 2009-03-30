@@ -1,1 +1,2 @@
 page.replace_html  "watch-#{params[:id]}" , :partial => "watched", :locals => {:id => params[:id]}
+page.visual_effect(:highlight, "watch-#{params[:id]}")

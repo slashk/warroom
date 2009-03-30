@@ -114,6 +114,13 @@ class PlayersController < ApplicationController
     render :partial => "search"
   end
 
+  def searchbywatchlist
+    @watchlist = compile_watchlist
+    w = Watchlist.find_all_by_user_id(current_user, :include => :player)
+    @players = w.map {|x| x.player }
+    render :partial => "search"
+  end
+
   def add_to_watchlist
     @subject = Watchlist.new(:player_id => params[:id], :user_id => current_user)
     @subject.save

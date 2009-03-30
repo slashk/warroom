@@ -2,13 +2,12 @@
   <tr>
     <th align="left" class="nosort noedit">ID</th>
     <th align="left" class="noedit">Player</th>
-    <th align="left" class="noedit nosort">Watch</th>
+    <th align="center" class="noedit nosort">Watch</th>
     <th align="center" class="noedit">Team</th>
     <th align="center" class="noedit">Rank</th>
     <th align="center" class="noedit">O-Rank</th>
     <th align="center" class="noedit">Pos</th>
     <% if is_admin? %>
-      <th align="center" class="noedit">P-Rank</th>
       <th align="center" class="noedit">Depth</th>
     <% end %>
     <th align="right" class="noedit">R</th>
@@ -46,7 +45,6 @@
       <td align="center"><%=h player.orank  %></td>
       <td align="center"><%=h player.pos  %></td>
       <% if is_admin? %>
-        <td align="center"><%=h player.prank  if (player.prank!=nil && is_admin?)%></td>
         <td align="center"><%=h player.depth  if (player.depth!=nil && is_admin?) %> </td>
       <% end %>
       <td align="right"><%=h player.R  %></td>
