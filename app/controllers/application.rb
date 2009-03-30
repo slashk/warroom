@@ -34,4 +34,18 @@ class ApplicationController < ActionController::Base
     last_pick_time = Pick.find(:first, :order => "pick_number desc").created_at
   end
 
+  def compile_watchlist
+    w = Watchlist.find_all_by_user_id(current_user)
+    if w.nil?
+      w = Array.new
+    else
+      if w.class != Array
+        return w.player_id
+      else
+        watchlist = w.map {|x| x.player_id }
+        return watchlist.compact
+      end
+    end
+  end
+
 end

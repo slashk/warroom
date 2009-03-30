@@ -6,6 +6,7 @@ class PlayersController < ApplicationController
   def index
     @players = Player.undrafted.byrank
     @teams = User.draftorder
+    @watchlist = compile_watchlist
 
     respond_to do |format|
       format.html # index.html.erb
@@ -88,15 +89,18 @@ class PlayersController < ApplicationController
 
   def searchbyname
     @players = Player.undrafted.byrank.byname(params[:searchtext])
+    @watchlist = compile_watchlist
     render :partial => "search"
   end
 
   def searchbyteam
     @players = Player.undrafted.byrank.find_all_by_team(params[:team])
+    @watchlist = compile_watchlist
     render :partial => "search"
   end
 
   def searchbypos
+    @watchlist = compile_watchlist
     case params[:fieldPosition]
     when "BATTERS"
       @players = Player.undrafted.batters.byrank
@@ -108,6 +112,16 @@ class PlayersController < ApplicationController
       @players = Player.undrafted.byrank.bypos(params[:fieldPosition])
     end
     render :partial => "search"
+  end
+
+  def add_to_watchlist
+    @subject = Watchlist.new(:player_id => params[:id], :user_id => current_user)
+    @subject.save
+  end
+
+  def remove_from_watchlist
+    @subject = Watchlist.find_by_player_id(params[:id])
+    @subject.destroy
   end
 
 end

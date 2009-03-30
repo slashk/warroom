@@ -1,0 +1,1 @@
+page.replace_html  "watch-#{params[:id]}" , :partial => "unwatched", :locals => {:id => params[:id]}

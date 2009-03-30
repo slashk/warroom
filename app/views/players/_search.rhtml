@@ -2,6 +2,7 @@
   <tr>
     <th align="left" class="nosort noedit">ID</th>
     <th align="left" class="noedit">Player</th>
+    <th align="left" class="noedit nosort">Watch</th>
     <th align="center" class="noedit">Team</th>
     <th align="center" class="noedit">Rank</th>
     <th align="center" class="noedit">O-Rank</th>
@@ -33,6 +34,13 @@
         <%= is_admin? ? link_to(player.id, :action => 'edit', :id => player) :  player.id %>
       </td>
       <td align="left"><a href="http://sports.yahoo.com/mlb/players/<%=h player.yahoo_ref %>" target="_blank"><%=h player.player  %></a></td>
+      <td align="center" id="watch-<%= player.id  %>" >
+        <% if @watchlist.include?(player.id) %>
+          <%= render(:partial => "watched", :locals => {:id => player.id}) %>
+        <% else %>
+          <%= render(:partial => "unwatched", :locals => {:id => player.id}) %>
+        <% end %>
+      </td>
       <td align="center"><%=h player.team.upcase  %></td>
       <td align="center"><%=h player.rank  %></td>
       <td align="center"><%=h player.orank  %></td>
