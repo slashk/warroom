@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
 
   def draft_started?
-    Picks.count > 0
+    Pick.picks_taken.size > 0
   end
 
   # find the team who is currently on the clock
