@@ -75,7 +75,8 @@ class RetaineesController < ApplicationController
 
   def add_player_to_retainee_list
     if check_compliance(current_user, params[:id])
-      @retainee = Retainee.new(:player_id => params[:id], :user_id => current_user)
+	# TODO check to make sure saving with correct user_id
+      @retainee = Retainee.new(:player_id => params[:id], :user_id => current_user.id)
       if @retainee.save
         @players = Player.find(params[:id])
       end
