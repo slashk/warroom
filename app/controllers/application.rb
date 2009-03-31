@@ -20,11 +20,16 @@ class ApplicationController < ActionController::Base
     Pick.picks_taken.size > 0
   end
 
+  def draft_over?
+    Pick.picks_taken.count >= Pick.count
+  end
+
   def find_current_pick
+    # if this is the last pick of the draft, return the last pick of the draft
     if Pick.picks_taken.count < Pick.count
       return Pick.find(Pick.picks_taken.count + 1)
     else
-      return nil
+      return Pick.find(Pick.picks_taken.count)
     end
   end
 
