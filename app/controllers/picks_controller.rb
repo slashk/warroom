@@ -1,4 +1,5 @@
 class PicksController < ApplicationController
+  before_filter :login_required
 
   def index
     @picks = Pick.picks_taken
