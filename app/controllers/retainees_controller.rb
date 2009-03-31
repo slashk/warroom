@@ -75,11 +75,11 @@ class RetaineesController < ApplicationController
 
   def add_player_to_retainee_list
     if check_compliance(current_user, params[:id])
-	# TODO check to make sure saving with correct user_id
       @retainee = Retainee.new(:player_id => params[:id], :user_id => current_user.id)
       if @retainee.save
         @players = Player.find(params[:id])
       end
+      # TODO add ajax message about non-compliance
     end
   end
 
@@ -98,21 +98,18 @@ class RetaineesController < ApplicationController
     # players. A team may decide to retain fewer than six players.
     compliant = true
     player = Player.find(newPlayer)
-    #    logger.debug "player pos is #{player.pos}"
     retainees = Retainee.find_all_by_user_id(user, :include => :player)
     if player.pos.match(/P/)
       pitchers = retainees.map {|x| x if x.player.pos.match(/P/)}
       pitchers.compact!
-      #      logger.debug "number of pitcher is #{pitchers.size}"
       compliant = false if pitchers.size > 2
     else
       batters = retainees.map {|x| x if !x.player.pos.match(/P/)}
       batters.compact!
-      #      logger.debug "number of batters is #{batters.size}"
       compliant = false if batters.size > 2
     end
-    # check RP <= 2
-    # check OF <= 2
+    # TODO check RP <= 2
+    # TODO check OF <= 2
     logger.debug "compliant is #{compliant}"
     return compliant
   end
