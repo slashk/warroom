@@ -1,15 +1,12 @@
 <h2>Draft Order</h2>
-<%# for team in @teams %>
-        <%# t = team.draft_order.to_s + ". " + team.short_name %>
-        <%# if team.id == @drafter.id %>
-                <%#= content_tag(:strong, t) %>
-        <%# elsif team.id == @on_deck.id %>
-                <%#= content_tag(:em, t) %>
-        <%# else %>
-                <%#= t %>
-        <%# end %>
-  <%#*<br />%>
-<%# end %>
-<p><span style="background-color: red; color: white;"><%#= @drafter.short_name %></span>
-on the clock for <%#= time_ago_in_words(@last_pick_time, true) %></p>
-<p><%#= @on_deck.short_name %> on deck</p>
+
+<% unless @upcoming.nil? %>
+  <% for pick in @upcoming %>
+    <%= "#{pick.pick_number} . #{pick.user.team}"  %><br />
+  <% end %>
+  <p><span style="background-color: red; color: white;"><%= @upcoming[0].user.team %></span>
+  on the clock for <%= time_ago_in_words(@last_pick_time, true) %></p>
+  <% unless @upcoming.size == 1 %>
+    <p><%= @upcoming[1].user.team %> on deck</p>
+  <% end %>
+<% end %>
