@@ -23,7 +23,7 @@
     <th align="right" class="noedit">WHIP</th>
   </tr>
 
-  <% if @players.empty? %>
+  <% if @players.nitems < 1 || @players.nil? %>
   </table>
   Player <%=h @phrase %> not found!
 <% else %>

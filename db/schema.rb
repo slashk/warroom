@@ -12,7 +12,7 @@
 ActiveRecord::Schema.define(:version => 20090330002128) do
 
   create_table "picks", :force => true do |t|
-    t.integer  "player_id",   :null => false
+    t.integer  "player_id"
     t.integer  "user_id",     :null => false
     t.integer  "pick_number", :null => false
     t.datetime "created_at"

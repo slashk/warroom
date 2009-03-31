@@ -1,7 +1,7 @@
 Show by franchise:
 <% for franchise in franchiseSearchBar %>
   <%= link_to_remote franchise.team,
-    :url => {:action => 'searchbyteam', :team => franchise.id},
+    :url => {:action => 'searchbyfranchise', :team => franchise.id},
     :update => "search_hits", 
     :complete => "TableKit.reload('players', {editable : false, stripe: true});"  %>
 <% end %>

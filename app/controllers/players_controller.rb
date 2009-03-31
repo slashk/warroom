@@ -93,11 +93,19 @@ class PlayersController < ApplicationController
     render :partial => "search"
   end
 
-  def searchbyteam
-    @players = Player.undrafted.byrank.find_all_by_team(params[:team])
+  def searchbyfranchise
+    picks = Pick.find_all_by_user_id(params[:team], :include => :player)
+    @players = picks.map {|x| x.player }
     @watchlist = compile_watchlist
     render :partial => "search"
   end
+
+  def searchbyteam
+    @players = Player.undrafted.byrank.find_all_by_team(params[:team])
+     @watchlist = compile_watchlist
+     render :partial => "search"
+   end
+
 
   def searchbypos
     @watchlist = compile_watchlist
@@ -119,7 +127,7 @@ class PlayersController < ApplicationController
     w = Watchlist.find_all_by_user_id(current_user, :include => :player)
     @players = w.map {|x| x.player }
     # TODO test this -- should reject players that are watched, but also drafted
-    @players = @players.reject {|x| Pick.find_by_player_id(x.player_id)}
+#    @players = @players.reject {|x| Pick.find_by_player_id(x.player_id)}
     render :partial => "search"
   end
 

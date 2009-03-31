@@ -1,22 +1,23 @@
-<h1>Listing picks</h1>
+<img alt="spinner" id="spinner" src="/images/ajax-loader.gif" style="display:none;" />
 
-<table>
-  <tr>
-    <th>Player</th>
-    <th>Team</th>
-    <th>Pick number</th>
-  </tr>
+<%= periodically_call_remote :url => {:action => 'scrolldraft'},
+    :update => :draft_live,
+    :frequency => 20,
+    :condition => 1,
+    :complete => visual_effect(:highlight, 'draft_live')
+%> 
 
-<% for pick in @picks %>
-  <tr>
-    <td><%=h pick.player_id %></td>
-    <td><%=h pick.team_id %></td>
-    <td><%=h pick.pick_number %></td>
-    <td><%= link_to 'Show', pick %></td>
-    <td><%= link_to 'Edit', edit_pick_path(pick) %></td>
-    <td><%= link_to 'Destroy', pick, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<%= periodically_call_remote :url => {:action => 'scrollteam'},
+    :update => :draftorder,
+    :frequency => 15,
+    :condition => 1,
+    :complete => visual_effect(:highlight, 'draftorder')
+%>
 
-<br />
+<div id="draftorder">
+<%= render :partial => "scrollteam" %>
+</div>
+
+<div id="draft_live">
+<%= render :partial => "scrolldraft" %>
+</div>

@@ -1,6 +1,6 @@
 <div id="asshead">
   <% if draft_started? -%>
-    <%=  periodically_call_remote :url => {:controller => 'draftadmin' ,:action => 'ticker'},
+    <%=  periodically_call_remote :url => {:controller => 'picks' ,:action => 'ticker'},
       :update => :update_cell,
       :frequency => 15,
       :condition => 1,

@@ -34,6 +34,14 @@ class ApplicationController < ActionController::Base
     last_pick_time = Pick.find(:first, :order => "pick_number desc").created_at
   end
 
+  def whose_pick
+    # find last pick
+    last_pick = Pick.picks_taken.first
+    current_pick_number = last_pick.pick_number + 1
+    # choose the pick.pick_number + 1
+    # return pick object ? or team_id ?
+  end
+
   def compile_watchlist
     w = Watchlist.find_all_by_user_id(current_user)
     if w.nil?
