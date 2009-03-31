@@ -7,3 +7,4 @@ nbproject/*
 nbproject
 config/deploy.rb
 Capfile
+lib/tasks/extract_fixtures.rake
