@@ -1,9 +1,19 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  player_id: 1
-  user_id: 1
-
-two:
-  player_id: 1
-  user_id: 1
+--- 
+watchlists_001: 
+  created_at: "2009-03-30 06:15:50"
+  id: "27"
+  player_id: "2271"
+  updated_at: "2009-03-30 06:15:50"
+  user_id: "1"
+watchlists_002: 
+  created_at: "2009-03-30 06:15:52"
+  id: "28"
+  player_id: "2272"
+  updated_at: "2009-03-30 06:15:52"
+  user_id: "1"
+watchlists_003: 
+  created_at: "2009-03-30 23:00:53"
+  id: "29"
+  player_id: "2259"
+  updated_at: "2009-03-30 23:00:53"
+  user_id: "1"
