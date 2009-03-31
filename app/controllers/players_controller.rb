@@ -133,7 +133,8 @@ class PlayersController < ApplicationController
   end
 
   def add_to_watchlist
-    @subject = Watchlist.new(:player_id => params[:id], :user_id => current_user)
+#        logger.debug "#{current_user.id}"
+    @subject = Watchlist.new(:player_id => params[:id], :user_id => current_user.id)
     @subject.save
   end
 
