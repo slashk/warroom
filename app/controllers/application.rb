@@ -21,7 +21,11 @@ class ApplicationController < ActionController::Base
   end
 
   def find_current_pick
-    return Pick.find(Pick.picks_taken.count + 1)
+    if Pick.picks_taken.count < Pick.count
+      return Pick.find(Pick.picks_taken.count + 1)
+    else
+      return nil
+    end
   end
 
   # find the team who is currently on the clock
@@ -29,7 +33,7 @@ class ApplicationController < ActionController::Base
     return Pick.find(Pick.picks_taken.count + 1).user
   end
   
-  # find the time of the last pick 
+  # find the time of the last pick
   def find_last_pick_time
     Pick.find(Pick.picks_taken.count).updated_at
   end
