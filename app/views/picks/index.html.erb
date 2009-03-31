@@ -1,23 +1,23 @@
 <img alt="spinner" id="spinner" src="/images/ajax-loader.gif" style="display:none;" />
 
 <%= periodically_call_remote :url => {:action => 'scrolldraft'},
-    :update => :draft_live,
-    :frequency => 20,
-    :condition => 1,
-    :complete => visual_effect(:highlight, 'draft_live')
+  :update => :draft_live,
+  :frequency => 20,
+  :condition => 1,
+  :complete => visual_effect(:highlight, 'draft_live')
 %> 
 
 <%= periodically_call_remote :url => {:action => 'scrollteam'},
-    :update => :draftorder,
-    :frequency => 15,
-    :condition => 1,
-    :complete => visual_effect(:highlight, 'draftorder')
+  :update => :draftorder,
+  :frequency => 15,
+  :condition => 1,
+  :complete => visual_effect(:highlight, 'draftorder')
 %>
 
 <div id="draftorder">
-<%= render :partial => "scrollteam" %>
+  <%= render :partial => "scrollteam" %>
 </div>
 
 <div id="draft_live">
-<%= render :partial => "scrolldraft" %>
+  <%= render :partial => "scrolldraft" %>
 </div>
