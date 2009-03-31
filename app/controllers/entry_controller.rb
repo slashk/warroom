@@ -1,13 +1,9 @@
 class EntryController < ApplicationController
 
   def new
-    # create a new unpopulated form
-    @pick = Pick.new
-    @pick.pick_number = Pick.count + 1
-    @drafter = User.find_by_draft_order(whose_pick(@pick.pick_number, DRAFT))
-    @pick.team_id = @drafter.id
-    @teams = User.find(:all)
-    @round = find_round(@pick.pick_number)
+    @pick = find_current_pick
+    @teams = User.all
+    render 
   end
 
   def create

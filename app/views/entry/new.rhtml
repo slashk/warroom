@@ -1,14 +1,14 @@
-<%=
-  observe_field('player_id', :url => {:controller => 'players', :action => 'show'},
-    :update => 'draftee', :with => 'player_id')
-%>
-<h1>Round #<%= @round %> </h1>
 <h2>Overall Pick #<%= @pick.pick_number -%> </h2>
 <% form_for(:pick, :url => {:action => 'create'}) do |p| %>
   <dt>Player</dt><dd><%= p.text_field :player_id , :size => 5 -%></dd>
-  <dt>Team</dt><dd><%= p.collection_select(:team_id, @teams, :id, :short_name) %></dd>
-  <dt>Pick Number</dt><dd><%= p.text_field :pick_number, :size => 5 -%></dd>
+  <dt>Team</dt><dd><%= p.collection_select(:user_id, @teams, :id, :team) %></dd>
+  <dt>Pick Number</dt><dd><%= p.text_field :pick_number, :size => 5 -%></dd><br />
   <%= submit_tag "Create" %>
 <% end %>
 
 <div id="draftee"></div>
+
+<%=
+observe_field('pick_player_id', :url => {:controller => 'players', :action => 'show'},
+:update => 'draftee', :with => "'id=' + value")
+%>
