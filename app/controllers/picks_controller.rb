@@ -62,10 +62,14 @@ class PicksController < ApplicationController
   end
 
   def ticker
-    @pick = Pick.picks_taken.first
-    @next_pick = Pick.find(@pick.pick_number + 1)
-    @team = @next_pick.user.team
-    render :partial => "ticker"
+    unless draft_over?
+      @pick = Pick.picks_taken.first
+      @next_pick = find_current_pick
+      @team = @next_pick.user.team
+      render :partial => "ticker"
+    else
+      render :text => "Draft Finished!"
+    end
   end
 
 end
