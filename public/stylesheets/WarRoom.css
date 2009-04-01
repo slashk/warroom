@@ -48,7 +48,7 @@ th {
     border-bottom-color: silver;
     border-left-color: silver;
     border-right-color: silver;
-    background-color: #CCCCFF;
+    /* background-color: #CCCCFF; */
 }
 
 #errorExplanation {
@@ -206,4 +206,10 @@ span.player {
 .retainees {
     width: 35%;
     float: right;
+}
+
+.loginbox {
+    margin-right: 30%;
+    margin-left: 30%;
+    padding-top: 25px;
 }
