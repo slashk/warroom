@@ -3,13 +3,10 @@
     <th align="left" class="nosort noedit">ID</th>
     <th align="left" class="noedit">Player</th>
     <th align="center" class="noedit nosort">Watch</th>
+    <th align="center" class="noedit">Pos</th>
     <th align="center" class="noedit">Team</th>
     <th align="center" class="noedit">Rank</th>
     <th align="center" class="noedit">O-Rank</th>
-    <th align="center" class="noedit">Pos</th>
-    <% if is_admin? %>
-      <th align="center" class="noedit">Depth</th>
-    <% end %>
     <th align="right" class="noedit">R</th>
     <th align="right" class="noedit">HR</th>
     <th align="right" class="noedit">RBI</th>
@@ -40,13 +37,10 @@
           <%= render(:partial => "unwatched", :locals => {:id => player.id}) %>
         <% end %>
       </td>
+      <td align="center"><%=h player.pos  %></td>
       <td align="center"><%=h player.team.upcase  %></td>
       <td align="center"><%=h player.rank  %></td>
       <td align="center"><%=h player.orank  %></td>
-      <td align="center"><%=h player.pos  %></td>
-      <% if is_admin? %>
-        <td align="center"><%=h player.depth  if (player.depth!=nil && is_admin?) %> </td>
-      <% end %>
       <td align="right"><%=h player.R  %></td>
       <td align="right"><%=h player.HR  %></td>
       <td align="right"><%=h player.RBI  %></td>
