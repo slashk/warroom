@@ -22,12 +22,12 @@ pre {
 }
 
 a { 
-        color: blue;
+        color: #333366;
         text-decoration: none;
     font-weight: bold;
 }
-a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
+a:visited { color: #000066; }
+a:hover { background-color: #3366FF; }
 
 .fieldWithErrors {
     padding: 2px;
@@ -36,7 +36,6 @@ a:hover { color: #fff; background-color:#000; }
 }
 
 th {
-
     border-top-style: solid;
     border-bottom-style: solid;
     border-left-style: solid;
@@ -49,6 +48,7 @@ th {
     border-bottom-color: silver;
     border-left-color: silver;
     border-right-color: silver;
+    background-color: #CCCCFF;
 }
 
 #errorExplanation {
@@ -89,8 +89,8 @@ th {
 }
 
 div#asshead {
-    background-color: lightblue;
-    color: maroon;
+    background-color: #CCCCFF;
+    color: #000033;
     border-style: none;
 }
 
@@ -105,7 +105,7 @@ div#right {
 div#draftorder {
     float: right;
     width: 25%;
-    background-color: #e6e6e6;
+    background-color: #CCCCFF;
     height: 100%;
     padding: 10px;
 }
@@ -176,7 +176,7 @@ form#login_form_label {
 }
 
 #draftee {
-    background-color: lightblue;
+    background-color: #CCCCFF;
     color: maroon;
     border-style: none;
 }
@@ -189,7 +189,7 @@ span.player {
 .retaineesSelected {
     width: 90%;
     min-height: 200px;
-    background-color: lightblue;
+    background-color: #CCCCFF;
     padding: 5px;
     border: black;
 }
