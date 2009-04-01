@@ -1,4 +1,3 @@
-<h2>Picks</h2>
 <% for pick in @picks %>
   <div id="draftee<%= pick.pick_number %>">
   <%= "<strong>" if my_team?(pick.user_id) -%>

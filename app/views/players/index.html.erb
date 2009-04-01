@@ -13,7 +13,7 @@
   </tr>
 </table>
 
-<div id="search_hits">
+<div id="search_hits" <%= 'class="two-thirds-right"' if is_admin? %> >
   <%=  render :partial => "search" %>
 </div>
 
@@ -25,3 +25,29 @@
   :url => { :action => :searchbyname },
   :with => 'searchtext' )
 %>
+
+<% if is_admin? %>
+  <div class="one-third">
+    <div class="title">Pick Order</div>
+    <div id="inline">
+      <%= render :partial => "picks/inline" %>
+    </div>
+    <div class="title">Draft Results</div>
+    <div id="draft_live">
+      <%= render :partial => "picks/scrolldraft" %>
+    </div>
+  </div>
+  <%= periodically_call_remote :url => {:controller => 'picks', :action => 'inline'},
+    :update => :inline,
+    :frequency => 25,
+    :condition => 1,
+    :complete => visual_effect(:highlight, 'inline')
+%>
+
+  <%= periodically_call_remote :url => {:controller=> 'picks', :action => 'scrolldraft'},
+    :update => :draft_live,
+    :frequency => 30,
+    :condition => 1,
+    :complete => visual_effect(:highlight, 'draft_live')
+%>
+<% end %>

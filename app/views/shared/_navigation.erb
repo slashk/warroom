@@ -1,11 +1,4 @@
 <div id="asshead">
-  <% if draft_started? && logged_in? -%>
-    <%=  periodically_call_remote :url => {:controller => 'picks' ,:action => 'ticker'},
-      :update => :update_cell,
-      :frequency => 15,
-      :condition => 1,
-      :complete => visual_effect(:highlight, 'update_cell') %>
-  <% end -%>
   <table width="100%">
     <tr>
       <td>
@@ -24,6 +17,7 @@
           <% if is_admin? then -%>
             <%= link_to "Entry", :controller => "entry"  %>
             <%= link_to "Users", :controller => "users" %>
+            <%= link_to "Widescreen", :controller => "players", :action => "widescreen" %>
           <% end %>
         <% end %>
       </td>

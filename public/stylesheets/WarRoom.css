@@ -27,7 +27,7 @@ a {
     font-weight: bold;
 }
 a:visited { color: #000066; }
-a:hover { background-color: #3366FF; }
+a:hover { background-color: lightgrey; }
 
 .fieldWithErrors {
     padding: 2px;
@@ -212,4 +212,28 @@ span.player {
     margin-right: 30%;
     margin-left: 30%;
     padding-top: 25px;
+}
+
+.two-thirds-right {
+    width: 79%;
+    float: left;
+}
+
+.one-third {
+    width: 20%;
+    float: right;
+    padding-left: 10px;
+}
+
+div#draft_live {
+}
+
+div#inline {
+    
+}
+
+.title {
+    background-color: #CCCCFF;
+    font-size: medium;
+    font-weight: bold;
 }
