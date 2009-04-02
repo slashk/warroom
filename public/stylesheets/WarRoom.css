@@ -223,6 +223,7 @@ span.player {
     width: 20%;
     float: right;
     padding-left: 10px;
+    background-color: #CCCCFF;
 }
 
 div#draft_live {
