@@ -68,6 +68,7 @@ class AdminController < ApplicationController
     draft.keys.sort.each do |x|
       a = Pick.new(:pick_number => x, :user_id => draft[x])
       puts "#{a.pick_number}. #{a.user_id}"
+      a.save
     end
   end
 

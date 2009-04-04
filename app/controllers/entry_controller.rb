@@ -1,4 +1,6 @@
 class EntryController < ApplicationController
+    before_filter :login_required
+
 
   def index
     @pick = find_current_pick
@@ -19,7 +21,7 @@ class EntryController < ApplicationController
     else
       flash[:error] = "Player not drafted"
     end
-    render :controller => index
+    render :action => index
   end
 
 end

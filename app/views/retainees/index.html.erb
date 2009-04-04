@@ -5,6 +5,7 @@
     <th>Team</th>
     <th>Player</th>
     <th>Pos</th>
+    <th>ID</th>
   </tr>
 
 <% for retainee in @retainees %>
@@ -12,6 +13,7 @@
     <td><%=h retainee.user.team %></td>
     <td><%=h retainee.player.player %></td>
     <td><%=h retainee.player.pos %></td>
+    <td><%=h retainee.player.yahoo_ref %></td>
   </tr>
 <% end %>
 </table>
