@@ -21,7 +21,7 @@ class EntryController < ApplicationController
     else
       flash[:error] = "Player not drafted"
     end
-    render :action => index
+    redirect_to :action => 'new'
   end
 
 end
