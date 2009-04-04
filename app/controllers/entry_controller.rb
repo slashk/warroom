@@ -10,7 +10,7 @@ class EntryController < ApplicationController
   def create
     @pick = Pick.new(params[:pick_number])
     @pick.save ? flash[:notice] = 'Player was successfully created.' :  flash[:error] = 'Error in saving your pick'
-    redirect_to :action => 'new'
+    redirect_to :action => 'index'
   end
 
   def update
@@ -21,7 +21,7 @@ class EntryController < ApplicationController
     else
       flash[:error] = "Player not drafted"
     end
-    redirect_to :action => 'new'
+    redirect_to :action => 'index'
   end
 
 end
