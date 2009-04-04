@@ -29,11 +29,11 @@
   <div class="one-third">
     <div class="title">Pick Order</div>
     <div id="inline">
-      <%= render :partial => "picks/inline" %>
+      <%#= render :partial => "picks/inline" %>
     </div>
     <div class="title">Draft Results</div>
     <div id="draft_live">
-      <%= render :partial => "picks/scrolldraft" %>
+      <%#= render :partial => "picks/scrolldraft" %>
     </div>
   </div>
   <%= periodically_call_remote :url => {:controller => 'picks', :action => 'inline'},

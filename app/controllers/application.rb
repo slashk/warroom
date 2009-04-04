@@ -27,20 +27,22 @@ class ApplicationController < ActionController::Base
   def find_current_pick
     # if this is the last pick of the draft, return the last pick of the draft
     if Pick.picks_taken.count < Pick.count
-      return Pick.find(Pick.picks_taken.count + 1)
+      return Pick.find_by_pick_number(Pick.picks_taken.count + 1)
     else
-      return Pick.find(Pick.picks_taken.count)
+      return Pick.find_by_pick_number(Pick.picks_taken.count)
     end
   end
 
   # find the team who is currently on the clock
   def find_user_on_clock
-    return Pick.find(Pick.picks_taken.count + 1).user
+    return Pick.find_by_pick_number(Pick.picks_taken.count + 1).user
   end
   
   # find the time of the last pick
   def find_last_pick_time
-    Pick.find(Pick.picks_taken.count).updated_at
+    if Pick.picks_taken.count > 0
+      Pick.find_by_pick_number(Pick.picks_taken.count).updated_at
+    end
   end
 
   def compile_watchlist
