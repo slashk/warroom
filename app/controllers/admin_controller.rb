@@ -1,17 +1,28 @@
 class AdminController < ApplicationController
-  def pick
+  before_filter :login_required
+
+  def index
+    # this is the control panel: buttons and status
 
   end
 
-  def create_draft
+  def create
+    users = User.all(:order => "draft_order asc")
     if params[:draft_type] == "snake"
-      # get draft order hash
-      # destroy all current picks
-      # new and save Pick.new(:pick_number => draft.key, :team_id => draft.value)
+      draft = set_snake(users, params[:rounds])
+    else
+      draft = set_straight(users,params[:rounds])
     end
+    # destroy all current picks
+    Pick.all.each do |x|
+      x.destroy
+    end
+    # create the new draft
+    make_it(draft)
+    # find all draft picks to show admin
   end
 
-  def player
+  def yahoo
   end
 
   def previous
@@ -31,7 +42,6 @@ class AdminController < ApplicationController
     (rounds/2).times do |x|
       full_rounds.each do |u|
         z = z + 1
-        # puts "#{z}. #{u.team}"
         draft[z] = u.id
       end
     end
@@ -41,11 +51,10 @@ class AdminController < ApplicationController
       # add another fwd round
       users.each do |u|
         z = z + 1
-        # puts "#{z}. #{u.team}"
         draft[z] = u.id
       end
     end
-    # return hash of pick_number{user.id}
+    # return hash of pick_number => user.id
     return draft
   end
 
@@ -57,18 +66,17 @@ class AdminController < ApplicationController
     rounds.times do |x|
       users.each do |u|
         z = z + 1
-        # puts "#{z}. #{u.team}"
         draft[z] = u.id
       end
     end
     return draft
   end
 
-  def make_it
+  def make_it(draft)
+    # draft is a hash of pick_number => user_id
     draft.keys.sort.each do |x|
-      a = Pick.new(:pick_number => x, :user_id => draft[x])
-      puts "#{a.pick_number}. #{a.user_id}"
-      a.save
+      draft_slot = Pick.new(:pick_number => x, :user_id => draft[x])
+      draft_slot.save
     end
   end
 
