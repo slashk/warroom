@@ -21,7 +21,6 @@ There are several screens to this application
 * User screens
 ** Players screen: this is mostly an Ajax driven player stat sorter. It is the main screen where you can see all the available (undrafted) players. Players can be sorted by about any DB field (team, position, stats, etc.). There is also an Ajax live search box. Finally, there is an Ajax updater on the top of the screen that shows the last pick taken.
 ** Picks screen: shows the draft picks in order as well as the upcoming draft order. These are both Ajax periodic updaters.
-** Projections screen: a half ass implementation of aggregating team stats to see how your draft is fairing. Needs major work.
 * Commish (Admin) screens
 ** Entry screen: a commish only screen, where the draft administrator can record picks.
 ** Commish screen: basically the draft list, but fully editable (in case of problems).
@@ -36,10 +35,10 @@ h3. Dependencies
 h3. To Do
 
 * add real testing. and javascript testing.
-* clean up Ajax/RJS
-* clean up player sorting algorithm. it's shameful hack.
+* add admin functionality that sets up drafts and pulls players stats
 * add analysis features beyond the half-assed projections screen. or maybe make that full-assed.
 * eventually make this so no "admin" or "commish" is needed -- that's right a real draft application which allows you to draft your own player and keeps track of time. i can dream. 
+* highlight players row when moused over
 
 h3. Utilities
 
