@@ -39,6 +39,7 @@ h3. To Do
 * add analysis features beyond the half-assed projections screen. or maybe make that full-assed.
 * eventually make this so no "admin" or "commish" is needed -- that's right a real draft application which allows you to draft your own player and keeps track of time. i can dream. 
 * highlight players row when moused over
+* pull in DL and news from y!
 
 h3. Utilities
 
