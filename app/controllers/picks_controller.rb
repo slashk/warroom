@@ -81,6 +81,7 @@ class PicksController < ApplicationController
     @SP = myTeamCount['SP']
     @RP = myTeamCount['RP']
     @C = myTeamCount['C']
+    @P = myTeamCount['P']
     render :partial => "myteam"
   end
 

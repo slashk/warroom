@@ -25,6 +25,7 @@ class PlayersController < ApplicationController
     @SP = myTeamCount['SP']
     @RP = myTeamCount['RP']
     @C = myTeamCount['C']
+    @P = myTeamCount['P']
   end
 
   # GET /players/1
