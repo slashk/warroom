@@ -215,18 +215,19 @@ span.player {
 }
 
 .two-thirds-right {
-    width: 75%;
+    width: 77%;
     float: left;
 }
 
 .one-third {
-    width: 20%;
+    width: 22%;
     float: right;
     padding-left: 10px;
     background-color: #CCCCFF;
 }
 
 div#draft_live {
+    padding: 1px;
 }
 
 div#inline {
@@ -237,4 +238,9 @@ div#inline {
     background-color: #CCCCFF;
     font-size: medium;
     font-weight: bold;
+}
+
+#baseball-diamond {
+    margin-right: auto;
+    margin-left: auto;
 }

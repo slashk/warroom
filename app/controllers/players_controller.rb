@@ -7,11 +7,24 @@ class PlayersController < ApplicationController
     @players = Player.undrafted.byrank
     @teams = User.draftorder
     @watchlist = compile_watchlist
+    # draft results
     @picks = Pick.picks_taken
+    # Pick order
     current_pick = find_current_pick
     @upcoming = Pick.find(:all, :conditions => "pick_number >= #{current_pick.pick_number}",
       :order => "pick_number asc", :limit => 10, :include => :user )
     @last_pick_time =  draft_started? ? find_last_pick_time : Time.now
+    # my team
+    mypicks = Pick.find_all_by_user_id(current_user.id, :include => :player)
+    myTeamCount = countPlayers(mypicks)
+    @SS = myTeamCount['SS']
+    @B1 = myTeamCount['1B']
+    @B2 = myTeamCount['2B']
+    @B3 = myTeamCount['3B']
+    @OF = myTeamCount['OF']
+    @SP = myTeamCount['SP']
+    @RP = myTeamCount['RP']
+    @C = myTeamCount['C']
   end
 
   # GET /players/1

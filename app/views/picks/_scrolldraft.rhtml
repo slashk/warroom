@@ -1,8 +1,8 @@
 <% for pick in @picks %>
-  <div id="draftee<%= pick.pick_number %>">
+  <span id="draftee<%= pick.pick_number %>">
   <%= "<strong>" if my_team?(pick.user_id) -%>
   <%=h pick.pick_number %>. <%=h pick.player.player unless pick.player.nil? -%>
-  (<%=h "#{pick.player.pos} - " unless pick.player.nil? -%><%=h pick.user.team unless pick.user.team.nil? -%>)
+  (<%=h "#{pick.player.pos}/" unless pick.player.nil? -%><%=h pick.user.team unless pick.user.team.nil? -%>)
   <%= "</strong>" if my_team?(pick.user_id) -%>
-  </div>
+  </span><br />
 <% end %>

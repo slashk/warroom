@@ -70,6 +70,20 @@ class PicksController < ApplicationController
     render :partial => "inline"
   end
 
+  def myteam
+    mypicks = Pick.find_all_by_user_id(current_user.id, :include => :player)
+    myTeamCount = countPlayers(mypicks)
+    @SS = myTeamCount['SS']
+    @B1 = myTeamCount['1B']
+    @B2 = myTeamCount['2B']
+    @B3 = myTeamCount['3B']
+    @OF = myTeamCount['OF']
+    @SP = myTeamCount['SP']
+    @RP = myTeamCount['RP']
+    @C = myTeamCount['C']
+    render :partial => "myteam"
+  end
+
   def ticker
     unless draft_over?
       @pick = Pick.picks_taken.first
