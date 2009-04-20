@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
   def find_user_on_clock
     return Pick.find_by_pick_number(Pick.picks_taken.count + 1).user
   end
-  
+
   # find the time of the last pick
   def find_last_pick_time
     if Pick.picks_taken.count > 0
