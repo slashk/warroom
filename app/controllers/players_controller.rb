@@ -142,14 +142,15 @@ class PlayersController < ApplicationController
     @watchlist = compile_watchlist
     w = Watchlist.find_all_by_user_id(current_user, :include => :player)
     drafted_players = Pick.all(:select => "player_id").map {|x| x.player_id}
-    @players = w.map {|x| x.player unless drafted_players.include?(x.player_id) }
-    @players.compact!
+    #    @players = w.map {|x| x.player unless drafted_players.include?(x.player_id) }
+    #    @players.compact!
+    # this is fucked -- the proper way to do this is select not map
+    @players = w.select { |x| !drafted_players.include?(x.player_id) }
     # TODO test this -- should reject players that are watched, but also drafted
     render :partial => "search"
   end
 
   def add_to_watchlist
-    #        logger.debug "#{current_user.id}"
     @subject = Watchlist.new(:player_id => params[:id], :user_id => current_user.id)
     @subject.save
   end
