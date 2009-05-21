@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   # WarRoom specific stuff
   has_many :pick
   has_one :user
+  has_many :retainee
   validates_uniqueness_of :draft_order, :on => :create, :message => "must be unique"
   validates_numericality_of :draft_order
 

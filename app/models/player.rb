@@ -1,5 +1,6 @@
 class Player < ActiveRecord::Base
   has_one :pick
+  has_one :retainee
   validates_numericality_of :yahoo_ref
   validates_presence_of :player, :pos
 
