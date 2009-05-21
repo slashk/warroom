@@ -111,7 +111,6 @@ class PlayersController < ApplicationController
   def searchbyfranchise
     picks = Pick.find_all_by_user_id(params[:team], :include => :player)
     @players = picks.map {|x| x.player }
-    @players.compact!
     @watchlist = compile_watchlist
     render :partial => "search"
   end
