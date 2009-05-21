@@ -28,14 +28,7 @@ class RetaineesController < ApplicationController
   def edit
     @user = User.find(current_user)
     @players = Player.find_all_by_previousTeam(@user, :order => "orank asc")
-    r = Retainee.find_all_by_user_id(@user)
-    if r.nitems > 0
-      rplayers = r.map {|x| x.player_id}
-      @retainees = @players.map {|x| x if rplayers.include?(x.id) }
-      @retainees.compact!
-    else
-      @retainees = []
-    end
+    @retainees = Retainee.find_all_by_user_id(@user).map {|x| x.player}
   end
 
   def create
