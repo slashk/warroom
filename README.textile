@@ -45,3 +45,17 @@ h3. Utilities
 
 In the script folder, there is a script called hpricot_players.rb that scrapes player stats to populate the players model/database. This will be worked into the admin controller soon.
 
+h3. Architecture
+
+There is two major models (players and users) in this application:
+
+# player: a person and his asssociated stats and affiliations
+# user: someone who owns a team (important: you can't have people who don't draft as a user)
+
+All the other models in this application are relationships between players and users (owners):
+
+# pick: a player that has been drafted by an user
+# retainee: a player that has been retained by an user
+# watchlist: a player that has been watched by an user
+
+I believe everything in this application is fairly RESTful.
