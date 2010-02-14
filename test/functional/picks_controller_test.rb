@@ -14,7 +14,7 @@ class PicksControllerTest < ActionController::TestCase
 
   test "should create pick" do
     assert_difference('Pick.count') do
-      post :create, :pick => { }
+      post :create, :pick => {  }
     end
 
     assert_redirected_to pick_path(assigns(:pick))
