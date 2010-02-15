@@ -5,26 +5,12 @@
       <%= render :partial => 'shared/teamSearchBar' %>
       <%= render :partial => 'shared/franchiseSearchBar', :object => @teams unless @teams.nil?  %>
     </td>
-    <td>
-      <label for="searchtext"><font size="1"><b>Search:</b></font></label>
-      <%= text_field_tag 'searchtext' %>
-      <img alt="spinner" id="spinner" src="/images/ajax-loader.gif" style="display:none;" />
-    </td>
   </tr>
 </table>
 
 <div id="search_hits" class="two-thirds-right" >
   <%=  render :partial => "search" %>
 </div>
-
-<%= observe_field('searchtext',
-  :frequency => 1,
-  :update => :search_hits,
-  :loading => "Element.show('spinner')",
-  :complete => "Element.hide('spinner')",
-  :url => { :action => :searchbyname },
-  :with => 'searchtext' )
-%>
 
 <div class="one-third">
   <div class="title">My Team</div>

@@ -5,7 +5,7 @@ class Player < ActiveRecord::Base
   validates_presence_of :player, :pos
 
   # named scopes
-  named_scope :byrank, {:order => "orank asc", :limit => 150}
+  named_scope :byrank, {:order => "orank asc"}
   named_scope :undrafted, :joins => 'LEFT JOIN picks ON players.id=picks.player_id', :conditions => "picks.id IS NULL"
   named_scope :byname, lambda {|name| {:conditions => ["player LIKE ?", "%#{name}%"]}}
   named_scope :bypos, lambda {|pos| {:conditions => ["pos like ?", "%#{pos}%"]}}

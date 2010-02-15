@@ -3,6 +3,6 @@ Show by team:
   <%= link_to_remote t,
     :url => {:action => 'searchbyteam', :team => t },
     :update => "search_hits",
-    :complete => "TableKit.reload('players', {editable:false, stripe: true});" %>
+    :complete => "playerTable();" %>
 <% end %>
 <br />

@@ -1,12 +1,50 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+// javascript code for MTBcalendar
+//
+// global variables (geocoder)
 
-function initPlayerPage(){
-    // this sets up the main index page (/players) on load
-    // (1) setup searchtext observer, (2) load player's table
+// All pages
+    $(document).ready(function(){
+        playerTable();
+    });
 
-    // make sorts desending as default
-    TableKit.options.defaultSortDirection = -1;
-    TableKit.options.editable = false;
-    TableKit.options.resizable = false;
+function playerTable() {
+    $('#players').dataTable({
+      "iDisplayLength": 50,
+      "bJQueryUI": true,
+      "sPaginationType": "full_numbers"
+    });
 }
+
+//    $("#style-guidelines").dialog({
+//        title: "Event Style Guidelines",
+//        modal: false,
+//        width: 450,
+//        autoOpen: false,
+//        buttons: {
+//            Ok: function() {
+//                $(this).dialog('close');
+//            }
+//        }
+//    });
+//	$('#help-icon-style-guidelines').click(function () {
+//		$('#style-guidelines').dialog('open');
+//	});
+
+
+//    $("#newstabs").tabs();
+
+//$(document).ready(function() {
+//    // accordian for race details
+//    $('#race_detail').accordion({
+//        animated: 'bounceslide',
+//        icons: {
+//            header: "ui-icon-circle-triangle-e",
+//            headerSelected: "ui-icon-circle-triangle-s"
+//        }
+//    });
+//});
+
+//function add_another_race() {
+//    $('#races').append($(".raceEntry:first").clone());
+//}
+
