@@ -121,7 +121,6 @@ class PlayersController < ApplicationController
     render :partial => "search"
   end
 
-
   def searchbypos
     @watchlist = compile_watchlist(current_user)
     case params[:fieldPosition]

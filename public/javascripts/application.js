@@ -1,17 +1,16 @@
-// javascript code for MTBcalendar
-//
-// global variables (geocoder)
+// javascript code for WarRoom
 
 // All pages
-    $(document).ready(function(){
-        playerTable();
-    });
+$(document).ready(function(){
+    playerTable();
+    //$('#sidebar').tabs();
+});
 
 function playerTable() {
     $('#players').dataTable({
-      "iDisplayLength": 50,
-      "bJQueryUI": true,
-      "sPaginationType": "full_numbers"
+        "iDisplayLength": 50,
+        "bJQueryUI": true,
+        "sPaginationType": "full_numbers"
     });
 }
 

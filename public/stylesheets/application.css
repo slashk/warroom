@@ -1,8 +1,5 @@
 /* @override http://localhost:2000/stylesheets/scaffold.css?1201485926 */
 
-@background_color: #fff;
-@text_color: #333;
-
 body { background-color: #fff; color: #333; }
 
 h2 {
@@ -103,25 +100,24 @@ div#right {
     text-align: right;
 }
 
-div#draftorder {
+/* div#draftorder {
     float: right;
     width: 25%;
-    background-color: #CCCCFF;
+    background-color: #CCCCFF; 
     height: 100%;
     padding: 10px;
-}
+} */
 
 #draftorder p {
     font-size: 10px;
-
 }
 
-div#draft_live {
+/* div#draft_live {
     float: left;
     height: 100%;
     padding: 10px;
     width: auto;
-}
+} */
 
 form#login_form {
     border: 1px solid #ccc;
