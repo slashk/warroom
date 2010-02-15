@@ -23,39 +23,41 @@
   </thead>
 
   <tbody>
-    <% for player in @players %>
-      <tr id="player-<%= player.id  %>">
-        <td align="left">
-          <%= is_admin? ? link_to(player.id, :action => 'edit', :id => player.id) :  player.id %>
-        </td>
-        <td align="left">
-          <a href="http://sports.yahoo.com/mlb/players/<%=h player.yahoo_ref %>" target="_blank">
-            <%=h player.player  %>
-          </a>
-        </td>
-        <td align="center" id="watch-<%= player.id  %>" >
-          <% if @watchlist.include?(player.id) %>
-            <%= render(:partial => "watched", :locals => {:id => player.id}) %>
-          <% else %>
-            <%= render(:partial => "unwatched", :locals => {:id => player.id}) %>
-          <% end %>
-        </td>
-        <td align="center"><%=h player.pos  %></td>
-        <td align="center"><%=h player.team.upcase  %></td>
-        <td align="center"><%=h player.rank  %></td>
-        <td align="center"><%=h player.orank  %></td>
-        <td align="right"><%=h player.R  %></td>
-        <td align="right"><%=h player.HR  %></td>
-        <td align="right"><%=h player.RBI  %></td>
-        <td align="right"><%=h player.SB  %></td>
-        <td align="right"><%= ba(player.AVG) if (player.AVG!=nil)  %></td>
-        <td align="right"><%=h player.IP  %></td>
-        <td align="right"><%=h player.W  %></td>
-        <td align="right"><%=h player.SV  %></td>
-        <td align="right"><%=h player.K  %></td>
-        <td align="right"><%=h sprintf("%.2f",player.ERA) if (player.ERA!=nil) %></td>
-        <td align="right"><%=h sprintf("%.2f",player.WHIP) if (player.WHIP!=nil)  %></td>
-      </tr>
+    <% unless @players.nil? %>
+      <% for player in @players %>
+        <tr id="player-<%= player.id  %>">
+          <td align="left">
+            <%= is_admin? ? link_to(player.id, :action => 'edit', :id => player.id) :  player.id %>
+          </td>
+          <td align="left">
+            <a href="http://sports.yahoo.com/mlb/players/<%=h player.yahoo_ref %>" target="_blank">
+              <%=h player.player  %>
+            </a>
+          </td>
+          <td align="center" id="watch-<%= player.id  %>" >
+            <% if @watchlist.include?(player.id) %>
+              <%= render(:partial => "watched", :locals => {:id => player.id}) %>
+            <% else %>
+              <%= render(:partial => "unwatched", :locals => {:id => player.id}) %>
+            <% end %>
+          </td>
+          <td align="center"><%=h player.pos  %></td>
+          <td align="center"><%=h player.team.upcase  %></td>
+          <td align="center"><%=h player.rank  %></td>
+          <td align="center"><%=h player.orank  %></td>
+          <td align="right"><%=h player.R  %></td>
+          <td align="right"><%=h player.HR  %></td>
+          <td align="right"><%=h player.RBI  %></td>
+          <td align="right"><%=h player.SB  %></td>
+          <td align="right"><%= ba(player.AVG) if (player.AVG!=nil)  %></td>
+          <td align="right"><%=h player.IP  %></td>
+          <td align="right"><%=h player.W  %></td>
+          <td align="right"><%=h player.SV  %></td>
+          <td align="right"><%=h player.K  %></td>
+          <td align="right"><%=h sprintf("%.2f",player.ERA) if (player.ERA!=nil) %></td>
+          <td align="right"><%=h sprintf("%.2f",player.WHIP) if (player.WHIP!=nil)  %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

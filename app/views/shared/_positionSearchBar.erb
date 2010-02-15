@@ -16,7 +16,7 @@ Show by position:
 <%= link_to_remote 'Flagged',
   :url => {:action => 'searchbywatchlist'},
   :update => "search_hits",
-  :complete => "playerTable();"  %>
+  :success => "playerTable();"  %>
 <%= link_to_remote 'ALL',
   :url => {:action => 'searchbypos', :fieldPosition => "ALL"},
   :update => "search_hits",

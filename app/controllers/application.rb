@@ -45,18 +45,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def compile_watchlist
-    w = Watchlist.find_all_by_user_id(current_user)
-    if w.nil?
-      w = Array.new
-    else
-      if w.class != Array
-        return w.player_id
-      else
-        watchlist = w.map {|x| x.player_id }
-        return watchlist.compact
-      end
-    end
+  def compile_watchlist(user)
+    # return an array of player_id that is the users watchlist
+    w = Watchlist.find_all_by_user_id(user)
+    return w.map {|x| x.player_id }
   end
 
   def countPlayers(players)

@@ -6,7 +6,7 @@ class PlayersController < ApplicationController
   def index
     @players = Player.undrafted.byrank
     @teams = User.draftorder
-    @watchlist = compile_watchlist
+    @watchlist = compile_watchlist(current_user)
     # draft results
     @picks = Pick.picks_taken
     # Pick order
@@ -111,19 +111,19 @@ class PlayersController < ApplicationController
   def searchbyfranchise
     picks = Pick.find_all_by_user_id(params[:team], :include => :player)
     @players = picks.map {|x| x.player }
-    @watchlist = compile_watchlist
+    @watchlist = compile_watchlist(current_user)
     render :partial => "search"
   end
 
   def searchbyteam
     @players = Player.undrafted.byrank.find_all_by_team(params[:team])
-    @watchlist = compile_watchlist
+    @watchlist = compile_watchlist(current_user)
     render :partial => "search"
   end
 
 
   def searchbypos
-    @watchlist = compile_watchlist
+    @watchlist = compile_watchlist(current_user)
     case params[:fieldPosition]
     when "BATTERS"
       @players = Player.undrafted.batters.byrank
@@ -138,14 +138,10 @@ class PlayersController < ApplicationController
   end
 
   def searchbywatchlist
-    @watchlist = compile_watchlist
-    w = Watchlist.find_all_by_user_id(current_user, :include => :player)
+    # find your watchlist [player.id], find drafted_players, find players in w but not in dp
+    @watchlist = compile_watchlist(current_user)
     drafted_players = Pick.all(:select => "player_id").map {|x| x.player_id}
-    #    @players = w.map {|x| x.player unless drafted_players.include?(x.player_id) }
-    #    @players.compact!
-    # this is fucked -- the proper way to do this is select not map
-    @players = w.select { |x| !drafted_players.include?(x.player_id) }
-    # TODO test this -- should reject players that are watched, but also drafted
+    @players = Player.all(:conditions => ['id in (?)', @watchlist - drafted_players])
     render :partial => "search"
   end
 
