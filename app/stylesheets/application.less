@@ -2,29 +2,47 @@
 
 @background_color: #fff;
 @text_color: #333;
+@header_background_color: lightblue;
+@header_font: verdana, arial, helvetica, sans-serif;
+@main_font: "Lucida Grande", Lucida, Verdana, sans-serif;
+/* rounded corners */
+@radius: 8px;
+.rounded_corners (@radius: 8px) {
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+  border-radius: @radius;
+}
+.shadow {
+	-webkit-box-shadow: 10px 10px 25px #ccc;
+	-moz-box-shadow: 10px 10px 25px #ccc;
+	box-shadow: 10px 10px 25px #ccc;
+}
 
-body { background-color: #fff; color: #333; }
+body { 
+	background-color: #fff; 
+	color: #333; 
+}
 
 h2 {
-    background-color: lightblue;
-    font-family: verdana, arial, helvetica, sans-serif;
+    background-color: @header_background_color;
+    font-family: @header_font;
     font-style: normal;
 }
 
 body, p, ol, ul, td {
-    font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+    font-family: @main_font;
     font-size: 13px;
 }
 
 pre {
-    background-color: #eee;
+    background-color: #eee; /* what is this ? */
     padding: 10px;
     font-size: 11px;
 }
 
 a { 
-        color: #333366;
-        text-decoration: none;
+    color: #333366;
+    text-decoration: none;
     font-weight: bold;
 }
 a:visited { color: #000066; }
@@ -37,18 +55,7 @@ a:hover { background-color: lightgrey; }
 }
 
 th {
-    border-top-style: solid;
-    border-bottom-style: solid;
-    border-left-style: solid;
-    border-right-style: solid;
-    border-top-width: 1px;
-    border-bottom-width: 1px;
-    border-left-width: 1px;
-    border-right-width: 1px;
-    border-top-color: silver;
-    border-bottom-color: silver;
-    border-left-color: silver;
-    border-right-color: silver;
+	border: solid 1px silver;
     /* background-color: #CCCCFF; */
 }
 
@@ -113,7 +120,6 @@ div#draftorder {
 
 #draftorder p {
     font-size: 10px;
-
 }
 
 div#draft_live {
@@ -123,15 +129,35 @@ div#draft_live {
     width: auto;
 }
 
+/* session>new */
+.loginbox {
+    margin-right: 30%;
+    margin-left: 30%;
+    padding-top: 25px;
+}
+
 form#login_form {
     border: 1px solid #ccc;
     padding: 3px;
     text-align:center;
+	.shadow;
+	.rounded_corners;
 }
 
 form#login_form_label {
     font-size: 80%;
 }
+
+form#login_form td label { 
+	float: right;
+}
+
+form#login_form input {
+	float:  left;
+	margin-left: 10px;
+}
+
+/* ===================== */
 
 #error {
     color: white;
@@ -148,32 +174,6 @@ form#login_form_label {
     background-color: green;
     margin: 15px;
     padding: 5px;
-}
-
-/* tablesort styles */
-
-.roweven {
-    background-color: #fff;
-}
-
-.rowodd {
-    background-color: #eee;
-}
-
-.sortasc {
-    background-color:#DDFFAC;
-    background-image:url(/images/up.gif);
-    background-repeat: no-repeat;
-}
-
-.sortdesc {
-    background-color:#B9DDFF;
-    background-image:url(/images/down.gif);
-    background-repeat: no-repeat;
-}
-
-.nosort {
-    cursor:default;
 }
 
 #draftee {
@@ -207,12 +207,6 @@ span.player {
 .retainees {
     width: 35%;
     float: right;
-}
-
-.loginbox {
-    margin-right: 30%;
-    margin-left: 30%;
-    padding-top: 25px;
 }
 
 .two-thirds-right {

@@ -1,14 +1,24 @@
 <div class="loginbox">
-<% form_tag session_path, :id => 'login_form' do -%>
-<p><label for="login">Login</label><br/>
-<%= text_field_tag 'login' %></p>
-
-<p><label for="password">Password</label><br/>
-<%= password_field_tag 'password' %></p>
-
-<p><label for="remember_me">Remember me:</label>
-<%= check_box_tag 'remember_me' %></p>
-
-<p><%= submit_tag 'Log in' %></p>
+	<% form_tag session_path, :id => 'login_form' do -%>
+	<table width=100%>
+		<tbody>
+			<tr>
+				<td><label for="login">Login</label></td> 
+				<td><%= text_field_tag 'login' %></td>
+			</tr>
+			<tr>
+				<td><label for="password">Password</label></td>
+				<td><%= password_field_tag 'password' %></td>
+			</tr>
+			<tr>
+				<td><label for="remember_me">Remember me</label></td>
+				<td><%= check_box_tag 'remember_me' %></td>
+				</tr>
+			<tr>
+				<td></td>
+				<td><%= submit_tag 'Log in' %></td>
+			</tr>
+		</tbody>
+	</table>
 <% end -%>
 </div>
