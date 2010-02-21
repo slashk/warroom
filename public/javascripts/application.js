@@ -14,6 +14,19 @@ function playerTable() {
     });
 }
 
+function dashboard() {
+	// the dashboard is main page
+	// setup event loop 
+	// check for draft change (current draft pick number)
+	// 		if changed, then update everything
+	//				this requires service that spits out current-draft-pick
+	//				warroom.com/pick/current ?
+	// check for watchlist change
+	// 		if changed, then update watchlist
+	//				this requires service that spits out current-watchlist
+	//				this is hard because it's a join, not a object ?
+}
+
 //    $("#style-guidelines").dialog({
 //        title: "Event Style Guidelines",
 //        modal: false,
