@@ -1,8 +1,23 @@
 require 'test_helper'
 
 class EntryControllerTest < ActionController::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+
+  test "should show index" do
+    login_as :commish
+    get :index
+    assert_response :success
+    assert_not_nil assigns(:pick)
+    assert_not_nil assigns(:teams)
   end
+  
+  # test "should create entry" do
+  #   post :create, :pick => {   }
+  # end
+  
+  test "should update entry" do
+    login_as :commish
+    put :update, :pick => { :player_id => players(:players_022).id, :pick_number => picks(:one).pick_number, :user_id => users(:commish) }
+    assert_redirected_to :action => :index
+  end
+
 end

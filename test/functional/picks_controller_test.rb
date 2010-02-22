@@ -37,7 +37,7 @@ class PicksControllerTest < ActionController::TestCase
 
   test "should update pick" do
     login_as :commish
-    put :update, :id => picks(:one).id, :pick => { }
+    put :update, :id => picks(:one).id, :pick => { :player_id => players(:players_022).id }
     assert_redirected_to pick_path(assigns(:pick))
   end
 
