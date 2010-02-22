@@ -1,37 +1,19 @@
 --- 
 retainees_001: 
-  created_at: "2009-03-29 22:09:30"
-  id: "63"
-  player_id: "2276"
-  updated_at: "2009-03-29 22:09:30"
-  user_id: "1"
+  player: players_199
+  user: commish
 retainees_002: 
-  created_at: "2009-03-29 22:09:34"
-  id: "64"
-  player_id: "2277"
-  updated_at: "2009-03-29 22:09:34"
-  user_id: "1"
+  player: players_194
+  user: sharky
 retainees_003: 
-  created_at: "2009-03-29 22:10:42"
-  id: "65"
-  player_id: "2536"
-  updated_at: "2009-03-29 22:10:42"
-  user_id: "1"
+  player: players_193
+  user: spencer
 retainees_004: 
-  created_at: "2009-03-29 22:11:47"
-  id: "67"
-  player_id: "2548"
-  updated_at: "2009-03-29 22:11:47"
-  user_id: "1"
+  player: players_197
+  user: shrek
 retainees_005: 
-  created_at: "2009-03-29 22:11:55"
-  id: "68"
-  player_id: "2552"
-  updated_at: "2009-03-29 22:11:55"
-  user_id: "1"
+  player: players_196
+  user: collins
 retainees_006: 
-  created_at: "2009-03-30 06:09:19"
-  id: "69"
-  player_id: "2279"
-  updated_at: "2009-03-30 06:09:19"
-  user_id: "1"
+  player: players_195
+  user: elan

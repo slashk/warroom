@@ -14,7 +14,7 @@
 
 <div id="sidebar" class="one-third">
   <div id="myteam">
-    <%= render :partial => "picks/myteam" %>
+    <%= render :partial => "picks/myteam", :locals => {:myteam => @myTeamCount} %>
   </div>
   <div id="inline">
     <%= render :partial => "picks/inline" %>

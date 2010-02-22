@@ -1,21 +1,28 @@
 <h1>All Retainees</h1>
 
-<table style="padding:10px;" class="sortable">
-  <tr>
-    <th>Team</th>
-    <th>Player</th>
-    <th>Pos</th>
-    <th>ID</th>
-  </tr>
+<table style="padding:10px;">
+	<thead>
+	  <tr>
+	    <th>Team</th>
+	    <th>Player</th>
+	    <th>Pos</th>
+	    <th>ID</th>
+	  </tr>
+	</thead>
 
-<% for retainee in @retainees %>
-  <tr>
-    <td><%=h retainee.user.team %></td>
-    <td><%=h retainee.player.player %></td>
-    <td><%=h retainee.player.pos %></td>
-    <td><%=h retainee.player.id %></td>
-  </tr>
+<% unless @retainees.empty? %>
+	<tbody>
+	<% for retainee in @retainees %>
+	  <tr>
+	    <td><%=h retainee.user.team %></td>
+	    <td><%=h retainee.player.player %></td>
+	    <td><%=h retainee.player.pos %></td>
+	    <td><%=h retainee.player.id %></td>
+	  </tr>
+	<% end %>
+	</tbody>
 <% end %>
+
 </table>
 
 <br />

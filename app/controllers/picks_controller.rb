@@ -4,8 +4,7 @@ class PicksController < ApplicationController
   def index
     @picks = Pick.picks_taken
     current_pick = find_current_pick
-    @upcoming = Pick.find(:all, :conditions => "pick_number >= #{current_pick.pick_number}",
-      :order => "pick_number asc", :limit => 10, :include => :user )
+    @upcoming = Pick.upcoming_picks(current_pick.pick_number)
     @last_pick_time = find_last_pick_time
   end
 
@@ -56,16 +55,14 @@ class PicksController < ApplicationController
 
   def scrollteam
     current_pick = find_current_pick
-    @upcoming = Pick.find(:all, :conditions => "pick_number >= #{current_pick.pick_number}",
-      :order => "pick_number asc", :limit => 10, :include => :user )
+    @upcoming = Pick.upcoming_picks(current_pick.pick_number)
     @last_pick_time =  draft_started? ? find_last_pick_time : Time.now
     render :partial => "scrollteam"
   end
 
   def inline
     current_pick = find_current_pick
-    @upcoming = Pick.find(:all, :conditions => "pick_number >= #{current_pick.pick_number}",
-      :order => "pick_number asc", :limit => 10, :include => :user )
+    @upcoming = Pick.upcoming_picks(current_pick.pick_number)
     @last_pick_time =  draft_started? ? find_last_pick_time : Time.now
     render :partial => "inline"
   end

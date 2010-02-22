@@ -1,4 +1,4 @@
-<% unless @upcoming.nil? %>
+<% unless @upcoming.empty? %>
   <% for pick in @upcoming %>
     <%= "#{pick.pick_number} . #{pick.user.team}"  %><br />
   <% end %>

@@ -46,13 +46,15 @@ class ApplicationController < ActionController::Base
   # take player object array and return hash of Y! position with count in each
   def countPlayers(players)
     posCount = Hash.new
-    ypos = %w(SP RP 1B 2B 3B SS C OF P)
-    ypos.each do |z|
-      posCount[z] = 0
-    end
-    players.each do |x|
-      ypos.each do |pos|
-        posCount[pos] += 1 if x.player.pos.include?(pos)
+    unless players.nil?
+      ypos = %w(SP RP 1B 2B 3B SS C OF P)
+      ypos.each do |z|
+        posCount[z] = 0
+      end
+      players.each do |x|
+        ypos.each do |pos|
+          posCount[pos] += 1 if x.player.pos.include?(pos)
+        end
       end
     end
     return posCount

@@ -14,7 +14,6 @@ players_001:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2259"
   note: ~
   orank: "1"
   pAVG: ~
@@ -51,7 +50,6 @@ players_002:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2260"
   note: ~
   orank: "3"
   pAVG: ~
@@ -88,7 +86,6 @@ players_003:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2261"
   note: ~
   orank: "7"
   pAVG: ~
@@ -125,7 +122,6 @@ players_004:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2262"
   note: ~
   orank: "11"
   pAVG: ~
@@ -162,7 +158,6 @@ players_005:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2263"
   note: ~
   orank: "17"
   pAVG: ~
@@ -199,7 +194,6 @@ players_006:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2264"
   note: ~
   orank: "19"
   pAVG: ~
@@ -236,7 +230,6 @@ players_007:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2265"
   note: ~
   orank: "24"
   pAVG: ~
@@ -273,7 +266,6 @@ players_008:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2266"
   note: ~
   orank: "28"
   pAVG: ~
@@ -310,7 +302,6 @@ players_009:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2267"
   note: ~
   orank: "38"
   pAVG: ~
@@ -347,7 +338,6 @@ players_010:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2268"
   note: ~
   orank: "44"
   pAVG: ~
@@ -384,7 +374,6 @@ players_011:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2269"
   note: ~
   orank: "49"
   pAVG: ~
@@ -421,7 +410,6 @@ players_012:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2270"
   note: ~
   orank: "55"
   pAVG: ~
@@ -458,7 +446,6 @@ players_013:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2271"
   note: ~
   orank: "2"
   pAVG: ~
@@ -495,7 +482,6 @@ players_014:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2272"
   note: ~
   orank: "4"
   pAVG: ~
@@ -532,7 +518,6 @@ players_015:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2273"
   note: ~
   orank: "9"
   pAVG: ~
@@ -569,7 +554,6 @@ players_016:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2274"
   note: ~
   orank: "15"
   pAVG: ~
@@ -606,7 +590,6 @@ players_017:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2275"
   note: ~
   orank: "18"
   pAVG: ~
@@ -643,7 +626,6 @@ players_018:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2276"
   note: ~
   orank: "21"
   pAVG: ~
@@ -680,7 +662,6 @@ players_019:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2277"
   note: ~
   orank: "25"
   pAVG: ~
@@ -717,7 +698,6 @@ players_020:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2278"
   note: ~
   orank: "36"
   pAVG: ~
@@ -754,7 +734,6 @@ players_021:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2279"
   note: ~
   orank: "41"
   pAVG: ~
@@ -791,7 +770,6 @@ players_022:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2280"
   note: ~
   orank: "47"
   pAVG: ~
@@ -828,7 +806,6 @@ players_023:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2281"
   note: ~
   orank: "54"
   pAVG: ~
@@ -865,7 +842,6 @@ players_024:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2282"
   note: ~
   orank: "56"
   pAVG: ~
@@ -902,7 +878,6 @@ players_025:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2283"
   note: ~
   orank: "57"
   pAVG: ~
@@ -939,7 +914,6 @@ players_026:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2284"
   note: ~
   orank: "60"
   pAVG: ~
@@ -976,7 +950,6 @@ players_027:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2285"
   note: ~
   orank: "64"
   pAVG: ~
@@ -1013,7 +986,6 @@ players_028:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2286"
   note: ~
   orank: "66"
   pAVG: ~
@@ -1050,7 +1022,6 @@ players_029:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2287"
   note: ~
   orank: "69"
   pAVG: ~
@@ -1087,7 +1058,6 @@ players_030:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2288"
   note: ~
   orank: "78"
   pAVG: ~
@@ -1124,7 +1094,6 @@ players_031:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2289"
   note: ~
   orank: "87"
   pAVG: ~
@@ -1161,7 +1130,6 @@ players_032:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2290"
   note: ~
   orank: "95"
   pAVG: ~
@@ -1198,7 +1166,6 @@ players_033:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2291"
   note: ~
   orank: "103"
   pAVG: ~
@@ -1235,7 +1202,6 @@ players_034:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2292"
   note: ~
   orank: "115"
   pAVG: ~
@@ -1272,7 +1238,6 @@ players_035:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2293"
   note: ~
   orank: "119"
   pAVG: ~
@@ -1309,7 +1274,6 @@ players_036:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2294"
   note: ~
   orank: "128"
   pAVG: ~
@@ -1346,7 +1310,6 @@ players_037:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2295"
   note: ~
   orank: "131"
   pAVG: ~
@@ -1383,7 +1346,6 @@ players_038:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2296"
   note: ~
   orank: "61"
   pAVG: ~
@@ -1420,7 +1382,6 @@ players_039:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2297"
   note: ~
   orank: "65"
   pAVG: ~
@@ -1457,7 +1418,6 @@ players_040:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2298"
   note: ~
   orank: "67"
   pAVG: ~
@@ -1494,7 +1454,6 @@ players_041:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2299"
   note: ~
   orank: "71"
   pAVG: ~
@@ -1531,7 +1490,6 @@ players_042:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2300"
   note: ~
   orank: "83"
   pAVG: ~
@@ -1568,7 +1526,6 @@ players_043:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2301"
   note: ~
   orank: "90"
   pAVG: ~
@@ -1605,7 +1562,6 @@ players_044:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2302"
   note: ~
   orank: "102"
   pAVG: ~
@@ -1642,7 +1598,6 @@ players_045:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2303"
   note: ~
   orank: "108"
   pAVG: ~
@@ -1679,7 +1634,6 @@ players_046:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2304"
   note: ~
   orank: "118"
   pAVG: ~
@@ -1716,7 +1670,6 @@ players_047:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2305"
   note: ~
   orank: "122"
   pAVG: ~
@@ -1753,7 +1706,6 @@ players_048:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2306"
   note: ~
   orank: "129"
   pAVG: ~
@@ -1790,7 +1742,6 @@ players_049:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2307"
   note: ~
   orank: "132"
   pAVG: ~
@@ -1827,7 +1778,6 @@ players_050:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2308"
   note: ~
   orank: "137"
   pAVG: ~
@@ -1864,7 +1814,6 @@ players_051:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2309"
   note: ~
   orank: "138"
   pAVG: ~
@@ -1901,7 +1850,6 @@ players_052:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2310"
   note: ~
   orank: "142"
   pAVG: ~
@@ -1938,7 +1886,6 @@ players_053:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2311"
   note: ~
   orank: "147"
   pAVG: ~
@@ -1975,7 +1922,6 @@ players_054:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2312"
   note: ~
   orank: "173"
   pAVG: ~
@@ -2012,7 +1958,6 @@ players_055:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2313"
   note: ~
   orank: "184"
   pAVG: ~
@@ -2049,7 +1994,6 @@ players_056:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2314"
   note: ~
   orank: "187"
   pAVG: ~
@@ -2086,7 +2030,6 @@ players_057:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2315"
   note: ~
   orank: "191"
   pAVG: ~
@@ -2123,7 +2066,6 @@ players_058:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2316"
   note: ~
   orank: "201"
   pAVG: ~
@@ -2160,7 +2102,6 @@ players_059:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2317"
   note: ~
   orank: "212"
   pAVG: ~
@@ -2197,7 +2138,6 @@ players_060:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2318"
   note: ~
   orank: "214"
   pAVG: ~
@@ -2234,7 +2174,6 @@ players_061:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2319"
   note: ~
   orank: "225"
   pAVG: ~
@@ -2271,7 +2210,6 @@ players_062:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2320"
   note: ~
   orank: "235"
   pAVG: ~
@@ -2308,7 +2246,6 @@ players_063:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2321"
   note: ~
   orank: "141"
   pAVG: ~
@@ -2345,7 +2282,6 @@ players_064:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2322"
   note: ~
   orank: "143"
   pAVG: ~
@@ -2382,7 +2318,6 @@ players_065:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2323"
   note: ~
   orank: "160"
   pAVG: ~
@@ -2419,7 +2354,6 @@ players_066:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2324"
   note: ~
   orank: "174"
   pAVG: ~
@@ -2456,7 +2390,6 @@ players_067:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2325"
   note: ~
   orank: "186"
   pAVG: ~
@@ -2493,7 +2426,6 @@ players_068:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2326"
   note: ~
   orank: "188"
   pAVG: ~
@@ -2530,7 +2462,6 @@ players_069:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2327"
   note: ~
   orank: "198"
   pAVG: ~
@@ -2567,7 +2498,6 @@ players_070:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2328"
   note: ~
   orank: "202"
   pAVG: ~
@@ -2604,7 +2534,6 @@ players_071:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2329"
   note: ~
   orank: "213"
   pAVG: ~
@@ -2641,7 +2570,6 @@ players_072:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2330"
   note: ~
   orank: "220"
   pAVG: ~
@@ -2678,7 +2606,6 @@ players_073:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2331"
   note: ~
   orank: "233"
   pAVG: ~
@@ -2715,7 +2642,6 @@ players_074:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2332"
   note: ~
   orank: "239"
   pAVG: ~
@@ -2752,7 +2678,6 @@ players_075:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2333"
   note: ~
   orank: "243"
   pAVG: ~
@@ -2789,7 +2714,6 @@ players_076:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2334"
   note: ~
   orank: "244"
   pAVG: ~
@@ -2826,7 +2750,6 @@ players_077:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2335"
   note: ~
   orank: "249"
   pAVG: ~
@@ -2863,7 +2786,6 @@ players_078:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2336"
   note: ~
   orank: "264"
   pAVG: ~
@@ -2900,7 +2822,6 @@ players_079:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2337"
   note: ~
   orank: "266"
   pAVG: ~
@@ -2937,7 +2858,6 @@ players_080:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2338"
   note: ~
   orank: "270"
   pAVG: ~
@@ -2974,7 +2894,6 @@ players_081:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2339"
   note: ~
   orank: "273"
   pAVG: ~
@@ -3011,7 +2930,6 @@ players_082:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2340"
   note: ~
   orank: "280"
   pAVG: ~
@@ -3048,7 +2966,6 @@ players_083:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2341"
   note: ~
   orank: "288"
   pAVG: ~
@@ -3085,7 +3002,6 @@ players_084:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2342"
   note: ~
   orank: "291"
   pAVG: ~
@@ -3122,7 +3038,6 @@ players_085:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2343"
   note: ~
   orank: "321"
   pAVG: ~
@@ -3159,7 +3074,6 @@ players_086:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2344"
   note: ~
   orank: "543"
   pAVG: ~
@@ -3196,7 +3110,6 @@ players_087:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2345"
   note: ~
   orank: "580"
   pAVG: ~
@@ -3233,7 +3146,6 @@ players_088:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2346"
   note: ~
   orank: "245"
   pAVG: ~
@@ -3270,7 +3182,6 @@ players_089:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2347"
   note: ~
   orank: "257"
   pAVG: ~
@@ -3307,7 +3218,6 @@ players_090:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2348"
   note: ~
   orank: "265"
   pAVG: ~
@@ -3344,7 +3254,6 @@ players_091:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2349"
   note: ~
   orank: "267"
   pAVG: ~
@@ -3381,7 +3290,6 @@ players_092:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2350"
   note: ~
   orank: "271"
   pAVG: ~
@@ -3418,7 +3326,6 @@ players_093:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2351"
   note: ~
   orank: "275"
   pAVG: ~
@@ -3455,7 +3362,6 @@ players_094:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2352"
   note: ~
   orank: "282"
   pAVG: ~
@@ -3492,7 +3398,6 @@ players_095:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2353"
   note: ~
   orank: "290"
   pAVG: ~
@@ -3529,7 +3434,6 @@ players_096:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2354"
   note: ~
   orank: "310"
   pAVG: ~
@@ -3566,7 +3470,6 @@ players_097:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2355"
   note: ~
   orank: "533"
   pAVG: ~
@@ -3603,7 +3506,6 @@ players_098:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2356"
   note: ~
   orank: "556"
   pAVG: ~
@@ -3640,7 +3542,6 @@ players_099:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2357"
   note: ~
   orank: "589"
   pAVG: ~
@@ -3677,7 +3578,6 @@ players_100:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2358"
   note: ~
   orank: "613"
   pAVG: ~
@@ -3714,7 +3614,6 @@ players_101:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2359"
   note: ~
   orank: "618"
   pAVG: ~
@@ -3751,7 +3650,6 @@ players_102:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2360"
   note: ~
   orank: "632"
   pAVG: ~
@@ -3788,7 +3686,6 @@ players_103:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2361"
   note: ~
   orank: "642"
   pAVG: ~
@@ -3825,7 +3722,6 @@ players_104:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2362"
   note: ~
   orank: "660"
   pAVG: ~
@@ -3862,7 +3758,6 @@ players_105:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2363"
   note: ~
   orank: "671"
   pAVG: ~
@@ -3899,7 +3794,6 @@ players_106:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2364"
   note: ~
   orank: "674"
   pAVG: ~
@@ -3936,7 +3830,6 @@ players_107:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2365"
   note: ~
   orank: "676"
   pAVG: ~
@@ -3973,7 +3866,6 @@ players_108:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2366"
   note: ~
   orank: "680"
   pAVG: ~
@@ -4010,7 +3902,6 @@ players_109:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2367"
   note: ~
   orank: "689"
   pAVG: ~
@@ -4047,7 +3938,6 @@ players_110:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2368"
   note: ~
   orank: "693"
   pAVG: ~
@@ -4084,7 +3974,6 @@ players_111:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2369"
   note: ~
   orank: "696"
   pAVG: ~
@@ -4121,7 +4010,6 @@ players_112:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2370"
   note: ~
   orank: "700"
   pAVG: ~
@@ -4158,7 +4046,6 @@ players_113:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2371"
   note: ~
   orank: "620"
   pAVG: ~
@@ -4195,7 +4082,6 @@ players_114:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2372"
   note: ~
   orank: "634"
   pAVG: ~
@@ -4232,7 +4118,6 @@ players_115:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2373"
   note: ~
   orank: "659"
   pAVG: ~
@@ -4269,7 +4154,6 @@ players_116:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2374"
   note: ~
   orank: "670"
   pAVG: ~
@@ -4306,7 +4190,6 @@ players_117:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2375"
   note: ~
   orank: "672"
   pAVG: ~
@@ -4343,7 +4226,6 @@ players_118:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2376"
   note: ~
   orank: "675"
   pAVG: ~
@@ -4380,7 +4262,6 @@ players_119:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2377"
   note: ~
   orank: "679"
   pAVG: ~
@@ -4417,7 +4298,6 @@ players_120:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2378"
   note: ~
   orank: "686"
   pAVG: ~
@@ -4454,7 +4334,6 @@ players_121:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2379"
   note: ~
   orank: "692"
   pAVG: ~
@@ -4491,7 +4370,6 @@ players_122:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2380"
   note: ~
   orank: "694"
   pAVG: ~
@@ -4528,7 +4406,6 @@ players_123:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2381"
   note: ~
   orank: "697"
   pAVG: ~
@@ -4565,7 +4442,6 @@ players_124:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2382"
   note: ~
   orank: "701"
   pAVG: ~
@@ -4602,7 +4478,6 @@ players_125:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2383"
   note: ~
   orank: "704"
   pAVG: ~
@@ -4639,7 +4514,6 @@ players_126:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2384"
   note: ~
   orank: "707"
   pAVG: ~
@@ -4676,7 +4550,6 @@ players_127:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2385"
   note: ~
   orank: "709"
   pAVG: ~
@@ -4713,7 +4586,6 @@ players_128:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2386"
   note: ~
   orank: "711"
   pAVG: ~
@@ -4750,7 +4622,6 @@ players_129:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2387"
   note: ~
   orank: "714"
   pAVG: ~
@@ -4787,7 +4658,6 @@ players_130:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2388"
   note: ~
   orank: "720"
   pAVG: ~
@@ -4824,7 +4694,6 @@ players_131:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2389"
   note: ~
   orank: "725"
   pAVG: ~
@@ -4861,7 +4730,6 @@ players_132:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2390"
   note: ~
   orank: "731"
   pAVG: ~
@@ -4898,7 +4766,6 @@ players_133:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2391"
   note: ~
   orank: "733"
   pAVG: ~
@@ -4935,7 +4802,6 @@ players_134:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2392"
   note: ~
   orank: "735"
   pAVG: ~
@@ -4972,7 +4838,6 @@ players_135:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2393"
   note: ~
   orank: "740"
   pAVG: ~
@@ -5009,7 +4874,6 @@ players_136:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2394"
   note: ~
   orank: "745"
   pAVG: ~
@@ -5046,7 +4910,6 @@ players_137:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2395"
   note: ~
   orank: "750"
   pAVG: ~
@@ -5083,7 +4946,6 @@ players_138:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2396"
   note: ~
   orank: "708"
   pAVG: ~
@@ -5120,7 +4982,6 @@ players_139:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2397"
   note: ~
   orank: "710"
   pAVG: ~
@@ -5157,7 +5018,6 @@ players_140:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2398"
   note: ~
   orank: "712"
   pAVG: ~
@@ -5194,7 +5054,6 @@ players_141:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2399"
   note: ~
   orank: "717"
   pAVG: ~
@@ -5231,7 +5090,6 @@ players_142:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2400"
   note: ~
   orank: "724"
   pAVG: ~
@@ -5268,7 +5126,6 @@ players_143:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2401"
   note: ~
   orank: "729"
   pAVG: ~
@@ -5305,7 +5162,6 @@ players_144:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2402"
   note: ~
   orank: "732"
   pAVG: ~
@@ -5342,7 +5198,6 @@ players_145:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2403"
   note: ~
   orank: "734"
   pAVG: ~
@@ -5379,7 +5234,6 @@ players_146:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2404"
   note: ~
   orank: "736"
   pAVG: ~
@@ -5416,7 +5270,6 @@ players_147:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2405"
   note: ~
   orank: "743"
   pAVG: ~
@@ -5453,7 +5306,6 @@ players_148:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2406"
   note: ~
   orank: "748"
   pAVG: ~
@@ -5490,7 +5342,6 @@ players_149:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2407"
   note: ~
   orank: "751"
   pAVG: ~
@@ -5527,7 +5378,6 @@ players_150:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2408"
   note: ~
   orank: "753"
   pAVG: ~
@@ -5564,7 +5414,6 @@ players_151:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2409"
   note: ~
   orank: "758"
   pAVG: ~
@@ -5601,7 +5450,6 @@ players_152:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2410"
   note: ~
   orank: "762"
   pAVG: ~
@@ -5638,7 +5486,6 @@ players_153:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2411"
   note: ~
   orank: "765"
   pAVG: ~
@@ -5675,7 +5522,6 @@ players_154:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2412"
   note: ~
   orank: "771"
   pAVG: ~
@@ -5712,7 +5558,6 @@ players_155:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2413"
   note: ~
   orank: "773"
   pAVG: ~
@@ -5749,7 +5594,6 @@ players_156:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2414"
   note: ~
   orank: "777"
   pAVG: ~
@@ -5786,7 +5630,6 @@ players_157:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2415"
   note: ~
   orank: "779"
   pAVG: ~
@@ -5823,7 +5666,6 @@ players_158:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2416"
   note: ~
   orank: "782"
   pAVG: ~
@@ -5860,7 +5702,6 @@ players_159:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2417"
   note: ~
   orank: "784"
   pAVG: ~
@@ -5897,7 +5738,6 @@ players_160:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2418"
   note: ~
   orank: "789"
   pAVG: ~
@@ -5934,7 +5774,6 @@ players_161:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2419"
   note: ~
   orank: "796"
   pAVG: ~
@@ -5971,7 +5810,6 @@ players_162:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2420"
   note: ~
   orank: "802"
   pAVG: ~
@@ -6008,7 +5846,6 @@ players_163:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2421"
   note: ~
   orank: "760"
   pAVG: ~
@@ -6045,7 +5882,6 @@ players_164:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2422"
   note: ~
   orank: "763"
   pAVG: ~
@@ -6082,7 +5918,6 @@ players_165:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2423"
   note: ~
   orank: "767"
   pAVG: ~
@@ -6119,7 +5954,6 @@ players_166:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2424"
   note: ~
   orank: "772"
   pAVG: ~
@@ -6156,7 +5990,6 @@ players_167:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2425"
   note: ~
   orank: "776"
   pAVG: ~
@@ -6193,7 +6026,6 @@ players_168:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2426"
   note: ~
   orank: "778"
   pAVG: ~
@@ -6230,7 +6062,6 @@ players_169:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2427"
   note: ~
   orank: "780"
   pAVG: ~
@@ -6267,7 +6098,6 @@ players_170:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2428"
   note: ~
   orank: "783"
   pAVG: ~
@@ -6304,7 +6134,6 @@ players_171:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2429"
   note: ~
   orank: "786"
   pAVG: ~
@@ -6341,7 +6170,6 @@ players_172:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2430"
   note: ~
   orank: "790"
   pAVG: ~
@@ -6378,7 +6206,6 @@ players_173:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2431"
   note: ~
   orank: "801"
   pAVG: ~
@@ -6415,7 +6242,6 @@ players_174:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2432"
   note: ~
   orank: "804"
   pAVG: ~
@@ -6452,7 +6278,6 @@ players_175:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2433"
   note: ~
   orank: "805"
   pAVG: ~
@@ -6489,7 +6314,6 @@ players_176:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2434"
   note: ~
   orank: "810"
   pAVG: ~
@@ -6526,7 +6350,6 @@ players_177:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2435"
   note: ~
   orank: "815"
   pAVG: ~
@@ -6563,7 +6386,6 @@ players_178:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2436"
   note: ~
   orank: "817"
   pAVG: ~
@@ -6600,7 +6422,6 @@ players_179:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2437"
   note: ~
   orank: "820"
   pAVG: ~
@@ -6637,7 +6458,6 @@ players_180:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2438"
   note: ~
   orank: "822"
   pAVG: ~
@@ -6674,7 +6494,6 @@ players_181:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2439"
   note: ~
   orank: "824"
   pAVG: ~
@@ -6711,7 +6530,6 @@ players_182:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2440"
   note: ~
   orank: "830"
   pAVG: ~
@@ -6748,7 +6566,6 @@ players_183:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2441"
   note: ~
   orank: "833"
   pAVG: ~
@@ -6785,7 +6602,6 @@ players_184:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2442"
   note: ~
   orank: "838"
   pAVG: ~
@@ -6822,7 +6638,6 @@ players_185:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2443"
   note: ~
   orank: "841"
   pAVG: ~
@@ -6859,7 +6674,6 @@ players_186:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2444"
   note: ~
   orank: "850"
   pAVG: ~
@@ -6896,7 +6710,6 @@ players_187:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2445"
   note: ~
   orank: "852"
   pAVG: ~
@@ -6933,7 +6746,6 @@ players_188:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2446"
   note: ~
   orank: "814"
   pAVG: ~
@@ -6970,7 +6782,6 @@ players_189:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2447"
   note: ~
   orank: "816"
   pAVG: ~
@@ -7007,7 +6818,6 @@ players_190:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2448"
   note: ~
   orank: "818"
   pAVG: ~
@@ -7044,7 +6854,6 @@ players_191:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2449"
   note: ~
   orank: "821"
   pAVG: ~
@@ -7081,7 +6890,6 @@ players_192:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2450"
   note: ~
   orank: "823"
   pAVG: ~
@@ -7118,7 +6926,6 @@ players_193:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2451"
   note: ~
   orank: "825"
   pAVG: ~
@@ -7155,7 +6962,6 @@ players_194:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2452"
   note: ~
   orank: "832"
   pAVG: ~
@@ -7192,7 +6998,6 @@ players_195:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2453"
   note: ~
   orank: "834"
   pAVG: ~
@@ -7229,7 +7034,6 @@ players_196:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2454"
   note: ~
   orank: "839"
   pAVG: ~
@@ -7266,7 +7070,6 @@ players_197:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2455"
   note: ~
   orank: "843"
   pAVG: ~
@@ -7303,7 +7106,6 @@ players_198:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2456"
   note: ~
   orank: "851"
   pAVG: ~
@@ -7340,7 +7142,6 @@ players_199:
   WHIP: "0"
   created_at: ~
   depth: ~
-  id: "2457"
   note: ~
   orank: "855"
   pAVG: ~

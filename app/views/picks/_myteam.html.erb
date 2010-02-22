@@ -1,8 +1,8 @@
 <table id="baseball-diamond">
   <tr>
-    <td style="text-align:right;">SS: <%= @SS %> </td>
-    <td style="text-align:center;"> <%= @B2  %> </td>
-    <td style="text-align: right;">OF: <%= @OF %> </td>
+    <td style="text-align:right;">SS: <%= myteam['SS'] %> </td>
+    <td style="text-align:center;"> <%= myteam['2B']  %> </td>
+    <td style="text-align: right;">OF: <%= myteam['OF'] %> </td>
   </tr>
   <tr>
     <td>&nbsp;</td>
@@ -10,16 +10,16 @@
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td style="text-align:right;"> <%= @B3  %> </td>
-    <td style="text-align:left;"> <%= @B1 %> </td>
+    <td style="text-align:right;"> <%= myteam['3B']  %> </td>
+    <td style="text-align:left;"> <%= myteam['1B'] %> </td>
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td>P: <%= @P %>/7 </td>
+    <td>P: <%= myteam['P'] %>/7 </td>
   </tr>
   <tr>
-    <td>SP: <%= @SP %>/2 </td>
-    <td style="text-align: center;"><%= @C %></td>
-    <td>RP: <%= @RP %>/2</td>
+    <td>SP: <%= myteam['SP'] %>/2 </td>
+    <td style="text-align: center;"><%= myteam['C'] %></td>
+    <td>RP: <%= myteam['RP'] %>/2</td>
   </tr>
 </table>
