@@ -60,4 +60,20 @@ class ApplicationController < ActionController::Base
     return posCount
   end
 
+  def is_admin?(user)
+      logged_in? && User.find(user).role == "admin"
+  end
+
+  def am_i_admin?
+    logged_in? && User.find(current_user).role == "admin"
+  end
+
+  def admin_role_required
+    unless am_i_admin?
+      flash[:error] = "Admin login required. Please login as admin."
+       redirect_to :controller => '/session', :action => 'new'
+     end
+  end
+
+
 end

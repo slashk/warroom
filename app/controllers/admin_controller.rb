@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
-  before_filter :login_required
+  before_filter :admin_role_required
 
   def index
     # this is the control panel: buttons and status
