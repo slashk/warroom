@@ -8,6 +8,11 @@ class PlayersControllerTest < ActionController::TestCase
     assert_not_nil assigns(:players)
   end
 
+  test "should not get index without login" do
+    get :index
+    assert_redirected_to :action => "new", :controller => "session"
+  end
+
   test "should get new" do
     login_as :commish
     get :new

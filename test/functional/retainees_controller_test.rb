@@ -9,6 +9,13 @@ class RetaineesControllerTest < ActionController::TestCase
     assert_not_nil assigns(:retainees)
   end
 
+  test "should not get anything without login" do
+    ["new", "index", "show", "create", "edit", "update", "destroy"].each do |page|
+      get page
+      assert_redirected_to :action => "new", :controller => "session"
+    end
+  end
+
   test "should get new" do
     login_as :elan
     get :new
