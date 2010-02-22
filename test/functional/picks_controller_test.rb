@@ -29,6 +29,14 @@ class PicksControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should not get anything without login" do
+    ["new", "index", "show", "create", "edit", "update", "destroy"].each do |page|
+      get page
+      assert_redirected_to :action => "new", :controller => "session"
+    end
+  end
+
+
   test "should get edit" do
     login_as :commish
     get :edit, :id => picks(:one).id
