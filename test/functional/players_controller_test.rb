@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class PlayersControllerTest < ActionController::TestCase
+  
+  # tests needed:
+  # all searches, most fragments
+  
   test "should get index" do
     login_as :elan
     get :index
