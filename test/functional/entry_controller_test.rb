@@ -20,4 +20,16 @@ class EntryControllerTest < ActionController::TestCase
     assert_redirected_to :action => :index
   end
 
+  test "should not get index without admin" do
+    login_as :elan
+    get :index
+    assert_redirected_to :action => "new", :controller => "session"
+  end
+
+  test "should not get index without login" do
+    get :index
+    assert_redirected_to :action => "new", :controller => "session"
+  end
+
+
 end
