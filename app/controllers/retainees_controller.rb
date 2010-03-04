@@ -3,6 +3,7 @@ class RetaineesController < ApplicationController
 
   def index
     @retainees = Retainee.find(:all, :order => :user_id, :include => [:player, :user])
+    @user = User.find(current_user)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -74,12 +75,20 @@ class RetaineesController < ApplicationController
       end
       # TODO add ajax message about non-compliance
     end
+  render :nothing => true
   end
 
   def remove_player_from_retainee_list
     @retainee = Retainee.find_by_player_id(params[:id])
     @retainee.destroy
     @id = params[:id]
+  render :nothing => true
+  end
+  
+  def retained_players
+    # @user = User.find(current_user)
+    @retainees = Retainee.find_all_by_user_id(current_user).map {|x| x.player}
+    render :partial => "selectedPlayers", :collection => @retainees
   end
   
   private

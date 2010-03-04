@@ -1,2 +1,0 @@
-page.remove "selectedPlayer_#{@id}"
-page.visual_effect :appear, "player_#{@id}"

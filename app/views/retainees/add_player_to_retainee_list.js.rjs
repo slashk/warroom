@@ -1,4 +1,0 @@
-unless @players.nil?
-  page.insert_html :bottom, 'selected', :partial => "selectedPlayers",:object => @players
-  page.visual_effect :fade, "player_#{@players.id}"
-end

@@ -2,6 +2,7 @@
 
 @background_color: #fff;
 @text_color: #333;
+@highlighted: lightred;
 @header_background_color: lightblue;
 @header_font: verdana, arial, helvetica, sans-serif;
 @main_font: "Lucida Grande", Lucida, Verdana, sans-serif;
@@ -187,6 +188,28 @@ span.player {
     cursor: move;
 }
 
+/* Retainee styles */
+
+#retainee {
+  width: 35%;
+  float: right;
+  background-color: lightgreen;
+}
+#nonRetainee {
+  width: 60%;
+  float: left;
+  background-color: lightgrey;
+}
+
+#nonRetainee table {
+	width: 98%;
+}
+
+#retaineeComplete {
+	width: 100%;
+	float:  left;	
+}
+
 .retaineesSelected {
     width: 90%;
     min-height: 200px;
@@ -199,27 +222,11 @@ span.player {
     background-color: yellow;
 }
 
-.final-roster {
-    width: 65%;
-    float: left;
+retaineeDropHover {
+	background-color: @highlighted;
 }
 
-.retainees {
-    width: 35%;
-    float: right;
-}
-
-.two-thirds-right {
-    width: 77%;
-    float: left;
-}
-
-.one-third {
-    width: 22%;
-    float: right;
-    padding-left: 10px;
-    background-color: #CCCCFF;
-}
+/* Draft */
 
 div#draft_live {
     padding: 1px;
@@ -238,4 +245,16 @@ div#inline {
 #baseball-diamond {
     margin-right: auto;
     margin-left: auto;
+}
+
+.two-thirds-right {
+    width: 77%;
+    float: left;
+}
+
+.one-third {
+    width: 22%;
+    float: right;
+    padding-left: 10px;
+    background-color: #CCCCFF;
 }

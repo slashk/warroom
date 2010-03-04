@@ -2,9 +2,8 @@
   statline = "#{players.pos}, #{players.K} K, #{players.W} W, #{players.SV} SV, #{players.ERA} ERA, #{players.WHIP} WHIP"
 else
   statline = "#{players.pos}, #{players.HR} HR, #{players.RBI} RBI, #{players.R} R, #{players.SB} SB, #{players.AVG} BA"
-end %>
-<%= content_tag :span,
-  "#{players.orank}. #{players.player} (#{statline})",
-  :id => "player_#{players.id}",
-  :class => "player" %><br />
-<%= draggable_element("player_#{players.id}", :revert=>true) %>
+end -%>
+<tr id="<%= players.id %>" class="player">
+	<td><%= players.orank -%>. <strong><%= players.player -%></strong> (<%= statline -%>)</td>
+	<td><img src="/images/add.png" class="addRetaineeButton"></td>
+</tr>

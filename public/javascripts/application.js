@@ -1,17 +1,46 @@
 // javascript code for WarRoom
-
 // All pages
 $(document).ready(function(){
     playerTable();
+	setRetaineeDragAndDrop();
     //$('#sidebar').tabs();
 });
 
-function playerTable() {
+function playerTable(){
     $('#players').dataTable({
         "iDisplayLength": 50,
         "bJQueryUI": true,
         "sPaginationType": "full_numbers"
     });
+}
+
+function setRetaineeDragAndDrop(){
+	// add handler to retainButtons
+	$(".addRetaineeButton").click(function (){
+		var $element = $(this);
+		var $playerRow = $element.parents(".player");
+		var $playerId = $playerRow.attr("id");
+		$.get("/retainees/add_player_to_retainee_list/"+$playerId, function (textStatus){
+			// if successful, highlight row and change add icon to cancel icon
+			// $element.parent("td").html("<img src='images/cancel.png' style='removeRetaineeButton'>");
+			// $playerRow.addClass("retainedPlayer");
+			// maybe also update status of retainee picks
+			// rebind cancel function to new cancel icon
+			$("#retainedPlayers").load("/retainees/retained_players/1");
+		});
+	})
+	// make retainedPlayers cancel-able
+	$(".removeRetaineeButton").click(function (){
+		var $playerRow = $(this).parent("span");
+		var $playerId = $playerRow.attr("id");
+		$.get('/retainees/remove_player_from_retainee_list/'+$playerId, function (){
+			$playerRow.fadeOut();					
+		});
+	});
+}
+
+function refreshRetaineeList () {
+	$("#retainedPlayers").load("/retainees/retained_players/1");
 }
 
 function dashboard() {
@@ -26,37 +55,3 @@ function dashboard() {
 	//				this requires service that spits out current-watchlist
 	//				this is hard because it's a join, not a object ?
 }
-
-//    $("#style-guidelines").dialog({
-//        title: "Event Style Guidelines",
-//        modal: false,
-//        width: 450,
-//        autoOpen: false,
-//        buttons: {
-//            Ok: function() {
-//                $(this).dialog('close');
-//            }
-//        }
-//    });
-//	$('#help-icon-style-guidelines').click(function () {
-//		$('#style-guidelines').dialog('open');
-//	});
-
-
-//    $("#newstabs").tabs();
-
-//$(document).ready(function() {
-//    // accordian for race details
-//    $('#race_detail').accordion({
-//        animated: 'bounceslide',
-//        icons: {
-//            header: "ui-icon-circle-triangle-e",
-//            headerSelected: "ui-icon-circle-triangle-s"
-//        }
-//    });
-//});
-
-//function add_another_race() {
-//    $('#races').append($(".raceEntry:first").clone());
-//}
-

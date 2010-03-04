@@ -136,6 +136,21 @@ form#login_form input {
   border-style: none;
 }
 span.player { cursor: move; }
+#retainee {
+  width: 35%;
+  float: right;
+  background-color: lightgreen;
+}
+#nonRetainee {
+  width: 60%;
+  float: left;
+  background-color: lightgrey;
+}
+#nonRetainee table { width: 98%; }
+#retaineeComplete {
+  width: 100%;
+  float: left;
+}
 .retaineesSelected {
   width: 90%;
   min-height: 200px;
@@ -144,13 +159,16 @@ span.player { cursor: move; }
   border: black;
 }
 .retaineesSelectedHighlighted { background-color: yellow; }
-.final-roster {
-  width: 65%;
-  float: left;
+retaineeDropHover { background-color: lightred; }
+div#draft_live { padding: 1px; }
+.title {
+  background-color: #ccccff;
+  font-size: medium;
+  font-weight: bold;
 }
-.retainees {
-  width: 35%;
-  float: right;
+#baseball-diamond {
+  margin-right: auto;
+  margin-left: auto;
 }
 .two-thirds-right {
   width: 77%;
@@ -161,14 +179,4 @@ span.player { cursor: move; }
   float: right;
   padding-left: 10px;
   background-color: #ccccff;
-}
-div#draft_live { padding: 1px; }
-.title {
-  background-color: #ccccff;
-  font-size: medium;
-  font-weight: bold;
-}
-#baseball-diamond {
-  margin-right: auto;
-  margin-left: auto;
 }
