@@ -15,32 +15,53 @@ function playerTable(){
 }
 
 function setRetaineeDragAndDrop(){
+	// retainees box
+	$('.removeRetaineeButton').livequery('click', function (event) { 
+			var $element = $(this);
+			var $playerId = getPlayerId($element.attr("id"));
+	        $.get("/retainees/remove_player_from_retainee_list/"+$playerId, function (textStatus){
+				refreshMyRetaineeList();
+				$nonRetaineeButton = $("#"+$playerId+"-nonRetainee")
+				toggleRetaineeButton($nonRetaineeButton);				
+			});
+	    }); 
+	// attach dataTable to nonRetainedPlayers
+	$('#nonRetainedPlayers').dataTable({
+        "iDisplayLength": 50,
+        "bJQueryUI": true,
+		"aaSorting": [[3,'asc']],
+		"bPaginate": false,
+		
+    });
 	// add handler to retainButtons
-	$(".addRetaineeButton").click(function (){
+	$(".addRetaineeButton").livequery('click', function (event) {
 		var $element = $(this);
-		var $playerRow = $element.parents(".player");
-		var $playerId = $playerRow.attr("id");
+		var $playerId = getPlayerId($element.attr("id"));
 		$.get("/retainees/add_player_to_retainee_list/"+$playerId, function (textStatus){
-			// if successful, highlight row and change add icon to cancel icon
-			// $element.parent("td").html("<img src='images/cancel.png' style='removeRetaineeButton'>");
-			// $playerRow.addClass("retainedPlayer");
-			// maybe also update status of retainee picks
-			// rebind cancel function to new cancel icon
-			$("#retainedPlayers").load("/retainees/retained_players/1");
+			refreshMyRetaineeList();
+			toggleRetaineeButton($element);
 		});
 	})
-	// make retainedPlayers cancel-able
-	$(".removeRetaineeButton").click(function (){
-		var $playerRow = $(this).parent("span");
-		var $playerId = $playerRow.attr("id");
-		$.get('/retainees/remove_player_from_retainee_list/'+$playerId, function (){
-			$playerRow.fadeOut();					
-		});
-	});
 }
 
-function refreshRetaineeList () {
-	$("#retainedPlayers").load("/retainees/retained_players/1");
+function refreshMyRetaineeList () {
+	$("#retainedPlayers").load("/retainees/retained_players/1").highlight();
+}
+
+function getPlayerId (x) {
+	return x.split("-")[0];
+}
+
+function toggleRetaineeButton (element) {
+	element.unbind("click");
+	// find out if its add or remove
+	element.toggleClass("addRetaineeButton").toggleClass("removeRetaineeButton");
+	// change icon
+	if (element.attr("src") == "/images/cancel.png") {
+		element.attr("src","/images/add.png");
+	} else {
+		element.attr("src","/images/cancel.png");
+	}
 }
 
 function dashboard() {

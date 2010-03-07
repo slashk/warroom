@@ -4,32 +4,21 @@ class RetaineesController < ApplicationController
   def index
     @retainees = Retainee.find(:all, :order => :user_id, :include => [:player, :user])
     @user = User.find(current_user)
-
-    respond_to do |format|
-      format.html # index.html.erb
-    end
   end
 
   def show
     @retainee = Retainee.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-    end
   end
 
   def new
     @retainee = Retainee.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-    end
   end
 
   def edit
     @user = User.find(current_user)
-    @players = Player.find_all_by_previousTeam(@user, :order => "orank asc")
+    @players = Player.find_all_by_previousTeam(@user)
     @retainees = Retainee.find_all_by_user_id(@user).map {|x| x.player}
+    @retained_pool = @retainees.nil? ? [] : @retainees.map {|x| x.id}
   end
 
   def create
@@ -37,7 +26,7 @@ class RetaineesController < ApplicationController
 
     respond_to do |format|
       if @retainee.save
-        flash[:notice] = 'Retainee was successfully created.'
+        flash[:notice] = 'Retainee List was successfully created.'
         format.html { redirect_to(@retainee) }
       else
         format.html { render :action => "new" }
@@ -82,7 +71,7 @@ class RetaineesController < ApplicationController
     @retainee = Retainee.find_by_player_id(params[:id])
     @retainee.destroy
     @id = params[:id]
-  render :nothing => true
+    render :nothing => true
   end
   
   def retained_players

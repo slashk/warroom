@@ -1,29 +1,48 @@
 <div id="retainee-instructions">
   <p>
-    You may retain 3 batters and 3 pitchers from your 2008 Final Roster.
-    To retain a player, drag him from your 2008 Final Roster into the 2009 Retainees box.
-    Your 2008 Final Roster is sorted in Yahoo! player rank order (top ranked players at the top).
+    You may retain 3 batters and 3 pitchers from your previous year's final roster.
+    Your previous year's final roster is sorted in Yahoo! player rank order (top ranked players at the top).
   </p>
 </div>
 <div id="nonRetainee">
   <h1>2008 <%= @user.team %> Final Roster</h1>
   <table id="nonRetainedPlayers" class="nonretaineeBox" >
-	<thead><tr><th>Player</th><th>Button</th></tr></thead>
-	<tbody>
-    <%= render :partial => "players", :collection => @players unless @players.nil? %>
-	</tbody>
+	  <thead>
+	    <tr>
+	      <th align="left">Player</th>
+	      <th align="center">Pos</th>
+	      <th align="center">Team</th>
+	      <th align="center">Rank</th>
+	      <th align="center">O-Rank</th>
+	      <th align="right">R</th>
+	      <th align="right">HR</th>
+	      <th align="right">RBI</th>
+	      <th align="right">SB</th>
+	      <th align="right">AVG</th>
+	      <th align="right">IP</th>
+	      <th align="right">W</th>
+	      <th align="right">SV</th>
+	      <th align="right">K</th>
+	      <th align="right">ERA</th>
+	      <th align="right">WHIP</th>
+		  <th align="center"></th>
+	    </tr>
+	  </thead>
+	  <tbody> 
+		<%= render :partial => "players", :collection => @players unless @players.nil? %>
+	  </tbody>
   </table>
 </div>
 
 <div id="retainee">
-  <h1>2009 Retainees</h1>
-  <div id="retainedPlayers" class="retaineeBox" >
-    <%= render(:partial => "selectedPlayers", :collection => @retainees) unless @retainees.nitems < 1 %>
-  </div>
+  <h1>Retainees</h1>
+	<ol id="retainedPlayers" class="retaineeBox">
+		    <%= render(:partial => "selectedPlayers", :collection => @retainees) unless @retainees.nitems < 1 %>
+	</ol>
+	<div id="retaineeComplete">
+		<p style="text-align:center;">
+		<%= link_to "Done", retainees_path, :class => "fg-warroom-button ui-state-default ui-priority-secondary ui-corner-all" %>
+		</p>
+	</div>
 </div>
 
-<div id="retaineeComplete">
-	<p>
-	<%= link_to("Click here to complete your retainee selection", :action => :index) %>
-	</p>
-</div>

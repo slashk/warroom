@@ -36,7 +36,6 @@ a {
   text-decoration: none;
   font-weight: bold;
 }
-a:visited { color: #000066; }
 a:hover { background-color: lightgrey; }
 .fieldWithErrors {
   padding: 2px;
@@ -137,16 +136,32 @@ form#login_form input {
 }
 span.player { cursor: move; }
 #retainee {
-  width: 35%;
+  width: 20%;
   float: right;
   background-color: lightgreen;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  padding: 5px 5px;
 }
 #nonRetainee {
-  width: 60%;
+  width: 75%;
   float: left;
-  background-color: lightgrey;
 }
-#nonRetainee table { width: 98%; }
+.fg-warroom-button {
+  outline: 0;
+  margin: 0 4px 0 0;
+  padding: 0.4em 1em;
+  text-decoration: none !important;
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  zoom: 1;
+  color: #ffffff;
+}
+.fg-warroom-button.a { color: #ffffff; }
+.fg-warroom-button.a:visited { color: #ffffff; }
+#nonRetainee table { width: 100%; }
 #retaineeComplete {
   width: 100%;
   float: left;
@@ -158,8 +173,6 @@ span.player { cursor: move; }
   padding: 5px;
   border: black;
 }
-.retaineesSelectedHighlighted { background-color: yellow; }
-retaineeDropHover { background-color: lightred; }
 div#draft_live { padding: 1px; }
 .title {
   background-color: #ccccff;

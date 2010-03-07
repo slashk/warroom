@@ -1,9 +1,27 @@
-<% if players.pos.match(/P/)
-  statline = "#{players.pos}, #{players.K} K, #{players.W} W, #{players.SV} SV, #{players.ERA} ERA, #{players.WHIP} WHIP"
-else
-  statline = "#{players.pos}, #{players.HR} HR, #{players.RBI} RBI, #{players.R} R, #{players.SB} SB, #{players.AVG} BA"
-end -%>
-<tr id="<%= players.id %>" class="player">
-	<td><%= players.orank -%>. <strong><%= players.player -%></strong> (<%= statline -%>)</td>
-	<td><img src="/images/add.png" class="addRetaineeButton"></td>
+<tr>
+  <td>
+    <a href="http://sports.yahoo.com/mlb/players/<%= players.yahoo_ref %>" target="_blank">
+      <%= players.player -%>
+    </a>
+  </td>
+  <td style="text-align:center;"><%= players.pos  %></td>
+  <td style="text-align:center;"><%= players.team.upcase  %></td>
+  <td style="text-align:center;"><%= players.rank  %></td>
+  <td style="text-align:center;"><%= players.orank  %></td>
+  <td><%= players.R  %></td>
+  <td><%= players.HR  %></td>
+  <td><%= players.RBI  %></td>
+  <td><%= players.SB  %></td>
+  <td style="text-align:center;"><%= ba(players.AVG) if (players.AVG!=nil)  %></td>
+  <td style="text-align:center;"><%= players.IP  %></td>
+  <td><%= players.W  %></td>
+  <td><%= players.SV  %></td>
+  <td><%= players.K  %></td>
+  <td style="text-align:center;"><%= sprintf("%.2f",players.ERA) if (players.ERA!=nil) %></td>
+  <td style="text-align:center;"><%= sprintf("%.2f",players.WHIP) if (players.WHIP!=nil)  %></td>
+  <% if @retained_pool.include?(players.id) -%>
+	  <td style="text-align:center;"><img src="/images/cancel.png" id="<%= players.id.to_s %>-nonRetainee" class="removeRetaineeButton"></td>
+  <% else -%>
+	  <td style="text-align:center;"><img src="/images/add.png" id="<%= players.id.to_s %>-nonRetainee" class="addRetaineeButton"></td>
+  <% end -%>
 </tr>
