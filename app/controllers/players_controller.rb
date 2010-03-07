@@ -1,8 +1,6 @@
 class PlayersController < ApplicationController
   before_filter :login_required
 
-  # GET /players
-  # GET /players.xml
   def index
     @players = Player.undrafted.byrank
     unless @players.nil?
@@ -23,8 +21,6 @@ class PlayersController < ApplicationController
     end
   end
 
-  # GET /players/1
-  # GET /players/1.xml
   def show
     @player = Player.find(params[:id])
 
@@ -35,8 +31,6 @@ class PlayersController < ApplicationController
     end
   end
 
-  # GET /players/new
-  # GET /players/new.xml
   def new
     @player = Player.new
 
@@ -46,13 +40,10 @@ class PlayersController < ApplicationController
     end
   end
 
-  # GET /players/1/edit
   def edit
     @player = Player.find(params[:id])
   end
 
-  # POST /players
-  # POST /players.xml
   def create
     @player = Player.new(params[:player])
 
@@ -68,8 +59,6 @@ class PlayersController < ApplicationController
     end
   end
 
-  # PUT /players/1
-  # PUT /players/1.xml
   def update
     @player = Player.find(params[:id])
 
