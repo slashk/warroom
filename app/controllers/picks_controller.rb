@@ -49,7 +49,7 @@ class PicksController < ApplicationController
   end
 
   def scrolldraft
-    @picks = Pick.picks_taken
+    @picks = Pick.picks_taken_limited(15)
     render :partial => "scrolldraft"
   end
 
