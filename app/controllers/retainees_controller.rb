@@ -75,9 +75,11 @@ class RetaineesController < ApplicationController
   end
   
   def retained_players
-    # @user = User.find(current_user)
     @retainees = Retainee.find_all_by_user_id(current_user).map {|x| x.player}
+    batters = @retainees.map{|x| x.id if x.pos.match(/P/)}
+    pitchers = @retainees.map{|x| x.id if x.pos.match(/P/)}
     render :partial => "selectedPlayers", :collection => @retainees
+    @limit_text = "You may retain #{3 - batters.count} more batters and #{3 - pitchers.count} more pitchers"
   end
   
   private

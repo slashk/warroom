@@ -1,9 +1,3 @@
-<div id="retainee-instructions">
-  <p>
-    You may retain 3 batters and 3 pitchers from your previous year's final roster.
-    Your previous year's final roster is sorted in Yahoo! player rank order (top ranked players at the top).
-  </p>
-</div>
 <div id="nonRetainee">
   <h1>2008 <%= @user.team %> Final Roster</h1>
   <table id="nonRetainedPlayers" class="nonretaineeBox" >
@@ -35,7 +29,7 @@
 </div>
 
 <div id="retainee">
-  <h1>Retainees</h1>
+  <h3 class="fg-warroom-button ui-state-default ui-priority-secondary ui-corner-all" style="margin-top:5px;">Retainees</h3>	
 	<ol id="retainedPlayers" class="retaineeBox">
 		    <%= render(:partial => "selectedPlayers", :collection => @retainees) unless @retainees.nitems < 1 %>
 	</ol>
@@ -43,6 +37,11 @@
 		<p style="text-align:center;">
 		<%= link_to "Done", retainees_path, :class => "fg-warroom-button ui-state-default ui-priority-secondary ui-corner-all" %>
 		</p>
+	</div>
+	<div id="retainee-instructions">
+	  <p>
+	    You may retain 3 batters and 3 pitchers from your previous year's final roster.
+	  </p>
 	</div>
 </div>
 
