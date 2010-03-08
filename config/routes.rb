@@ -6,6 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :session, :controller => "session"
   map.resources :players
   map.resources :picks
+  map.resources :watchlist
   map.connect '/entry', :controller => 'entry', :action => 'index'
   #map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil
   #map.signup '/signup', :controller => 'users', :action => 'new'

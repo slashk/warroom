@@ -4,7 +4,9 @@ class PlayersController < ApplicationController
   def index
     @players = Player.undrafted.byrank
     unless @players.nil?
+      playerslist = @players.map {|x| x.id}
       @teams = User.draftorder
+      @watched = Watchlist.find_all_by_user_id(current_user, :conditions => ["player_id in (?)", playerslist])
       @watchlist = compile_watchlist(current_user)
       # draft results
       @picks = Pick.picks_taken

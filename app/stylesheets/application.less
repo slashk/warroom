@@ -3,9 +3,10 @@
 @background_color: #fff;
 @text_color: #333;
 @highlighted: lightred;
-@header_background_color: lightblue;
+@header_background_color: #B3CAA5;
 @header_font: verdana, arial, helvetica, sans-serif;
 @main_font: "Lucida Grande", Lucida, Verdana, sans-serif;
+@on-the-clock-color: red;
 /* rounded corners */
 @radius: 8px;
 .rounded_corners (@radius: 8px) {
@@ -18,6 +19,8 @@
 	-moz-box-shadow: 10px 10px 25px #ccc;
 	box-shadow: 10px 10px 25px #ccc;
 }
+
+/* standards */
 
 body { 
 	background-color: #fff; 
@@ -46,8 +49,6 @@ a {
     text-decoration: none;
     font-weight: bold;
 }
-
-a:hover { background-color: lightgrey; }
 
 .fieldWithErrors {
     padding: 2px;
@@ -90,17 +91,14 @@ th {
     list-style: square;
 }
 
-.ListLine0 {
-    background-color: #fff;
-}
-.ListLine1 {
-    background-color: lightgrey;
-}
 
+/* headers */
 div#asshead {
-    background-color: #CCCCFF;
+    background-color: @header_background_color;
     color: #000033;
     border-style: none;
+	.rounded_corners;
+	padding: 5px;
 }
 
 div#left {
@@ -111,10 +109,11 @@ div#right {
     text-align: right;
 }
 
+/* */
 div#draftorder {
     float: right;
     width: 25%;
-    background-color: #CCCCFF;
+    background-color: @header_background_color;
     height: 100%;
     padding: 10px;
 }
@@ -255,13 +254,24 @@ div#inline {
 }
 
 .two-thirds-right {
-    width: 77%;
+    width: 76%;
     float: left;
+}
+
+.nav-title {
+	font-size: 14pt;
 }
 
 .one-third {
     width: 22%;
     float: right;
     padding-left: 10px;
-    background-color: #CCCCFF;
+    background-color: @header_background_color;
+	.rounded_corners;
+}
+
+/* specials */
+
+.on-the-clock {
+	background-color: @on-the-clock-color;
 }

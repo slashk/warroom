@@ -18,7 +18,7 @@ body {
   color: #333333;
 }
 h2 {
-  background-color: lightblue;
+  background-color: #b3caa5;
   font-family: verdana, arial, helvetica, sans-serif;
   font-style: normal;
 }
@@ -36,7 +36,6 @@ a {
   text-decoration: none;
   font-weight: bold;
 }
-a:hover { background-color: lightgrey; }
 .fieldWithErrors {
   padding: 2px;
   background-color: red;
@@ -69,19 +68,21 @@ th { border: solid 1px silver; }
   font-size: 12px;
   list-style: square;
 }
-.ListLine0 { background-color: #ffffff; }
-.ListLine1 { background-color: lightgrey; }
 div#asshead {
-  background-color: #ccccff;
+  background-color: #b3caa5;
   color: #000033;
   border-style: none;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  padding: 5px;
 }
 div#left { text-align: left; }
 div#right { text-align: right; }
 div#draftorder {
   float: right;
   width: 25%;
-  background-color: #ccccff;
+  background-color: #b3caa5;
   height: 100%;
   padding: 10px;
 }
@@ -184,12 +185,17 @@ div#draft_live { padding: 1px; }
   margin-left: auto;
 }
 .two-thirds-right {
-  width: 77%;
+  width: 76%;
   float: left;
 }
+.nav-title { font-size: 14pt; }
 .one-third {
   width: 22%;
   float: right;
   padding-left: 10px;
-  background-color: #ccccff;
+  background-color: #b3caa5;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
 }
+.on-the-clock { background-color: red; }

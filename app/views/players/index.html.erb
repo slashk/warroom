@@ -19,6 +19,10 @@
   <div id="inline">
     <%= render :partial => "picks/inline" %>
   </div>
+	<h3 class="fg-warroom-button ui-state-default ui-priority-secondary ui-corner-all" style="margin-top:5px;">Watchlist</h3>	
+  <div id="watchlist">
+    <%= render :partial => "watchlist/watchlist", :collection => @watched %>
+  </div>
   <div id="draft_live">
     <%= render :partial => "picks/scrolldraft" %>
   </div>

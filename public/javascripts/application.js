@@ -3,7 +3,7 @@
 $(document).ready(function(){
     playerTable();
 	setRetaineeDragAndDrop();
-    //$('#sidebar').tabs();
+	refreshWatchlist(15000);
 });
 
 function playerTable(){
@@ -42,6 +42,18 @@ function setRetaineeDragAndDrop(){
 			toggleRetaineeButton($element);
 		});
 	})
+}
+
+function refreshWatchlist($interval) {
+	setInterval(function(){ $("#watchlist").load("/watchlist/show/"+$.cookie("auth_token")).highlight() }, $interval);
+}
+
+function refreshMyTeam() {
+
+}
+
+function refreshComingNext() {
+	
 }
 
 function refreshMyRetaineeList () {
