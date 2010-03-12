@@ -9,7 +9,7 @@ require 'cgi'
 # some stats are combined in one table cell and need further regex parsing
 
 LEAGUE_ID = 151603 # change this to your new league number
-PATH = "/b1/#{LEAGUE_ID}/players?status=A&pos=B&cut_type=33&stat1=S_S_2009&sort=OR"
+path = "/b1/#{LEAGUE_ID}/players?status=A&pos=B&cut_type=33&stat1=S_S_2009&sort=OR"
 SITE = "http://baseball.fantasysports.yahoo.com"
 # Cookies are hard. find the Yahoo! cookies for B, Y and T
 # you need your own, otherwise you can't grab for your league
@@ -158,25 +158,38 @@ end
 def insert_players_into_db(players)
   players.each do |p|
     new_player = Player.create(:orank => p['orank'], :yahoo_ref => p['yahoo_ref'], :player => p['player'], :team => p['team'], :pos => p['pos'], :rank => p['rank'], :IP => p['IP'], :W => p['W'], :SV => p['SV'], :K => p['K'], :ERA => p['ERA'], :WHIP => p['WHIP'], :R => p['R'], :HR => p['HR'], :RBI => p['RBI'], :SB => p['SB'], :AVG => p['AVG'], :AB => p['AB'])
-    puts (new_player.save ? "#{p['player']} saved" : "ERROR: #{p['player']} cannot be saved")
+    if new_player.save
+      "#{p['player']} saved"
+    else
+      new_player.touch
+      "#{p['player']} updated"
+    end
   end
 end
 
 desc "scrapes players and player stats from Y!"
 task :scrape_players => :environment do
-  until PATH.nil? do
-    page = get_player_page(SITE, PATH, Y_COOKIE)
+  until path.nil? do
+    page = get_player_page(SITE, path, Y_COOKIE)
     path = nil
     insert_players_into_db(distill_hitters_page(page))
-    PATH = get_next_page_path(page)
+    path = get_next_page_path(page)
     page = nil
   end
-  PATH = "/b1/#{LEAGUE_ID}/players?status=A&pos=P&stat1=S_S_2009&sort=OR"
-  until PATH.nil? do
-    page = get_player_page(SITE, PATH, Y_COOKIE)
+  path = "/b1/#{LEAGUE_ID}/players?status=A&pos=P&stat1=S_S_2009&sort=OR"
+  until path.nil? do
+    page = get_player_page(SITE, path, Y_COOKIE)
     path = nil
     insert_players_into_db(distill_pitchers_page(page))
-    PATH = get_next_page_path(page)
+    path = get_next_page_path(page)
     page = nil
+  end
+end
+
+desc "find players not updated today"
+task :find_stale_players => :environment do
+  stale = Player.all(:conditions => "date(updated_at) != CURRENT_DATE")
+  stale.each do |p|
+    puts "#{p.id}. #{p.player} (#{p.team})"
   end
 end
