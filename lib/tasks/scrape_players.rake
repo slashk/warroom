@@ -1,5 +1,3 @@
-desc "scrapes players and player stats from Y!"
-
 require 'rubygems'
 require 'net/http'
 require 'hpricot'
@@ -10,9 +8,13 @@ require 'cgi'
 # batter and pitching stats are displayed differently and at different URLs
 # some stats are combined in one table cell and need further regex parsing
 
-
-DEBUG = ARGV[0].to_i
-
+LEAGUE_ID = 151603 # change this to your new league number
+PATH = "/b1/#{LEAGUE_ID}/players?status=A&pos=B&cut_type=33&stat1=S_S_2009&sort=OR"
+SITE = "http://baseball.fantasysports.yahoo.com"
+# Cookies are hard. find the Yahoo! cookies for B, Y and T
+# you need your own, otherwise you can't grab for your league
+Y_COOKIE = "B=bc84uqh2p5s7i&b=4&d=KKDnTGtpYEKQNNEcM2nBJ5BPPuX2gvUwRMCnCg--&s=0b; Y=v=1&n=4t90ciibh0ajb&l=af4ffb440hj7b8dad4j/o&p=m242tgi4f33f0200&r=0u&lg=en-US&intl=us; T=z=t0dlJBtIFqJBvRqyb5enWF6MjVOBjUyNzY1MTUxMw--&a=YAE&sk=DAAiZsesPWdjMr&ks=EAAGE_L__xd9f0CBGh3RHgiJg--~C&d=c2wBTlRJNUFUSTFNREV5TmpJMk5BLS0BYQFZQUUBb2sBWlcwLQFhbAFrcGVwcGxlAXRpcAFGTi4xWUIBenoBdDBkbEpCQTdFAWcBT1FSWENPUkpQUjQyVVM2WUdRS09DUkFCRTQ-"
+  
 class String
   def escape_single_quotes
     self.gsub(/[']/, '\\\\\'')
@@ -29,7 +31,6 @@ def get_player_page(s, p, c)
   res = Net::HTTP.start(url.host, url.port) {|http|
     http.request(req, url.query)
   }
-  #  puts res if DEBUG > 0
 end
 
 def distill_hitters_page(res)
@@ -135,8 +136,7 @@ def get_next_page_path(res)
 end
 
 def spit(players, format)
-  # TODO put in the output printing code
-  # TODO quote O'Leahry names
+  # this is old method for printing out SQL
   categories = ["orank", "yahoo_ref", "player", "team", "pos", "rank", "IP", "W", "SV", "K", "ERA", "WHIP", "R", "HR", "RBI", "SB", "AVG", "AB"]
   case format
   when 'sql'
@@ -155,32 +155,28 @@ def spit(players, format)
   end
 end
 
+def insert_players_into_db(players)
+  players.each do |p|
+    new_player = Player.create(:orank => p['orank'], :yahoo_ref => p['yahoo_ref'], :player => p['player'], :team => p['team'], :pos => p['pos'], :rank => p['rank'], :IP => p['IP'], :W => p['W'], :SV => p['SV'], :K => p['K'], :ERA => p['ERA'], :WHIP => p['WHIP'], :R => p['R'], :HR => p['HR'], :RBI => p['RBI'], :SB => p['SB'], :AVG => p['AVG'], :AB => p['AB'])
+    puts (new_player.save ? "#{p['player']} saved" : "ERROR: #{p['player']} cannot be saved")
+  end
+end
+
+desc "scrapes players and player stats from Y!"
 task :scrape_players => :environment do
-  site = 'http://baseball.fantasysports.yahoo.com'
-  # change this to your new league number (the second number is important) and year (last number)
-  path = '/b1/55398/players?status=A&pos=B&stat1=S_S_2008'
-  #path = '/b1/25357/players?status=A&pos=B&stat1=S_S_2008'
-  #
-  # Cookies are hard. find the Yahoo! cookies for B, Y and T
-  #cookie = "B=fm81hdma1eakk; Y=v=1&n=4t90ciibh0ajb&l=af4ffb440hj7b8dad4j/o&p=m242spo4903f02&r=0u&lg=us&intl=us; T=z=99164A9DL74Abx5B039Ze8uNgY1Mjc2NTE1MTM-&a=AAE&sk=DAA1d.AqrcQYq6&d=c2wBTVFFeU5UQXhNall5TmpRLQFhAUFBRQF6egE5OTE2NEFnV0E- ";
-  cookie = "B=bc84uqh2p5s7i&b=4&d=KKDnTGtpYEKQNNEcM2nBJ5BPPuX2gvUwRMCnCg--&s=0b; Y=v=1&n=4t90ciibh0ajb&l=af4ffb440hj7b8dad4j/o&p=m242tgi4f33f0200&r=0u&lg=en-US&intl=us; T=z=t0dlJBtIFqJBvRqyb5enWF6MjVOBjUyNzY1MTUxMw--&a=YAE&sk=DAAiZsesPWdjMr&ks=EAAGE_L__xd9f0CBGh3RHgiJg--~C&d=c2wBTlRJNUFUSTFNREV5TmpJMk5BLS0BYQFZQUUBb2sBWlcwLQFhbAFrcGVwcGxlAXRpcAFGTi4xWUIBenoBdDBkbEpCQTdFAWcBT1FSWENPUkpQUjQyVVM2WUdRS09DUkFCRTQ-"
-    #d=F3O1MPSw1RnfefA9bBRL0SfpyVF_yh.N70tfYFMn92vVJCh1F379tn2khDCocTBLp6bUxvyBoKdZMGxppMElhEml7CX0uQFO_HjK2azLjiQpD6wpvyF.hg--&v=1
-  players = Array.new
-  until path.nil? do
-    page = get_player_page(site, path, cookie)
+  until PATH.nil? do
+    page = get_player_page(SITE, PATH, Y_COOKIE)
     path = nil
-    players = players + distill_hitters_page(page)
-    path = get_next_page_path(page)
+    insert_players_into_db(distill_hitters_page(page))
+    PATH = get_next_page_path(page)
     page = nil
   end
-  #path = '/b1/25357/players?status=A&pos=P&stat1=S_S_2007'
-  path = '/b1/55398/players?status=A&pos=P&stat1=S_S_2008'
-  until path.nil? do
-    page = get_player_page(site, path, cookie)
+  PATH = "/b1/#{LEAGUE_ID}/players?status=A&pos=P&stat1=S_S_2009&sort=OR"
+  until PATH.nil? do
+    page = get_player_page(SITE, PATH, Y_COOKIE)
     path = nil
-    players = players + distill_pitchers_page(page)
-    path = get_next_page_path(page)
+    insert_players_into_db(distill_pitchers_page(page))
+    PATH = get_next_page_path(page)
     page = nil
   end
-  spit(players, 'sql')
 end
