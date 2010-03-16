@@ -139,11 +139,12 @@ span.player { cursor: move; }
 #retainee {
   width: 20%;
   float: right;
-  background-color: lightgreen;
+  background-color: #b3caa5;
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
   border-radius: 8px;
   padding: 5px 5px;
+  margin-top: 2em;
 }
 #nonRetainee {
   width: 75%;
@@ -170,7 +171,7 @@ span.player { cursor: move; }
 .retaineesSelected {
   width: 90%;
   min-height: 200px;
-  background-color: #ccccff;
+  background-color: #b3caa5;
   padding: 5px;
   border: black;
 }

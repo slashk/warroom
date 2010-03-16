@@ -192,10 +192,10 @@ span.player {
 #retainee {
   width: 20%;
   float: right;
-  background-color: lightgreen;
+  background-color: @header_background_color;
   .rounded_corners;
   padding: 5px 5px;
-
+	margin-top: 2em;
 }
 #nonRetainee {
   width: 75%;
@@ -227,7 +227,7 @@ span.player {
 .retaineesSelected {
     width: 90%;
     min-height: 200px;
-    background-color: #CCCCFF;
+    background-color: @header_background_color;
     padding: 5px;
     border: black;
 }
@@ -266,7 +266,7 @@ div#inline {
     width: 22%;
     float: right;
     padding-left: 10px;
-    background-color: @header_background_color;
+    background-color: @header_background_color; 
 	.rounded_corners;
 }
 

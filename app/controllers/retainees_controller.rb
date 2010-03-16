@@ -61,10 +61,14 @@ class RetaineesController < ApplicationController
       @retainee = Retainee.new(:player_id => params[:id], :user_id => current_user.id)
       if @retainee.save
         @players = Player.find(params[:id])
+        returnMessage = "OK"
+        status = 200
+      else
+        returnMessage = "ERROR"
+        status = 404
       end
-      # TODO add ajax message about non-compliance
     end
-  render :nothing => true
+    render :text => returnMessage, :status => status
   end
 
   def remove_player_from_retainee_list
@@ -76,10 +80,8 @@ class RetaineesController < ApplicationController
   
   def retained_players
     @retainees = Retainee.find_all_by_user_id(current_user).map {|x| x.player}
-    batters = @retainees.map{|x| x.id if x.pos.match(/P/)}
-    pitchers = @retainees.map{|x| x.id if x.pos.match(/P/)}
     render :partial => "selectedPlayers", :collection => @retainees
-    @limit_text = "You may retain #{3 - batters.count} more batters and #{3 - pitchers.count} more pitchers"
+    @limit_text = "You may retain #{3-countBatters(@retainees)} more batters and #{3-countPitchers(@retainees)} more pitchers"
   end
   
   private

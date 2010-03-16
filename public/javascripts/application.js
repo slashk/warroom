@@ -1,10 +1,31 @@
 // javascript code for WarRoom
+
+// global variables
+var $currentPick = 0;
+var $interval = 10000;
+
 // All pages
 $(document).ready(function(){
     playerTable();
+	playerLoop();
 	setRetaineeDragAndDrop();
 	refreshWatchlist(15000);
 });
+
+function playerLoop() {
+	setInterval(function(){ 
+		$.get("/currentpick", function(){
+			// if dbCurrentPick > currentPick
+			//		update all sidebar widgets
+			// 		check isItMyPick?
+			//			redAlert -- make background colors red
+			//			pop alert that you are on clock
+			//			refresh screen
+			//			add + button to each player name
+			alert(response)
+		}, "json")
+		}, $interval);
+}
 
 function playerTable(){
     $('#players').dataTable({
@@ -38,6 +59,7 @@ function setRetaineeDragAndDrop(){
 		var $element = $(this);
 		var $playerId = getPlayerId($element.attr("id"));
 		$.get("/retainees/add_player_to_retainee_list/"+$playerId, function (textStatus){
+			alert(textStatus);
 			refreshMyRetaineeList();
 			toggleRetaineeButton($element);
 		});
@@ -69,10 +91,10 @@ function toggleRetaineeButton (element) {
 	// find out if its add or remove
 	element.toggleClass("addRetaineeButton").toggleClass("removeRetaineeButton");
 	// change icon
-	if (element.attr("src") == "/images/cancel.png") {
+	if (element.attr("src") == "/images/delete.png") {
 		element.attr("src","/images/add.png");
 	} else {
-		element.attr("src","/images/cancel.png");
+		element.attr("src","/images/delete.png");
 	}
 }
 

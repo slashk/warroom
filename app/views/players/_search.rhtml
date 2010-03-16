@@ -27,7 +27,8 @@
       <% for player in @players %>
         <tr id="player-<%= player.id  %>">
           <td align="left">
-            <%= is_admin? ? link_to(player.id, :action => 'edit', :id => player.id) :  player.id %>
+            <%#= is_admin? ? link_to(player.id, :action => 'edit', :id => player.id) :  player.id %>
+			<%= player.id -%>
           </td>
           <td align="left">
             <a href="http://sports.yahoo.com/mlb/players/<%=h player.yahoo_ref %>" target="_blank">

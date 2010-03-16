@@ -48,6 +48,14 @@ class PicksController < ApplicationController
     redirect_to(picks_url)
   end
 
+  def current_pick
+    @current_pick = Pick.current_pick
+    respond_to do |wants|
+      wants.js { FIX render @current_pick.to_json  }
+      wants.html { @current_pick.to_json  }
+    end
+  end
+
   def scrolldraft
     @picks = Pick.picks_taken_limited(15)
     render :partial => "scrolldraft"
