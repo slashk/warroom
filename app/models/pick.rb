@@ -7,5 +7,6 @@ class Pick < ActiveRecord::Base
   named_scope :picks_taken, :conditions => "player_id IS NOT NULL", :order => "pick_number desc", :include => [:player, :user]
   named_scope :picks_taken_limited, lambda {|x| {:conditions => "player_id IS NOT NULL", :order => "pick_number desc", :include => [:player, :user], :limit => x}}
   named_scope :upcoming_picks, lambda {|x| {:conditions => "pick_number >= #{x}", :order => "pick_number asc", :limit => 10, :include => :user}}
+  named_scope :current_pick, :conditions => "player_id IS NULL", :order => 'pick_number asc', :limit => 1
   
 end

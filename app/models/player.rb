@@ -2,7 +2,8 @@ class Player < ActiveRecord::Base
   has_one :pick
   has_one :retainee
   validates_numericality_of :yahoo_ref
-  validates_presence_of :player, :pos
+  validates_uniqueness_of :yahoo_ref, :message => "must be unique"
+  validates_presence_of :player, :pos, :team
 
   # named scopes
   named_scope :byrank, {:order => "orank asc"}
