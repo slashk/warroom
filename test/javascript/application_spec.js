@@ -1,6 +1,18 @@
 require("spec_helper.js");
 require("../../public/javascripts/application.js");
 
+// list of functions in public/javascripts/application.js
+// playerLoop: main event loop on homepage
+// playerTable : add table sort to #search
+// setRetaineeDragAndDrop
+// refreshWatchlist
+// refreshMyTeam
+// refreshComingNext
+// refreshMyRetaineeList
+// getPlayerId : takes 
+// toggleRetaineeButton
+// 
+
 Screw.Unit(function(){
   describe("Your application javascript", function(){
     it("does something", function(){
