@@ -50,20 +50,6 @@ class ApplicationController < ActionController::Base
     posCount = Hash.new(0) 
     temp_array.each {|x| posCount[x]+=1 } 
     return posCount
-    
-    # posCount = Hash.new
-    # unless players.nil?
-    #   ypos = %w(SP RP 1B 2B 3B SS C OF P)
-    #   ypos.each do |z|
-    #     posCount[z] = 0
-    #   end
-    #   players.each do |x|
-    #     ypos.each do |pos|
-    #       posCount[pos] += 1 if x.player.pos.include?(pos)
-    #     end
-    #   end
-    # end
-    # return posCount
   end
   
   def countPitchers(players)
