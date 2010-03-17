@@ -1,11 +1,14 @@
 class PicksController < ApplicationController
-  before_filter :login_required
+  before_filter :login_required, :except => [:current_pick]
+  
 
   def index
     @picks = Pick.picks_taken
-    current_pick = find_current_pick
-    @upcoming = Pick.upcoming_picks(current_pick.pick_number)
-    @last_pick_time = find_last_pick_time
+    unless @picks.empty?
+      current_pick = find_current_pick
+      @upcoming = Pick.upcoming_picks(current_pick.pick_number)
+      @last_pick_time = find_last_pick_time
+    end
   end
 
   def show
@@ -49,11 +52,21 @@ class PicksController < ApplicationController
   end
 
   def current_pick
-    @current_pick = Pick.current_pick
+    current_pick = Pick.current_pick.first
     respond_to do |wants|
-      wants.js { FIX render @current_pick.to_json  }
-      wants.html { @current_pick.to_json  }
+      wants.js {
+        unless current_pick.nil? 
+          render :json => current_pick.to_json, :status => 200 
+        else
+          render :json => "", :status => 401   
+        end         
+            }
     end
+  end
+
+  def is_it_my_pick
+    res = Pick.current_pick.first.user_id == current_user.id ? 1 : 0
+    render :text => res #, :status => 200
   end
 
   def scrolldraft
@@ -76,17 +89,20 @@ class PicksController < ApplicationController
   end
 
   def myteam
-    mypicks = Pick.find_all_by_user_id(current_user.id, :include => :player)
-    myTeamCount = countPlayers(mypicks)
-    @SS = myTeamCount['SS']
-    @B1 = myTeamCount['1B']
-    @B2 = myTeamCount['2B']
-    @B3 = myTeamCount['3B']
-    @OF = myTeamCount['OF']
-    @SP = myTeamCount['SP']
-    @RP = myTeamCount['RP']
-    @C = myTeamCount['C']
-    @P = myTeamCount['P']
+    # finds all picks even future ! need to compact otherwise you get NIL elements
+    mypicks = Pick.find_all_by_user_id(current_user, :include => :player) 
+    unless mypicks.nil?
+      @myTeamCount = countPlayers(mypicks.map{|x| x.player}.compact)
+      # @SS = myTeamCount['SS']
+      # @B1 = myTeamCount['1B']
+      # @B2 = myTeamCount['2B']
+      # @B3 = myTeamCount['3B']
+      # @OF = myTeamCount['OF']
+      # @SP = myTeamCount['SP']
+      # @RP = myTeamCount['RP']
+      # @C = myTeamCount['C']
+      # @P = myTeamCount['P']
+    end
     render :partial => "myteam"
   end
 
