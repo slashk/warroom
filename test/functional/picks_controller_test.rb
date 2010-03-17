@@ -54,7 +54,21 @@ class PicksControllerTest < ActionController::TestCase
     assert_difference('Pick.count', -1) do
       delete :destroy, :id => picks(:one).id
     end
-
     assert_redirected_to picks_path
   end
+  
+  test "should not error with no picks" do
+    # destroy all picks
+    Pick.all.each {|x| x.destroy}
+    assert_equal([], Pick.all)
+    login_as :commish
+    get :index
+    assert(@picks.nil?, "@picks is not empty")
+    assert_response :success, @response.body
+  end
+  
+  test "should return zero if draft has not started" do
+    # no login needed
+  end
+    
 end

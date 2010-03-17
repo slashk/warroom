@@ -28,7 +28,7 @@ class PlayersControllerTest < ActionController::TestCase
   test "should create player" do
     login_as :commish
     assert_difference('Player.count') do
-      post :create, :player => { :yahoo_ref => 2235, :player => 'Ken Pepple', :pos => '3B' }
+      post :create, :player => { :yahoo_ref => 10111, :player => 'Ken Pepple', :pos => '3B', :team => "ATL" }
     end
 
     assert_redirected_to player_path(assigns(:player))
@@ -60,4 +60,5 @@ class PlayersControllerTest < ActionController::TestCase
 
     assert_redirected_to players_path
   end
+  
 end

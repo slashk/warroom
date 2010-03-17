@@ -25,7 +25,7 @@ class RetaineesControllerTest < ActionController::TestCase
   test "should create retainee" do
     login_as :elan
     assert_difference('Retainee.count') do
-      post :create, :retainee => { }
+      post :create, :retainee => { :user_id => 1, :player_id => 2235 }
     end
 
     assert_redirected_to retainee_path(assigns(:retainee))
