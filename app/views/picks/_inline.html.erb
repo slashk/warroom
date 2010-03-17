@@ -1,4 +1,3 @@
-<h3 class="fg-warroom-button ui-state-default ui-priority-secondary ui-corner-all" style="margin-top:5px;">Coming Next	</h3>
 <% unless @upcoming.empty? %>
   <% for pick in @upcoming %>
     <%= "#{pick.pick_number} . #{pick.user.team}"  %><br />

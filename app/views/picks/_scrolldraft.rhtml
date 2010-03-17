@@ -1,4 +1,3 @@
-<h3 class="fg-warroom-button ui-state-default ui-priority-secondary ui-corner-all" style="margin-top:5px;">Draft</h3>
 <% for pick in @picks %>
   <span id="draftee<%= pick.pick_number %>">
     <%= "<strong>" if my_team?(pick.user_id) -%>
