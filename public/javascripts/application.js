@@ -3,30 +3,20 @@
 // global variables
 var $currentPick = {"created_at":"2010-03-16T10:26:37-07:00","updated_at":"2010-03-16T10:26:37-07:00","player_id":null,"id":0,"user_id":0,"pick_number":0};
 var $interval = 10000;
-var $isItMyPick = "0";
+var $isItMyPick = 0;
 
 // All pages
 $(document).ready(function(){
     playerTable();
+	refreshSidebar();
 	playerLoop();
 	setRetaineeDragAndDrop();
-	refreshWatchlist(15000);
+	refreshWatchlist($interval);
 });
 
 function playerLoop() {
 	setInterval(function(){ 
-		getCurrentPick();
-		refreshWatchlist();
-		refreshDraftList();
-		if ($isItMyPick) {
-			soundRedAlert(); // make background red to alert user
-			addDraftButton();
-		} else {
-			removeRedAlert();
-			removeDraftButton();
-		};
-		refreshMyTeam();
-		refreshComingNext();
+		refreshSidebar();
 		// if dbCurrentPick > currentPick
 		//		update all sidebar widgets
 		// 		check isItMyPick?
@@ -38,6 +28,15 @@ function playerLoop() {
 		}, $interval);
 }
 
+function refreshSidebar(){
+	getCurrentPick();
+	refreshWatchlist();
+	refreshDraftList();
+	refreshMyTeam();
+	refreshComingNext();
+	isItMyPick();
+}
+
 function playerTable(){
     $('#players').dataTable({
         "iDisplayLength": 50,
@@ -46,14 +45,14 @@ function playerTable(){
     });
 }
 
-function soundRedAlert() {
+function addRedAlert() {
 	$("#sidebar").addClass("on-the-clock");
 	$("div#asshead").addClass("on-the-clock");
 }
 
 function removeRedAlert() {
 	$("#sidebar").removeClass("on-the-clock");	
-	$("div#asshead").addClass("on-the-clock");
+	$("div#asshead").removeClass("on-the-clock");
 }
 
 function addDraftButton(){
@@ -67,19 +66,22 @@ function removeDraftButton(){
 function getCurrentPick(){
 	 // sets a Pick object to $currentPick 
 	$.getJSON( '/currentpick', function( json ) {
-		if (json.pick.pick_number > $currentPick.pick_number) { 
 			$currentPick = json.pick;
-			refreshComingNext();
-			isItMyPick();
-		};	
 	});
 }
 
 function isItMyPick() {
 	// returns 1 or 0, which is true or false 
 	x = $.get('/isitmypick', function(data) {
-		$isItMyTurn = data;
-	});	
+		// $isItMyPick = data;
+		if (data == 1) {
+			addRedAlert(); // make background red to alert user
+			addDraftButton();
+		} else {
+			removeRedAlert();
+			removeDraftButton();
+		};
+	});
 }
 
 function setRetaineeDragAndDrop(){
