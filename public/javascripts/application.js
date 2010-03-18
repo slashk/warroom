@@ -3,7 +3,7 @@
 // global variables
 var $currentPick = {"created_at":"2010-03-16T10:26:37-07:00","updated_at":"2010-03-16T10:26:37-07:00","player_id":null,"id":0,"user_id":0,"pick_number":0};
 var $interval = 10000;
-var $isItMyPick = 0;
+// var $isItMyPick = 0;
 
 // All pages
 $(document).ready(function(){
@@ -15,16 +15,9 @@ $(document).ready(function(){
 });
 
 function playerLoop() {
+	// poll every $interval millseconds for new sidebar data
 	setInterval(function(){ 
 		refreshSidebar();
-		// if dbCurrentPick > currentPick
-		//		update all sidebar widgets
-		// 		check isItMyPick?
-		//			redAlert -- make background colors red
-		//			pop alert that you are on clock
-		//			refresh screen
-		//			add + button to each player name
-		// setInterval(function(){ $("#myteam").load("/picks/myteam").highlight() }, $interval);
 		}, $interval);
 }
 
