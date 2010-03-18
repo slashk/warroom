@@ -57,4 +57,19 @@ class RetaineesControllerTest < ActionController::TestCase
 
     assert_redirected_to retainees_path
   end
+  
+  test "should get index without previous teams" do
+    login_as :elan
+    # wipe all previous team data
+    all_players = Player.all
+    all_players.each do |p|
+      p.previousTeam = nil
+      p.save
+    end
+    get :index
+    assert_response :success, @response.body
+    get :edit
+    assert_response :success, @response.body
+  end
+  
 end
