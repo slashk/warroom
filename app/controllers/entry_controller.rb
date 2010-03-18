@@ -16,7 +16,7 @@ class EntryController < ApplicationController
   def update
     @pick = Pick.find_by_pick_number(params[:pick][:pick_number])
 
-    if @pick.update_attributes(params[:pick])
+    if !@pick.nil? && @pick.update_attributes(params[:pick])
       flash[:notice] = 'Player was successfully drafted.'
     else
       flash[:error] = "Player not drafted"

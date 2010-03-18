@@ -61,4 +61,10 @@ class PlayersControllerTest < ActionController::TestCase
     assert_redirected_to players_path
   end
   
+  test "should show not found player when bad player_id" do
+    login_as :commish
+    get :show, :id => "dwfsf"
+    assert_response :success, @response.body
+  end
+  
 end

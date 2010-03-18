@@ -16,7 +16,7 @@ $(document).ready(function(){
 	}
 	setRetaineeDragAndDrop();
 	retaineeTable();
-	findPlayerById();
+	// findPlayerById();
 });
 
 function playerLoop() {

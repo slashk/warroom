@@ -31,5 +31,10 @@ class EntryControllerTest < ActionController::TestCase
     assert_redirected_to :action => "new", :controller => "session"
   end
 
+  test "should not freak out when bad player id entered" do
+    login_as :commish
+    get :update, :pick => {:player_id => "xxa323", :pick_number => picks(:one).pick_number, :user_id => users(:commish)}
+    assert_redirected_to :action => "index"
+  end
 
 end

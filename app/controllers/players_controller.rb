@@ -25,7 +25,11 @@ class PlayersController < ApplicationController
   end
 
   def show
-    @player = Player.find(params[:id])
+    begin
+      @player = Player.find(params[:id])
+    rescue
+      @player = Player.new(:player => "not found", :yahoo_ref => "9999")
+    end
 
     respond_to do |format|
       format.html # show.html.erb
