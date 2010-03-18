@@ -1,3 +1,7 @@
+<script>
+	playerPage = 1;
+</script>
+
 <table width="100%">
   <tr valign="top">
     <td width="75%">
@@ -30,24 +34,3 @@
     <%#= render :partial => "picks/scrolldraft" %>
   </div>
 </div>
-
-<%#= periodically_call_remote :url => {:controller => 'picks', :action => 'myteam'},
-  :update => :myteam,
-  :frequency => 60,
-  :condition => 1,
-  :complete => visual_effect(:highlight, 'myteam')
-%>
-
-<%#= periodically_call_remote :url => {:controller => 'picks', :action => 'inline'},
-  :update => :inline,
-  :frequency => 25,
-  :condition => 1,
-  :complete => visual_effect(:highlight, 'inline')
-%>
-
-<%#= periodically_call_remote :url => {:controller=> 'picks', :action => 'scrolldraft'},
-  :update => :draft_live,
-  :frequency => 30,
-  :condition => 1,
-  :complete => visual_effect(:highlight, 'draft_live')
-%>

@@ -3,15 +3,18 @@
 // global variables
 var $currentPick = {"created_at":"2010-03-16T10:26:37-07:00","updated_at":"2010-03-16T10:26:37-07:00","player_id":null,"id":0,"user_id":0,"pick_number":0};
 var $interval = 10000;
+var playerPage = 0;
 // var $isItMyPick = 0;
 
 // All pages
 $(document).ready(function(){
     playerTable();
-	refreshSidebar();
-	playerLoop();
+	userTable();
+	if (playerPage == 1){
+		refreshSidebar();
+		playerLoop();		
+	}
 	setRetaineeDragAndDrop();
-	refreshWatchlist($interval);
 });
 
 function playerLoop() {
@@ -28,14 +31,6 @@ function refreshSidebar(){
 	refreshMyTeam();
 	refreshComingNext();
 	isItMyPick();
-}
-
-function playerTable(){
-    $('#players').dataTable({
-        "iDisplayLength": 50,
-        "bJQueryUI": true,
-        "sPaginationType": "full_numbers"
-    });
 }
 
 function addRedAlert() {
@@ -144,15 +139,17 @@ function toggleRetaineeButton (element) {
 	}
 }
 
-function dashboard() {
-	// the dashboard is main page
-	// setup event loop 
-	// check for draft change (current draft pick number)
-	// 		if changed, then update everything
-	//				this requires service that spits out current-draft-pick
-	//				warroom.com/pick/current ?
-	// check for watchlist change
-	// 		if changed, then update watchlist
-	//				this requires service that spits out current-watchlist
-	//				this is hard because it's a join, not a object ?
+function playerTable(){
+    $('#players').dataTable({
+        "iDisplayLength": 50,
+        "bJQueryUI": true,
+        "sPaginationType": "full_numbers"
+    });
 }
+
+function userTable(){
+    $('#users').dataTable({
+        "bJQueryUI": true,
+    });
+}
+

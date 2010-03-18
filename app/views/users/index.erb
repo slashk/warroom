@@ -1,27 +1,30 @@
 <h1>Teams</h1>
 
-<table>
-  <tr>
-    <th align="left">Login</th>
-    <th align="left">Email</th>
-    <th align="left">Team Name</th>
-    <th align="left">Role</th>
-    <th align="left">Draft Order</th>
-    <th align="left">Last Login</th>
-    <th></th>
-  </tr>
-
-  <% for user in @teams %>
-    <tr class="ListLine<%= cycle("1", "0") %>">
-      <td align="left"><%=h user.login  %></td>
-      <td align="left"><%=h user.email  %></td>
-      <td align="left"><%=h user.team unless user.team.nil? %></td>
-      <td align="left"><%=h user.role  %></td>
-      <td align="center"><%=h user.draft_order  %></td>
-      <td align="left"><%=h user.updated_at.to_s(:short)  %></td>
-      <td><%= link_to('Edit', :action => 'edit', :id => user.id) if is_admin? %></td>
-    </tr>
-  <% end %>
+<table id="users" width="100%">
+	<thead>
+	  <tr>
+	    <th align="left">Login</th>
+	    <th align="left">Email</th>
+	    <th align="left">Team Name</th>
+	    <th align="left">Role</th>
+	    <th align="left">Draft Order</th>
+	    <th align="left">Last Login</th>
+	    <th></th>
+	  </tr>
+	</thead>
+	<tbody>
+	  <% for user in @teams %>
+	    <tr class="ListLine<%= cycle("1", "0") %>">
+	      <td align="left"><%=h user.login  %></td>
+	      <td align="left"><%=h user.email  %></td>
+	      <td align="left"><%=h user.team unless user.team.nil? %></td>
+	      <td align="left"><%=h user.role  %></td>
+	      <td align="center"><%=h user.draft_order  %></td>
+	      <td align="left"><%=h user.updated_at.to_s(:short)  %></td>
+	      <td><%= link_to('Edit', :action => 'edit', :id => user.id) if is_admin? %></td>
+	    </tr>
+	  <% end %>
+	</tbody>
 </table>
 
 <%=  link_to('New User', :action => 'new') if is_admin? %>
