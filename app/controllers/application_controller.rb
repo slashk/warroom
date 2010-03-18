@@ -49,6 +49,7 @@ class ApplicationController < ActionController::Base
     temp_array.flatten!
     posCount = Hash.new(0) 
     temp_array.each {|x| posCount[x]+=1 } 
+    temp_array.each {|x| posCount['P']+=1 if x.match('P')}
     return posCount
   end
   
