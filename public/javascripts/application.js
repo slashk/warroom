@@ -15,6 +15,7 @@ $(document).ready(function(){
 		playerLoop();		
 	}
 	setRetaineeDragAndDrop();
+	retaineeTable();
 });
 
 function playerLoop() {
@@ -153,3 +154,8 @@ function userTable(){
     });
 }
 
+function retaineeTable(){
+    $('#retaineesTable').dataTable({
+        "bJQueryUI": true,
+    });
+}
