@@ -1,8 +1,8 @@
 <h2>Overall Pick #<%= @pick.pick_number -%> </h2>
 <% form_for(:pick, :url => {:action => 'update'}) do |p| %>
-  <dt>Player</dt><dd><%= p.text_field :player_id , :size => 5 -%></dd>
-  <dt>Team</dt><dd><%= p.collection_select(:user_id, @teams, :id, :team) %></dd>
-  <dt>Pick Number</dt><dd><%= p.text_field :pick_number, :size => 5 -%></dd><br />
+  <p><strong>Player</strong>: <%= p.text_field :player_id , :size => 5 -%></p>
+  <p><strong>Team</strong>: <%= p.collection_select(:user_id, @teams, :id, :team) %></p>
+  <p><strong>Pick Number</strong>: <%= p.text_field :pick_number, :size => 5 -%></p>
   <%= submit_tag "Draft" %>
 <% end %>
 

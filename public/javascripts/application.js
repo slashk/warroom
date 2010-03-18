@@ -16,6 +16,7 @@ $(document).ready(function(){
 	}
 	setRetaineeDragAndDrop();
 	retaineeTable();
+	findPlayerById();
 });
 
 function playerLoop() {
@@ -138,6 +139,11 @@ function toggleRetaineeButton (element) {
 	} else {
 		element.attr("src","/images/delete.png");
 	}
+}
+
+function findPlayerById() {
+	playerId = $("input#pick_player_id")[0].value
+	$("#draftee").load("/player/show/"+playerId).highlight();
 }
 
 function playerTable(){
