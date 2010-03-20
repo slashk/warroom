@@ -12,4 +12,13 @@ class Player < ActiveRecord::Base
   named_scope :bypos, lambda {|pos| {:conditions => ["pos like ?", "%#{pos}%"]}}
   named_scope :batters, {:conditions => ["pos not like ?", "%P%"]}
   named_scope :pitchers, {:conditions => ["pos like ?", "%P%"]}
+  
+  def is_pitcher?
+    self.pos.include? "P"
+  end
+
+  def is_batter?
+    !self.pos.include? "P"
+  end
+  
 end

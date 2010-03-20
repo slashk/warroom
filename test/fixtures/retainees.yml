@@ -1,19 +1,289 @@
 --- 
 retainees_001: 
-  player: players_199
-  user: commish
+  created_at: "2009-03-29 22:09:34"
+  id: "64"
+  player_id: "2277"
+  updated_at: "2009-03-29 22:09:34"
+  user_id: "1"
 retainees_002: 
-  player: players_194
-  user: sharky
+  created_at: "2009-03-29 22:10:42"
+  id: "65"
+  player_id: "2536"
+  updated_at: "2009-03-29 22:10:42"
+  user_id: "1"
 retainees_003: 
-  player: players_193
-  user: spencer
+  created_at: "2009-03-29 22:11:47"
+  id: "67"
+  player_id: "2548"
+  updated_at: "2009-03-29 22:11:47"
+  user_id: "1"
 retainees_004: 
-  player: players_197
-  user: shrek
+  created_at: "2009-03-29 22:11:55"
+  id: "68"
+  player_id: "2552"
+  updated_at: "2009-03-29 22:11:55"
+  user_id: "1"
 retainees_005: 
-  player: players_196
-  user: collins
+  created_at: "2009-03-30 06:09:19"
+  id: "69"
+  player_id: "2279"
+  updated_at: "2009-03-30 06:09:19"
+  user_id: "1"
 retainees_006: 
-  player: players_195
-  user: elan
+  created_at: "2009-03-31 20:22:56"
+  id: "71"
+  player_id: "2282"
+  updated_at: "2009-03-31 20:22:56"
+  user_id: "3"
+retainees_007: 
+  created_at: "2009-03-31 20:22:59"
+  id: "72"
+  player_id: "2287"
+  updated_at: "2009-03-31 20:22:59"
+  user_id: "3"
+retainees_008: 
+  created_at: "2009-03-31 20:23:03"
+  id: "73"
+  player_id: "2545"
+  updated_at: "2009-03-31 20:23:03"
+  user_id: "3"
+retainees_009: 
+  created_at: "2009-03-31 20:23:06"
+  id: "74"
+  player_id: "2558"
+  updated_at: "2009-03-31 20:23:06"
+  user_id: "3"
+retainees_010: 
+  created_at: "2009-04-04 22:00:47"
+  id: "76"
+  player_id: "2259"
+  updated_at: "2009-04-04 22:00:47"
+  user_id: "2"
+retainees_011: 
+  created_at: "2009-04-04 22:00:50"
+  id: "77"
+  player_id: "2534"
+  updated_at: "2009-04-04 22:00:50"
+  user_id: "8"
+retainees_012: 
+  created_at: "2009-04-04 22:00:52"
+  id: "78"
+  player_id: "2271"
+  updated_at: "2009-04-04 22:00:52"
+  user_id: "2"
+retainees_013: 
+  created_at: "2009-04-04 22:00:53"
+  id: "79"
+  player_id: "2266"
+  updated_at: "2009-04-04 22:00:53"
+  user_id: "8"
+retainees_014: 
+  created_at: "2009-04-04 22:00:55"
+  id: "80"
+  player_id: "2264"
+  updated_at: "2009-04-04 22:00:55"
+  user_id: "5"
+retainees_015: 
+  created_at: "2009-04-04 22:00:57"
+  id: "81"
+  player_id: "2299"
+  updated_at: "2009-04-04 22:00:57"
+  user_id: "8"
+retainees_016: 
+  created_at: "2009-04-04 22:00:58"
+  id: "82"
+  player_id: "2261"
+  updated_at: "2009-04-04 22:00:58"
+  user_id: "2"
+retainees_017: 
+  created_at: "2009-04-04 22:00:59"
+  id: "83"
+  player_id: "2267"
+  updated_at: "2009-04-04 22:00:59"
+  user_id: "5"
+retainees_018: 
+  created_at: "2009-04-04 22:01:03"
+  id: "84"
+  player_id: "2286"
+  updated_at: "2009-04-04 22:01:03"
+  user_id: "5"
+retainees_019: 
+  created_at: "2009-04-04 22:01:03"
+  id: "85"
+  player_id: "2546"
+  updated_at: "2009-04-04 22:01:03"
+  user_id: "2"
+retainees_020: 
+  created_at: "2009-04-04 22:01:14"
+  id: "86"
+  player_id: "2575"
+  updated_at: "2009-04-04 22:01:14"
+  user_id: "5"
+retainees_021: 
+  created_at: "2009-04-04 22:01:15"
+  id: "87"
+  player_id: "2547"
+  updated_at: "2009-04-04 22:01:15"
+  user_id: "2"
+retainees_022: 
+  created_at: "2009-04-04 22:01:17"
+  id: "88"
+  player_id: "2567"
+  updated_at: "2009-04-04 22:01:17"
+  user_id: "8"
+retainees_023: 
+  created_at: "2009-04-04 22:01:20"
+  id: "89"
+  player_id: "2561"
+  updated_at: "2009-04-04 22:01:20"
+  user_id: "2"
+retainees_024: 
+  created_at: "2009-04-04 22:01:30"
+  id: "90"
+  player_id: "2311"
+  updated_at: "2009-04-04 22:01:30"
+  user_id: "8"
+retainees_025: 
+  created_at: "2009-04-04 22:01:33"
+  id: "91"
+  player_id: "2262"
+  updated_at: "2009-04-04 22:01:33"
+  user_id: "4"
+retainees_026: 
+  created_at: "2009-04-04 22:01:37"
+  id: "92"
+  player_id: "2274"
+  updated_at: "2009-04-04 22:01:37"
+  user_id: "7"
+retainees_027: 
+  created_at: "2009-04-04 22:01:41"
+  id: "93"
+  player_id: "2272"
+  updated_at: "2009-04-04 22:01:41"
+  user_id: "4"
+retainees_028: 
+  created_at: "2009-04-04 22:01:41"
+  id: "94"
+  player_id: "2265"
+  updated_at: "2009-04-04 22:01:41"
+  user_id: "7"
+retainees_029: 
+  created_at: "2009-04-04 22:01:56"
+  id: "95"
+  player_id: "2550"
+  updated_at: "2009-04-04 22:01:56"
+  user_id: "8"
+retainees_030: 
+  created_at: "2009-04-04 22:02:01"
+  id: "96"
+  player_id: "2544"
+  updated_at: "2009-04-04 22:02:01"
+  user_id: "7"
+retainees_031: 
+  created_at: "2009-04-04 22:02:03"
+  id: "97"
+  player_id: "2762"
+  updated_at: "2009-04-04 22:02:03"
+  user_id: "4"
+retainees_032: 
+  created_at: "2009-04-04 22:02:18"
+  id: "99"
+  player_id: "2572"
+  updated_at: "2009-04-04 22:02:18"
+  user_id: "5"
+retainees_033: 
+  created_at: "2009-04-04 22:02:20"
+  id: "100"
+  player_id: "2269"
+  updated_at: "2009-04-04 22:02:20"
+  user_id: "7"
+retainees_034: 
+  created_at: "2009-04-04 22:02:29"
+  id: "101"
+  player_id: "2556"
+  updated_at: "2009-04-04 22:02:29"
+  user_id: "4"
+retainees_035: 
+  created_at: "2009-04-04 22:02:47"
+  id: "102"
+  player_id: "2273"
+  updated_at: "2009-04-04 22:02:47"
+  user_id: "4"
+retainees_036: 
+  created_at: "2009-04-04 22:03:04"
+  id: "103"
+  player_id: "2578"
+  updated_at: "2009-04-04 22:03:04"
+  user_id: "4"
+retainees_037: 
+  created_at: "2009-04-04 22:04:04"
+  id: "104"
+  player_id: "2729"
+  updated_at: "2009-04-04 22:04:04"
+  user_id: "5"
+retainees_038: 
+  created_at: "2009-04-04 22:16:16"
+  id: "107"
+  player_id: "2337"
+  updated_at: "2009-04-04 22:16:16"
+  user_id: "6"
+retainees_039: 
+  created_at: "2009-04-04 22:16:32"
+  id: "108"
+  player_id: "2335"
+  updated_at: "2009-04-04 22:16:32"
+  user_id: "6"
+retainees_040: 
+  created_at: "2009-04-04 22:16:58"
+  id: "109"
+  player_id: "2564"
+  updated_at: "2009-04-04 22:16:58"
+  user_id: "6"
+retainees_041: 
+  created_at: "2009-04-04 22:17:17"
+  id: "110"
+  player_id: "2276"
+  updated_at: "2009-04-04 22:17:17"
+  user_id: "1"
+retainees_042: 
+  created_at: "2009-04-04 22:17:25"
+  id: "111"
+  player_id: "2593"
+  updated_at: "2009-04-04 22:17:25"
+  user_id: "6"
+retainees_043: 
+  created_at: "2009-04-04 22:18:33"
+  id: "112"
+  player_id: "2565"
+  updated_at: "2009-04-04 22:18:33"
+  user_id: "6"
+retainees_044: 
+  created_at: "2009-04-04 22:22:07"
+  id: "114"
+  player_id: "2275"
+  updated_at: "2009-04-04 22:22:07"
+  user_id: "3"
+retainees_045: 
+  created_at: "2009-04-04 22:23:23"
+  id: "115"
+  player_id: "2583"
+  updated_at: "2009-04-04 22:23:23"
+  user_id: "7"
+retainees_046: 
+  created_at: "2009-04-04 22:23:34"
+  id: "116"
+  player_id: "2602"
+  updated_at: "2009-04-04 22:23:34"
+  user_id: "7"
+retainees_047: 
+  created_at: "2009-04-04 22:23:37"
+  id: "117"
+  player_id: "2590"
+  updated_at: "2009-04-04 22:23:37"
+  user_id: "3"
+retainees_048: 
+  created_at: "2009-04-04 22:36:05"
+  id: "118"
+  player_id: "2303"
+  updated_at: "2009-04-04 22:36:05"
+  user_id: "6"
