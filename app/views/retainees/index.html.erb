@@ -3,7 +3,7 @@
 	<table width="100%" cellpadding=0 cellspacing=0 id="retaineesTable">
 	<thead>
 	  <tr>
-	    <th>Team</th>
+	    <th>Franchise</th>
 	    <th>Player</th>
 	    <th align="center">Pos</th>		
 		<th align="center">Team</th>
@@ -15,8 +15,8 @@
 		  <tr>
 		    <td><%=h retainee.user.team %></td>
 		    <td><%=h retainee.player.player %></td>
-			<td align="center"><%= retainee.player.team %></td>
-		    <td align="center"><%=h retainee.player.pos %></td>
+			<td align="center"><%= retainee.player.pos %></td>
+		    <td align="center"><%=h retainee.player.team %></td>
 		  </tr>
 		<% end %>
 	<% end %>
