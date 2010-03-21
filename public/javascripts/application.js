@@ -149,7 +149,27 @@ function playerTable(){
     $('#players').dataTable({
         "iDisplayLength": 50,
         "bJQueryUI": true,
-        "sPaginationType": "full_numbers"
+        "sPaginationType": "full_numbers",
+		"aoColumns": [
+			{ "asSorting": [ "asc", "desc" ] }, // id
+			{ "asSorting": [ "asc", "desc" ], "sType": "html" }, // name
+			{ "asSorting": [ "desc", "asc" ] }, // watch
+			{ "asSorting": [ "desc", "asc" ] }, // pos
+			{ "asSorting": [ "asc", "desc" ] }, // team
+			{ "asSorting": [ "asc", "desc" ] }, // rank
+			{ "asSorting": [ "asc", "desc" ] }, // orank
+			{ "asSorting": [ "desc", "asc" ] }, // R
+			{ "asSorting": [ "desc", "asc" ] }, // HR
+			{ "asSorting": [ "desc", "asc" ] }, // RBI
+			{ "asSorting": [ "desc", "asc" ] }, // SB
+			{ "asSorting": [ "desc", "asc" ] }, // AVG
+			{ "asSorting": [ "desc", "asc" ] }, // IP
+			{ "asSorting": [ "desc", "asc" ] }, // W
+			{ "asSorting": [ "desc", "asc" ] }, // SV
+			{ "asSorting": [ "desc", "asc" ] }, // K
+			{ "asSorting": [ "asc", "desc" ] }, // ERA
+			{ "asSorting": [ "asc", "desc" ] } // WHIP
+		]
     });
 }
 
