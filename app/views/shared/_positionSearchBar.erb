@@ -13,7 +13,7 @@ Show by position:
   :url => {:action => 'searchbypos', :fieldPosition => "PITCHERS"},
   :update => "search_hits",
   :complete => "playerTable();"  %>
-<%= link_to_remote 'Flagged',
+<%= link_to_remote 'Watched',
   :url => {:action => 'searchbywatchlist'},
   :update => "search_hits",
   :success => "playerTable();"  %>
