@@ -155,7 +155,7 @@ function playerTable(){
 }
 
 function userTable(){
-    $('#users').dataTable({
+    $('#usersTable').dataTable({
         "bJQueryUI": true,
     });
 }
