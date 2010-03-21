@@ -2,19 +2,18 @@
 
 // global variables
 var $currentPick = {"created_at":"2010-03-16T10:26:37-07:00","updated_at":"2010-03-16T10:26:37-07:00","player_id":null,"id":0,"user_id":0,"pick_number":0};
-var $interval = 10000;
+var $interval = 30000; // thirty second updates
 var playerPage = 0;
-// var $isItMyPick = 0;
 
 // All pages
 $(document).ready(function(){
-    playerTable();
-	userTable();
-	pickTable();
 	if (playerPage == 1){
+	    playerTable();
 		refreshSidebar();
 		playerLoop();		
 	}
+	userTable();
+	pickTable();
 	setRetaineeDragAndDrop();
 	retaineeTable();
 });
@@ -32,12 +31,12 @@ function refreshSidebar(){
 	refreshDraftList();
 	refreshMyTeam();
 	refreshComingNext();
-	isItMyPick();
+	isItMyPick(); // find my pick last so that watchlist is repop'd
 }
 
 function addRedAlert() {
 	$("#sidebar").addClass("on-the-clock");
-	$("div#asshead").addClass("on-the-clock");
+	$("div#asshead").addClass("on-the-clock"); // shouldn't need div
 }
 
 function removeRedAlert() {
@@ -46,10 +45,15 @@ function removeRedAlert() {
 }
 
 function addDraftButton(){
-	
+	// add "draft me" button to watchlist players
 }
 
 function removeDraftButton(){
+	// remove the "draft me" button to watchlist players
+	
+}
+
+function draft() {
 	
 }
 
@@ -105,7 +109,7 @@ function setRetaineeDragAndDrop(){
 }
 
 function refreshWatchlist() {
-	$("#watchlist").load("/watchlist/show/"+$.cookie("auth_token")).highlight();
+	$("#watchlist").load("/watchlist/show/").highlight();
 }
 
 function refreshMyTeam() {
