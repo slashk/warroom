@@ -15,13 +15,14 @@ class PicksControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  # test "should create pick" do
-  #   assert_difference('Pick.count') do
-  #     post :create, :pick => {  }
-  #   end
-  # 
-  #   assert_redirected_to pick_path(assigns(:pick))
-  # end
+  test "should create pick" do
+    login_as :commish
+    assert_difference('Pick.count') do
+      post :create, :pick => { :pick_number => 188, :user_id => users(:commish).id  }
+    end
+  
+    assert_redirected_to pick_path(assigns(:pick))
+  end
 
   test "should show pick" do
     login_as :commish
@@ -72,7 +73,7 @@ class PicksControllerTest < ActionController::TestCase
   end
   
   test "should get is_it_my_pick" do
-    login_as :commish
+    login_as :elan
     get :is_it_my_pick
     assert_response :success, @response.body
   end
