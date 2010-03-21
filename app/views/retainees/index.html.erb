@@ -1,5 +1,6 @@
 <h1>All Retainees</h1>
-<table width="100%" id="retaineesTable">
+<div style="padding:1em;">
+	<table width="100%" id="retaineesTable">
 	<thead>
 	  <tr>
 	    <th>Team</th>
@@ -23,7 +24,7 @@
 	<% end %>
 	</tbody>
 </table>
-
+</div>
 <br />
 
 <h3 class="fg-warroom-button ui-state-default ui-priority-secondary ui-corner-all" style="margin-top:5px;"><%= link_to 'Set Your Retainees', :action => 'edit', :id => current_user %></h3>	

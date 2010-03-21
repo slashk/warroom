@@ -2,7 +2,11 @@
 module ApplicationHelper
 
   def draft_started?
-    Pick.count > 0
+    Pick.count > 0 && Pick.taken.size > 0
+  end
+
+  def draft_over?
+    Pick.taken.count >= Pick.count
   end
 
   def is_admin?

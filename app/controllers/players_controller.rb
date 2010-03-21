@@ -8,17 +8,6 @@ class PlayersController < ApplicationController
       @teams = User.draftorder
       @watched = Watchlist.find_all_by_user_id(current_user, :conditions => ["player_id in (?)", playerslist])
       @watchlist = compile_watchlist(current_user)
-      # draft results
-      # @picks = Pick.picks_taken_limited(15)
-      # Pick order
-      # current_pick = find_current_pick
-      # @upcoming = Pick.find(:all, :conditions => "pick_number >= #{current_pick.pick_number}",
-      #   :order => "pick_number asc", :limit => 10, :include => :user )
-      # @last_pick_time =  draft_started? ? find_last_pick_time : Time.now
-      # my team
-      # mypicks = Pick.find_all_by_user_id(current_user.id, :include => :player)
-      # myplayers = mypicks.map {|x| x.player}
-      # @myTeamCount = countPlayers(myplayers.compact!)
     else
       redirect_to :controller => "admin"
     end

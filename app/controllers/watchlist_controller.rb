@@ -1,4 +1,5 @@
 class WatchlistController < ApplicationController
+  # before_filter :login_required
 
   def index
   end
@@ -7,7 +8,6 @@ class WatchlistController < ApplicationController
   end
   
   def show
-    # current_user = User.find_by_remember_token(params[:id])
     players = Player.undrafted.byrank
     unless players.nil?
       playerslist = players.map {|x| x.id}

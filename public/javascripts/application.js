@@ -10,13 +10,13 @@ var playerPage = 0;
 $(document).ready(function(){
     playerTable();
 	userTable();
+	pickTable();
 	if (playerPage == 1){
 		refreshSidebar();
 		playerLoop();		
 	}
 	setRetaineeDragAndDrop();
 	retaineeTable();
-	// findPlayerById();
 });
 
 function playerLoop() {
@@ -162,6 +162,22 @@ function userTable(){
 
 function retaineeTable(){
     $('#retaineesTable').dataTable({
+        "iDisplayLength": 100,
         "bJQueryUI": true,
+    });
+}
+
+function pickTable(){
+    $('#picksTable').dataTable({
+        "bJQueryUI": true,
+        "iDisplayLength": 100,
+		"aaSorting": [[0,'desc']],
+		"aoColumns": [ 
+			{ "sType": "numeric" },
+			{ "sType": "string" },
+			{ "sType": "string" },
+			{ "sType": "string" },
+		],
+		"sPaginationType": "full_numbers"
     });
 }

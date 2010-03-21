@@ -3,12 +3,7 @@ class PicksController < ApplicationController
   
 
   def index
-    @picks = Pick.picks_taken
-    unless @picks.empty?
-      current_pick = find_current_pick
-      @upcoming = Pick.upcoming_picks(current_pick.pick_number)
-      @last_pick_time = find_last_pick_time
-    end
+    @picks = Pick.taken
   end
 
   def show
@@ -65,25 +60,33 @@ class PicksController < ApplicationController
   end
 
   def is_it_my_pick
-    res = Pick.current_pick.first.user_id == current_user.id ? 1 : 0
+    unless Pick.current.first.nil?
+      res = Pick.current.first.user_id == current_user ? 1 : 0
+    else
+      res = 0
+    end
     render :text => res #, :status => 200
   end
 
   def scrolldraft
-    @picks = Pick.picks_taken_limited(15)
+    @picks = Pick.taken_limited(15)
     render :partial => "scrolldraft"
   end
 
   def scrollteam
-    current_pick = find_current_pick
-    @upcoming = Pick.upcoming_picks(current_pick.pick_number)
-    @last_pick_time =  draft_started? ? find_last_pick_time : Time.now
-    render :partial => "scrollteam"
+    if draft_started? && !draft_over?
+      current_pick = find_current_pick
+      @upcoming = Pick.remaining(current_pick.pick_number)
+      @last_pick_time =  draft_started? ? find_last_pick_time : Time.now
+      render :partial => "scrollteam"
+    else
+      render :text => ""
+    end
   end
 
   def inline
     current_pick = find_current_pick
-    @upcoming = Pick.upcoming_picks(current_pick.pick_number)
+    @upcoming = Pick.remaining(current_pick.pick_number)
     @last_pick_time =  draft_started? ? find_last_pick_time : Time.now
     render :partial => "inline"
   end
@@ -108,7 +111,7 @@ class PicksController < ApplicationController
 
   def ticker
     unless draft_over?
-      @pick = Pick.picks_taken.first
+      @pick = Pick.taken.first
       @next_pick = find_current_pick
       @team = @next_pick.user.team
       render :partial => "ticker"

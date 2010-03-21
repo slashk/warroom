@@ -1,6 +1,6 @@
 <h2>Draft Order</h2>
 
-<% unless @upcoming.nil? %>
+<% unless draft_over? %>
   <% for pick in @upcoming %>
     <%= "#{pick.pick_number} . #{pick.user.team}"  %><br />
   <% end %>
@@ -9,4 +9,6 @@
   <% unless @upcoming.size == 1 %>
     <p><%= @upcoming[1].user.team %> on deck</p>
   <% end %>
+<% else %>
+	<p>Draft is over</p>
 <% end %>

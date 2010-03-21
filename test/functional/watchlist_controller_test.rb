@@ -1,8 +1,11 @@
 require 'test_helper'
 
 class WatchlistControllerTest < ActionController::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+
+  test "make sure watchlist>show returns successfully" do
+    login_as :elan
+    get :show
+    assert_response :success, @response.body
   end
+
 end

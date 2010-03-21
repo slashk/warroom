@@ -1,23 +1,31 @@
-<img alt="spinner" id="spinner" src="/images/ajax-loader.gif" style="display:none;" />
+<div id="draft" style="padding:1em;">
+	<table width="100%" cellpadding=0 cellspacing=0 id="picksTable" >
+	  <thead>
+	    <tr>
+	      <th align="left" >Number</th>
+	      <th align="left" >Player</th>
+	      <th align="center" class="noedit">Pos</th>
+	      <th align="center" class="noedit">Team</th>
+	    </tr>
+	  </thead>
 
-<%= periodically_call_remote :url => {:action => 'scrolldraft'},
-  :update => :draft_live,
-  :frequency => 20,
-  :condition => 1,
-  :complete => visual_effect(:highlight, 'draft_live')
-%> 
-
-<%= periodically_call_remote :url => {:action => 'scrollteam'},
-  :update => :draftorder,
-  :frequency => 15,
-  :condition => 1,
-  :complete => visual_effect(:highlight, 'draftorder')
-%>
-
-<div id="draftorder">
-  <%= render :partial => "scrollteam" %>
-</div>
-
-<div id="draft_live">
-  <%= render :partial => "scrolldraft" %>
+	  <tbody>
+	    <% unless @picks.nil? %>
+	      <% for pick in @picks %>
+	        <tr id="player-<%= pick.pick_number  %>">
+	          <td align="left">
+				<%= pick.pick_number -%>
+	          </td>
+	          <td align="left">
+	            <a href="http://sports.yahoo.com/mlb/players/<%=h pick.player.yahoo_ref %>" target="_blank">
+	              <%=h pick.player.player  %>
+	            </a>
+	          </td>
+	          <td align="center"><%=h pick.player.pos  %></td>
+	          <td align="center"><%=h pick.user.team  %></td>
+	        </tr>
+	      <% end %>
+	    <% end %>
+	  </tbody>
+	</table>
 </div>

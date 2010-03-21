@@ -70,5 +70,11 @@ class PicksControllerTest < ActionController::TestCase
   test "should return zero if draft has not started" do
     # no login needed
   end
+  
+  test "should get is_it_my_pick" do
+    login_as :commish
+    get :is_it_my_pick
+    assert_response :success, @response.body
+  end
     
 end
