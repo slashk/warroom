@@ -12,8 +12,10 @@
 <p><label for="team">Team Name</label><br/>
 <%= f.text_field :team %></p>
 
-<p><label for="draft_order">Draft Order</label><br/>
-<%= f.text_field :draft_order %></p>
+<% if is_admin? %>
+	<p><label for="draft_order">Draft Order</label><br/>
+	<%= f.text_field :draft_order %></p>
+<% end %>
 
 <p><label for="role">Role</label><br/>
 <%= f.text_field :role %></p>
