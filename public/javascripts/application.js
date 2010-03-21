@@ -177,6 +177,7 @@ function pickTable(){
 			{ "sType": "string" },
 			{ "sType": "string" },
 			{ "sType": "string" },
+			{ "sType": "string" },
 		],
 		"sPaginationType": "full_numbers"
     });

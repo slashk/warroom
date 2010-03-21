@@ -4,8 +4,9 @@
 	    <tr>
 	      <th align="left" >Number</th>
 	      <th align="left" >Player</th>
-	      <th align="center" class="noedit">Pos</th>
-	      <th align="center" class="noedit">Team</th>
+	      <th align="center">Pos</th>
+		  <th align="center">Franchise</th>
+	      <th align="center">Team</th>
 	    </tr>
 	  </thead>
 
@@ -22,6 +23,7 @@
 	            </a>
 	          </td>
 	          <td align="center"><%=h pick.player.pos  %></td>
+	          <td align="center"><%=h pick.player.team  %></td>
 	          <td align="center"><%=h pick.user.team  %></td>
 	        </tr>
 	      <% end %>
