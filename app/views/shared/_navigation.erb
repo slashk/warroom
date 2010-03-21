@@ -8,7 +8,7 @@
       <td style="text-align:left;">
         <div id="update_cell"></div>
       </td>
-      <td style="text-align:right;">
+      <td style="text-align:right;padding-right:1em;">
         <% if logged_in? %>
           <%= "Welcome #{current_user.login} [#{current_user.role}] !" %>
           [<%= link_to "logout", :controller=>'session', :action => 'destroy', :id => current_user %>]<br />
