@@ -2,8 +2,8 @@ class RetaineesController < ApplicationController
   before_filter :login_required
 
   def index
-    @retainees = Retainee.find(:all, :order => :user_id, :include => [:player, :user])
-    @user = User.find(current_user)
+    @retainees = Retainee.all(:include => [:player, :user])
+    @mine = Retainee.mine(current_user.id).count
   end
 
   def show
@@ -62,20 +62,28 @@ class RetaineesController < ApplicationController
       if @retainee.save
         @players = Player.find(params[:id])
         returnMessage = "OK"
-        status = 200
+        status = 201
       else
         returnMessage = "ERROR"
         status = 404
       end
-    end
+    else
+      returnMessage = "ERROR"
+      status = 405
+    end    
     render :text => returnMessage, :status => status
   end
 
   def remove_player_from_retainee_list
     @retainee = Retainee.find_by_player_id(params[:id])
-    @retainee.destroy
-    @id = params[:id]
-    render :nothing => true
+    if @retainee.destroy
+      returnMessage = "OK"
+      status = 201
+    else
+      returnMessage = "ERROR"
+      status = 500
+    end
+    render :text => returnMessage, :status => status    
   end
   
   def retained_players

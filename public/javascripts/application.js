@@ -98,7 +98,6 @@ function setRetaineeDragAndDrop(){
 		var $element = $(this);
 		var $playerId = getPlayerId($element.attr("id"));
 		$.get("/retainees/add_player_to_retainee_list/"+$playerId, function (textStatus){
-			alert(textStatus);
 			refreshMyRetaineeList();
 			toggleRetaineeButton($element);
 		});

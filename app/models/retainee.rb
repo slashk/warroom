@@ -5,4 +5,7 @@ class Retainee < ActiveRecord::Base
   validates_uniqueness_of :player_id, :message => "has already been retained"
   validates_numericality_of :player_id
   validates_numericality_of :user_id
+  
+  named_scope :mine, lambda {|user| {:conditions => {:user_id => user}}}
+  
 end
