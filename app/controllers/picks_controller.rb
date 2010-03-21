@@ -59,8 +59,8 @@ class PicksController < ApplicationController
   end
 
   def is_it_my_pick
-    unless Pick.current.first.nil?
-      res = Pick.current.first.user_id == current_user ? 1 : 0
+    unless Pick.current.empty?
+      res = Pick.current.first.user_id == current_user.id ? 1 : 0
     else
       res = 0
     end

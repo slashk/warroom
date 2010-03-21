@@ -77,5 +77,21 @@ class PicksControllerTest < ActionController::TestCase
     get :is_it_my_pick
     assert_response :success, @response.body
   end
-    
+
+  test "should be true when is_it_my_pick" do
+    Pick.create(:user_id => users(:commish).id, :pick_number => Pick.count+1)
+    login_as :commish
+    get :is_it_my_pick
+    assert_response :success, @response.body
+    assert_equal("1", @response.body)
+  end
+
+  test "should be false when not is_it_my_pick" do
+    Pick.create(:user_id => users(:commish).id, :pick_number => Pick.count+1)
+    login_as :elan
+    get :is_it_my_pick
+    assert_response :success, @response.body
+    assert_equal("0", @response.body)
+  end
+
 end
