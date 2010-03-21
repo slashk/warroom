@@ -1,1 +1,3 @@
-<%= watchlist.player.player %> (<%= watchlist.player.pos %>)<br>
+<% unless @watchlist.nil? -%>
+	<%= watchlist.player.player %> (<%= watchlist.player.pos %>)<br>
+<% end %>

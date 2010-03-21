@@ -8,21 +8,21 @@ class WatchlistController < ApplicationController
   end
   
   def show
-    players = Player.undrafted.byrank
-    unless players.nil?
-      playerslist = players.map {|x| x.id}
-      @watchlist = Watchlist.find_all_by_user_id(current_user, :conditions => ["player_id in (?)", playerslist])
-      render :partial => "watchlist", :collection => @watchlist 
-    end
+    @watchlist = Watchlist.mine(current_user.id)
+    render :partial => "watchlist", :collection => @watchlist
   end
   
   def edit
   end
   
   def create
+    @subject = Watchlist.new(:player_id => params[:id], :user_id => current_user.id)
+    @subject.save
   end
   
   def destroy
+    @subject = Watchlist.find_by_player_id(params[:id])
+    @subject.destroy
   end
 
 end
