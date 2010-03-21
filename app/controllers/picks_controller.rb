@@ -1,7 +1,6 @@
 class PicksController < ApplicationController
-  before_filter :login_required, :except => [:current_pick]
+  before_filter :login_required, :except => :current_pick
   
-
   def index
     @picks = Pick.taken
   end
@@ -47,7 +46,7 @@ class PicksController < ApplicationController
   end
 
   def current_pick
-    current_pick = Pick.current_pick.first
+    current_pick = Pick.current.first
     respond_to do |wants|
       wants.js {
         unless current_pick.nil? 
@@ -76,7 +75,7 @@ class PicksController < ApplicationController
   def scrollteam
     if draft_started? && !draft_over?
       current_pick = find_current_pick
-      @upcoming = Pick.remaining(current_pick.pick_number)
+      @upcoming = Pick.remaining(:limit => 10)
       @last_pick_time =  draft_started? ? find_last_pick_time : Time.now
       render :partial => "scrollteam"
     else
@@ -85,10 +84,14 @@ class PicksController < ApplicationController
   end
 
   def inline
-    current_pick = find_current_pick
-    @upcoming = Pick.remaining(current_pick.pick_number)
-    @last_pick_time =  draft_started? ? find_last_pick_time : Time.now
-    render :partial => "inline"
+    current_pick = Pick.current
+    if current_pick.empty?
+      render :text => "draft is over"
+    else
+      @upcoming = Pick.remaining(:limit => 10)
+      @last_pick_time =  draft_started? ? find_last_pick_time : Time.now
+      render :partial => "inline"
+    end
   end
 
   def myteam
