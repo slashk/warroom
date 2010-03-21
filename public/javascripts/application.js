@@ -95,7 +95,25 @@ function setRetaineeDragAndDrop(){
         "bJQueryUI": true,
 		"aaSorting": [[3,'asc']],
 		"bPaginate": false,
-		
+		"aoColumns": [
+			{ "asSorting": [ "asc", "desc" ], "sType": "html" }, // name
+			{ "asSorting": [ "asc", "desc" ] }, // pos
+			{ "asSorting": [ "asc", "desc" ] }, // team
+			{ "asSorting": [ "asc", "desc" ] }, // rank
+			{ "asSorting": [ "asc", "desc" ] }, // orank
+			{ "asSorting": [ "desc", "asc" ] }, // R
+			{ "asSorting": [ "desc", "asc" ] }, // HR
+			{ "asSorting": [ "desc", "asc" ] }, // RBI
+			{ "asSorting": [ "desc", "asc" ] }, // SB
+			{ "asSorting": [ "desc", "asc" ] }, // AVG
+			{ "asSorting": [ "desc", "asc" ] }, // IP
+			{ "asSorting": [ "desc", "asc" ] }, // W
+			{ "asSorting": [ "desc", "asc" ] }, // SV
+			{ "asSorting": [ "desc", "asc" ] }, // K
+			{ "asSorting": [ "asc", "desc" ] }, // ERA
+			{ "asSorting": [ "asc", "desc" ] }, // WHIP
+			{ "asSorting": [ "asc", "desc" ] } // button
+		]
     });
 	// add handler to retainButtons
 	$(".addRetaineeButton").livequery('click', function (event) {
@@ -186,7 +204,7 @@ function userTable(){
 function retaineeTable(){
     $('#retaineesTable').dataTable({
         "iDisplayLength": 100,
-        "bJQueryUI": true,
+        "bJQueryUI": true
     });
 }
 
@@ -197,7 +215,7 @@ function pickTable(){
 		"aaSorting": [[0,'desc']],
 		"aoColumns": [ 
 			{ "sType": "numeric" },
-			{ "sType": "string" },
+			{ "sType": "html" },
 			{ "sType": "string" },
 			{ "sType": "string" },
 			{ "sType": "string" },
