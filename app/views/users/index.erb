@@ -1,6 +1,6 @@
 <h1>Teams</h1>
-
-<table id="users" width="100%">
+<div style="padding:1em;">
+<table id="usersTable" width="100%" cellpadding=0 cellspacing=0>
 	<thead>
 	  <tr>
 	    <th align="left">Login</th>
@@ -26,5 +26,5 @@
 	  <% end %>
 	</tbody>
 </table>
-
+</div>
 <h3 class="fg-warroom-button ui-state-default ui-priority-secondary ui-corner-all" style="margin-top:5px;"><%=  link_to('New Team', :action => 'new') if is_admin? %></h3>	
