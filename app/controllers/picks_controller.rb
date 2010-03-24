@@ -99,15 +99,6 @@ class PicksController < ApplicationController
     mypicks = Pick.find_all_by_user_id(current_user, :include => :player) 
     unless mypicks.nil?
       @myTeamCount = countPlayers(mypicks.map{|x| x.player}.compact)
-      # @SS = myTeamCount['SS']
-      # @B1 = myTeamCount['1B']
-      # @B2 = myTeamCount['2B']
-      # @B3 = myTeamCount['3B']
-      # @OF = myTeamCount['OF']
-      # @SP = myTeamCount['SP']
-      # @RP = myTeamCount['RP']
-      # @C = myTeamCount['C']
-      # @P = myTeamCount['P']
     end
     render :partial => "myteam"
   end
