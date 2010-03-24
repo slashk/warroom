@@ -93,5 +93,42 @@ class PicksControllerTest < ActionController::TestCase
     assert_response :success, @response.body
     assert_equal("0", @response.body)
   end
+  
+  test "should get scrolldraft" do
+    login_as :elan
+    get :scrolldraft
+    assert_response :success, @response.body
+  end
 
+  test "should get scrollteam" do
+    login_as :elan
+    get :scrollteam
+    assert_response :success, @response.body
+  end
+  
+  test "should get inline" do
+    login_as :elan
+    get :inline
+    assert_response :success, @response.body
+  end
+
+  test "should get myteam" do
+    login_as :elan
+    get :myteam
+    assert_response :success, @response.body
+  end
+  
+  test "should get ticker" do
+    login_as :elan
+    get :ticker
+    assert_response :success, @response.body
+  end
+  
+  # test "should get current_pick" do
+  #     login_as :elan
+  #     get :current_pick, :format => 'json'
+  #     assert_response :success, @response.body
+  #   end
+  
+  
 end

@@ -1,8 +1,10 @@
 require 'test_helper'
 
 class RetaineeTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+
+  test "should mine named_scope work" do
+    # commish has six retainees
+    assert_equal(6, Retainee.mine(users(:commish).id).count)
   end
+
 end
