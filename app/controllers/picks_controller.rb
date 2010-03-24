@@ -113,5 +113,18 @@ class PicksController < ApplicationController
       render :text => "Draft Finished!"
     end
   end
+  
+  def draft
+    if !Pick.current.empty? && current_user.id == Pick.current.first.user_id
+      @pick = Pick.current.first
+      @pick.player_id = params[:player_id]
+      
+      if @pick.save
+        render :text => "OK", :status => 200
+      else
+        render :text => "Bad", :status => 500
+      end
+    end
+  end
 
 end

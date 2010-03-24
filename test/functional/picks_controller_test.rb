@@ -130,5 +130,37 @@ class PicksControllerTest < ActionController::TestCase
   #     assert_response :success, @response.body
   #   end
   
+  test "should draft player" do
+    # create new pick as draft (fixtures) are over
+    assert_difference "Pick.count", 1 do
+      Pick.create(:pick_number => Pick.count+1, :user_id => users(:elan).id)      
+    end
+    login_as :elan
+    assert_difference "Player.undrafted.count", -1 do
+      post :draft, :player_id => Player.undrafted.last.id, :format => :json
+    end
+    assert_response :success, @response.body
+  end
+
+  test "should not draft player when its not our turn" do
+    # create new pick as draft (fixtures) are over
+    assert_difference "Pick.count", 1 do
+      Pick.create(:pick_number => Pick.count+1, :user_id => users(:elan).id)      
+    end
+    login_as :commish
+    assert_no_difference "Player.undrafted.count" do
+      post :draft, :player_id => Player.undrafted.last.id, :format => :json
+    end
+    assert_response :success, @response.body
+  end
+
+  test "should not draft player when draft is over" do
+    # create new pick as draft (fixtures) are over
+    login_as :commish
+    assert_no_difference "Player.undrafted.count" do
+      post :draft, :player_id => Player.undrafted.last.id, :format => :json
+    end
+    assert_response :success, @response.body # is this really true ?
+  end
   
 end

@@ -1,3 +1,7 @@
 <% unless @watchlist.nil? -%>
-	<%= watchlist.player.player %> (<%= watchlist.player.pos %>)<br>
+	<% if @my_pick %>
+		<span class="watchlistPlayer"><%= watchlist.player.player %> (<%= watchlist.player.pos %>)<%= image_tag "user_add.png", :size => "16x16", :id => watchlist.player.id, :class => "watchlistPlayerIcon" %></span><br>
+	<% else %>
+		<span><%= watchlist.player.player %> (<%= watchlist.player.pos %>)</span><br>
+	<% end %>
 <% end %>

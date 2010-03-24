@@ -9,6 +9,12 @@ class WatchlistController < ApplicationController
   
   def show
     @watchlist = Watchlist.mine(current_user.id)
+    # find if it is your pick
+    unless Pick.current.empty?
+      @my_pick = (Pick.current.first.user_id == current_user.id) ? true : false
+    else
+      @mypick = false
+    end
     render :partial => "watchlist", :collection => @watchlist
   end
   

@@ -2,7 +2,7 @@
 
 // global variables
 var $currentPick = {"created_at":"2010-03-16T10:26:37-07:00","updated_at":"2010-03-16T10:26:37-07:00","player_id":null,"id":0,"user_id":0,"pick_number":0};
-var $interval = 30000; // thirty second updates
+var $interval = 10000; // thirty second updates
 var playerPage = 0;
 
 // All pages
@@ -45,7 +45,18 @@ function removeRedAlert() {
 }
 
 function addDraftButton(){
-	// add "draft me" button to watchlist players
+	// add click handler to draft players
+	// $possibleDraftees = $(".watchlistPlayer");
+	$(".watchlistPlayerIcon").livequery('click', function() { 
+			// var $element = $(this);
+			// 			alert($element);
+			var $playerId = $(this).attr("id");
+	        $.post("/draft/", { player_id: $playerId }, function (textStatus){
+				// refresh everything
+				// alert("Player $playerId drafted");
+				refreshSidebar();
+			});
+	    });
 }
 
 function removeDraftButton(){
