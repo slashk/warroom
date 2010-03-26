@@ -2,12 +2,10 @@
 
 <% form_for(@pick) do |f| %>
   <%= f.error_messages %>
-
   <p><strong>Player</strong>: <%= f.text_field :player_id , :size => 5 -%></p>
   <p><strong>Team</strong>: <%= f.collection_select(:user_id, @teams, :id, :team) %></p>
   <p><strong>Pick Number</strong>: <%= f.text_field :pick_number, :size => 5 -%></p>
-
-   <%= f.submit "Update" %>
+  <%= f.submit "Update" %>
 <% end %>
 
 <%= link_to 'Show', @pick %> |
