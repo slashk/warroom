@@ -17,20 +17,16 @@
 </div>
 
 <div id="sidebar" class="one-third">
+
 	<h3 class="fg-warroom-button ui-state-default ui-priority-secondary ui-corner-all" style="margin-top:5px;">Upcoming Picks</h3>	
-  <div id="inline">
-    <%#= render :partial => "picks/inline" %>
-  </div>
+  <div id="inline" class="sidebarWidget"></div>
+
 	<h3 class="fg-warroom-button ui-state-default ui-priority-secondary ui-corner-all" style="margin-top:5px;">My Team</h3>	
-  <div id="myteam">
-    <%#= render :partial => "picks/myteam", :locals => {:myteam => @myTeamCount} %>
-  </div>
+  <div id="myteam" class="sidebarWidget"></div>
+
 	<h3 class="fg-warroom-button ui-state-default ui-priority-secondary ui-corner-all" style="margin-top:5px;">Watchlist</h3>	
-  <div id="watchlist">
-    <%#= render :partial => "watchlist/watchlist", :collection => @watched %>
-  </div>
+  <div id="watchlist" class="sidebarWidget"></div>
+
 	<h3 class="fg-warroom-button ui-state-default ui-priority-secondary ui-corner-all" style="margin-top:5px;">Draft Results</h3>	
-  <div id="draft_live">
-    <%#= render :partial => "picks/scrolldraft" %>
-  </div>
+  <div id="draft_live" class="sidebarWidget"></div>
 </div>
