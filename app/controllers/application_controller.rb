@@ -50,6 +50,7 @@ class ApplicationController < ActionController::Base
     posCount = Hash.new(0) 
     temp_array.each {|x| posCount[x]+=1 } 
     temp_array.each {|x| posCount['P']+=1 if x.include? "P"}
+    posCount['Total'] = players.size
     return posCount
   end
   
