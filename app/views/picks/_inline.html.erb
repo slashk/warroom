@@ -1,10 +1,6 @@
-<% unless @upcoming.empty? %>
-  <% for pick in @upcoming %>
-    <%= "#{pick.pick_number} . #{pick.user.team}"  %><br />
-  <% end %>
-  <p><span style="background-color: red; color: white;"><%= @upcoming[0].user.team %></span>
-  on the clock for <%= time_ago_in_words(@last_pick_time, true) if @last_pick_time %></p>
-  <% unless @upcoming.size == 1 %>
-    <p><%= @upcoming[1].user.team %> on deck</p>
-  <% end %>
-<% end %>
+<% unless @upcoming.empty? -%>
+  <% for pick in @upcoming -%>
+    <%= "#{pick.pick_number} . #{pick.user.team}" %>
+	<%= "(" + time_ago_in_words(@last_pick_time, true) + ")" if @last_pick_time && pick == @upcoming[0] %><br />
+  <% end -%>
+<% end -%>
