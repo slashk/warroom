@@ -1,13 +1,13 @@
 <table width="100%" cellpadding=0 cellspacing=0 id="players" >
   <thead>
     <tr>
-      <th align="left" >ID</th>
       <th align="left" >Player</th>
       <th align="center" class="noedit nosort">Watch</th>
       <th align="center" class="noedit">Pos</th>
       <th align="center" class="noedit">Team</th>
       <th align="center" class="noedit">Rank</th>
       <th align="center" class="noedit">O-Rank</th>
+      <th align="center" class="noedit">Depth</th>
       <th align="right" class="noedit">R</th>
       <th align="right" class="noedit">HR</th>
       <th align="right" class="noedit">RBI</th>
@@ -27,10 +27,6 @@
       <% for player in @players %>
         <tr id="player-<%= player.id  %>">
           <td align="left">
-            <%#= is_admin? ? link_to(player.id, :action => 'edit', :id => player.id) :  player.id %>
-			<%= player.id -%>
-          </td>
-          <td align="left">
             <a href="http://sports.yahoo.com/mlb/players/<%=h player.yahoo_ref %>" target="_blank">
               <%=h player.player  %>
             </a>
@@ -46,6 +42,7 @@
           <td align="center"><%=h player.team.upcase  %></td>
           <td align="center"><%=h player.rank  %></td>
           <td align="center"><%=h player.orank  %></td>
+          <td align="center"><%=h player.depth  %></td>
           <td align="right"><%=h player.R  %></td>
           <td align="right"><%=h player.HR  %></td>
           <td align="right"><%=h player.RBI  %></td>

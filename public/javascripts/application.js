@@ -174,13 +174,13 @@ function playerTable(){
         "bJQueryUI": true,
         "sPaginationType": "full_numbers",
 		"aoColumns": [
-			{ "asSorting": [ "asc", "desc" ] }, // id
 			{ "asSorting": [ "asc", "desc" ], "sType": "html" }, // name
 			{ "asSorting": [ "desc", "asc" ] }, // watch
 			{ "asSorting": [ "desc", "asc" ] }, // pos
 			{ "asSorting": [ "asc", "desc" ] }, // team
 			{ "asSorting": [ "asc", "desc" ] }, // rank
 			{ "asSorting": [ "asc", "desc" ] }, // orank
+			{ "asSorting": [ "asc", "desc" ] }, // depth
 			{ "asSorting": [ "desc", "asc" ] }, // R
 			{ "asSorting": [ "desc", "asc" ] }, // HR
 			{ "asSorting": [ "desc", "asc" ] }, // RBI
