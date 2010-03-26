@@ -2,7 +2,7 @@ class PlayersController < ApplicationController
   before_filter :login_required
 
   def index
-    @players = Player.undrafted.byrank
+    @players = Player.undrafted #.byrank
     unless @players.empty?
       playerslist = @players.map {|x| x.id}
       @teams = User.draftorder
@@ -83,7 +83,7 @@ class PlayersController < ApplicationController
   end
 
   def searchbyname
-    @players = Player.undrafted.byrank.byname(params[:searchtext])
+    @players = Player.undrafted.byname(params[:searchtext])
     @watchlist = compile_watchlist
     render :partial => "search"
   end
@@ -91,12 +91,13 @@ class PlayersController < ApplicationController
   def searchbyfranchise
     picks = Pick.find_all_by_user_id(params[:team], :include => :player)
     @players = picks.map {|x| x.player }
+    @players.compact!
     @watchlist = compile_watchlist(current_user)
     render :partial => "search"
   end
 
   def searchbyteam
-    @players = Player.undrafted.byrank.find_all_by_team(params[:team])
+    @players = Player.undrafted.find_all_by_team(params[:team])
     @watchlist = compile_watchlist(current_user)
     render :partial => "search"
   end
@@ -105,13 +106,13 @@ class PlayersController < ApplicationController
     @watchlist = compile_watchlist(current_user)
     case params[:fieldPosition]
     when "BATTERS"
-      @players = Player.undrafted.batters.byrank
+      @players = Player.undrafted.batters
     when "PITCHERS"
-      @players = Player.undrafted.pitchers.byrank
+      @players = Player.undrafted.pitchers
     when "ALL"
       @players = Player.undrafted(:order => "orank asc")
     else
-      @players = Player.undrafted.byrank.bypos(params[:fieldPosition])
+      @players = Player.undrafted.bypos(params[:fieldPosition])
     end
     render :partial => "search"
   end

@@ -173,6 +173,7 @@ function playerTable(){
         "iDisplayLength": 50,
         "bJQueryUI": true,
         "sPaginationType": "full_numbers",
+		"aaSorting": [[4,'asc']],
 		"aoColumns": [
 			{ "asSorting": [ "asc", "desc" ], "sType": "html" }, // name
 			{ "asSorting": [ "desc", "asc" ] }, // watch
