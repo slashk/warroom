@@ -2,6 +2,9 @@
 	<table width="100%" cellpadding=0 cellspacing=0 id="picksTable" >
 	  <thead>
 	    <tr>
+		  <% if is_admin? %>
+			  <th align="left">ID</th>
+		  <% end %>
 	      <th align="left" >Number</th>
 	      <th align="left" >Player</th>
 	      <th align="center">Pos</th>
@@ -14,6 +17,9 @@
 	    <% unless @picks.nil? %>
 	      <% for pick in @picks %>
 	        <tr id="player-<%= pick.pick_number  %>">
+			  <% if is_admin? %>
+				  <td align="left"> <%= link_to pick.id, edit_pick_path(pick.id) %> </td>
+			  <% end %>
 	          <td align="left">
 				<%= pick.pick_number -%>
 	          </td>

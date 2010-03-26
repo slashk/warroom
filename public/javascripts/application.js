@@ -9,8 +9,14 @@ var playerPage = 0;
 $(document).ready(function(){
 	if (playerPage == 1){
 	    playerTable();
-		refreshSidebar();
-		playerLoop();		
+		getCurrentPick();
+		refreshWatchlist();
+		refreshDraftList();
+		refreshMyTeam();
+		refreshComingNext();
+		isItMyPick(); // find my pick last so that watchlist is repop'd
+		playerLoop();
+		addDraftButton();
 	}
 	userTable();
 	pickTable();
@@ -26,12 +32,12 @@ function playerLoop() {
 }
 
 function refreshSidebar(){
-	getCurrentPick();
-	refreshWatchlist();
-	refreshDraftList();
-	refreshMyTeam();
-	refreshComingNext();
-	isItMyPick(); // find my pick last so that watchlist is repop'd
+		getCurrentPick();
+		refreshWatchlist();
+		refreshDraftList();
+		refreshMyTeam();
+		refreshComingNext();
+		isItMyPick(); // find my pick last so that watchlist is repop'd
 }
 
 function addRedAlert() {
@@ -46,26 +52,12 @@ function removeRedAlert() {
 
 function addDraftButton(){
 	// add click handler to draft players
-	// $possibleDraftees = $(".watchlistPlayer");
 	$(".watchlistPlayerIcon").livequery('click', function() { 
-			// var $element = $(this);
-			// 			alert($element);
 			var $playerId = $(this).attr("id");
 	        $.post("/draft/", { player_id: $playerId }, function (textStatus){
-				// refresh everything
-				// alert("Player $playerId drafted");
 				refreshSidebar();
 			});
 	    });
-}
-
-function removeDraftButton(){
-	// remove the "draft me" button to watchlist players
-	
-}
-
-function draft() {
-	
 }
 
 function getCurrentPick(){
@@ -78,13 +70,10 @@ function getCurrentPick(){
 function isItMyPick() {
 	// returns 1 or 0, which is true or false 
 	x = $.get('/isitmypick', function(data) {
-		// $isItMyPick = data;
 		if (data == 1) {
 			addRedAlert(); // make background red to alert user
-			addDraftButton();
 		} else {
 			removeRedAlert();
-			removeDraftButton();
 		};
 	});
 }
@@ -223,8 +212,9 @@ function pickTable(){
     $('#picksTable').dataTable({
         "bJQueryUI": true,
         "iDisplayLength": 100,
-		"aaSorting": [[0,'desc']],
+		"aaSorting": [[1,'desc']],
 		"aoColumns": [ 
+			{ "sType": "numeric" },
 			{ "sType": "numeric" },
 			{ "sType": "html" },
 			{ "sType": "string" },
