@@ -11,7 +11,7 @@ require("../../public/javascripts/application.js");
 // refreshMyRetaineeList
 // getPlayerId : takes 
 // toggleRetaineeButton
-// 
+// draft
 
 Screw.Unit(function(){
   describe("Your application javascript", function(){

@@ -212,9 +212,8 @@ function pickTable(){
     $('#picksTable').dataTable({
         "bJQueryUI": true,
         "iDisplayLength": 100,
-		"aaSorting": [[1,'desc']],
+		"aaSorting": [[0,'desc']],
 		"aoColumns": [ 
-			{ "sType": "numeric" },
 			{ "sType": "numeric" },
 			{ "sType": "html" },
 			{ "sType": "string" },
