@@ -2,14 +2,11 @@
 	<table width="100%" cellpadding=0 cellspacing=0 id="picksTable" >
 	  <thead>
 	    <tr>
-		  <% if is_admin? %>
-			  <th align="left">ID</th>
-		  <% end %>
 	      <th align="left" >Number</th>
 	      <th align="left" >Player</th>
 	      <th align="center">Pos</th>
 		  <th align="center">Franchise</th>
-	      <th align="center">Team</th>
+	      <th align="center">Team</th>	
 	    </tr>
 	  </thead>
 
@@ -17,16 +14,17 @@
 	    <% unless @picks.nil? %>
 	      <% for pick in @picks %>
 	        <tr id="player-<%= pick.pick_number  %>">
-			  <% if is_admin? %>
-				  <td align="left"> <%= link_to pick.id, edit_pick_path(pick.id) %> </td>
-			  <% end %>
 	          <td align="left">
 				<%= pick.pick_number -%>
 	          </td>
 	          <td align="left">
-	            <a href="http://sports.yahoo.com/mlb/players/<%=h pick.player.yahoo_ref %>" target="_blank">
-	              <%=h pick.player.player  %>
-	            </a>
+				<% if is_admin? %>
+					<%= link_to pick.player.player, edit_pick_path(pick.id) -%>
+				<% else %>
+		            <a href="http://sports.yahoo.com/mlb/players/<%=h pick.player.yahoo_ref %>" target="_blank">
+		              <%=h pick.player.player  %>
+		            </a>
+				<% end %>
 	          </td>
 	          <td align="center"><%=h pick.player.pos  %></td>
 	          <td align="center"><%=h pick.player.team  %></td>

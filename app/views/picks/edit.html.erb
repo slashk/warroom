@@ -3,21 +3,11 @@
 <% form_for(@pick) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :player_id %><br />
-    <%= f.text_field :player_id %>
-  </p>
-  <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </p>
-  <p>
-    <%= f.label :pick_number %><br />
-    <%= f.text_field :pick_number %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
+  <p><strong>Player</strong>: <%= f.text_field :player_id , :size => 5 -%></p>
+  <p><strong>Team</strong>: <%= f.collection_select(:user_id, @teams, :id, :team) %></p>
+  <p><strong>Pick Number</strong>: <%= f.text_field :pick_number, :size => 5 -%></p>
+
+   <%= f.submit "Update" %>
 <% end %>
 
 <%= link_to 'Show', @pick %> |

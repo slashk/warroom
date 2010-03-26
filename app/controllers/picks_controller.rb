@@ -15,6 +15,7 @@ class PicksController < ApplicationController
 
   def edit
     @pick = Pick.find(params[:id])
+    @teams = User.all
   end
 
   def create
