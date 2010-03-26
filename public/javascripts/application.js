@@ -55,6 +55,7 @@ function addDraftButton(){
 	$(".watchlistPlayerIcon").livequery('click', function() { 
 			var $playerId = $(this).attr("id");
 	        $.post("/draft/", { player_id: $playerId }, function (textStatus){
+				isItMyPick();
 				refreshSidebar();
 			});
 	    });
