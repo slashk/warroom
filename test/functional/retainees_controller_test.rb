@@ -71,5 +71,19 @@ class RetaineesControllerTest < ActionController::TestCase
     get :edit
     assert_response :success, @response.body
   end
+
+  test "should get index without retainees" do
+    # wipe all previous team data
+    all_retainees = Retainee.all
+    all_retainees.each do |r|
+      r.destroy
+    end
+    login_as :elan
+    get :index
+    assert_response :success, @response.body
+    get :edit
+    assert_response :success, @response.body
+  end
+
   
 end
