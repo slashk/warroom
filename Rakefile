@@ -8,3 +8,6 @@ require 'rake/testtask'
 require 'rake/rdoctask'
 
 require 'tasks/rails'
+
+# for blue-ridge support and javascript testing
+task :default => "test:javascripts"
