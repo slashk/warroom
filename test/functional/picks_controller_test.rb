@@ -162,5 +162,18 @@ class PicksControllerTest < ActionController::TestCase
     end
     assert_response :success, @response.body # is this really true ?
   end
+ 
+  test "should get pick edit from index when admin" do
+    login_as :commish
+    get :index
+    assert_select 'tr.individualDraftPick', :html => /picks/
+  end
+
+  test "should get yahoo link from index when user" do
+    login_as :elan
+    get :index
+    assert_select 'tr.individualDraftPick', :html => /yahoo/
+  end
+
   
 end

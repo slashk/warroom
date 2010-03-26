@@ -13,7 +13,7 @@
 	  <tbody>
 	    <% unless @picks.nil? %>
 	      <% for pick in @picks %>
-	        <tr id="player-<%= pick.pick_number  %>">
+	        <tr id="player-<%= pick.pick_number %>" class="individualDraftPick">
 	          <td align="left">
 				<%= pick.pick_number -%>
 	          </td>
