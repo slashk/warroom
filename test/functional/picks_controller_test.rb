@@ -154,6 +154,17 @@ class PicksControllerTest < ActionController::TestCase
     assert_response :success, @response.body
   end
 
+  test "should not draft player when not logged in" do
+    assert_difference "Pick.count", 1 do
+      Pick.create(:pick_number => Pick.count+1, :user_id => users(:elan).id)      
+    end
+    assert_no_difference "Player.undrafted.count" do
+      post :draft, :player_id => Player.undrafted.last.id, :format => :json
+    end
+    # assert_response :success, @response.body
+  end
+
+
   test "should not draft player when draft is over" do
     # create new pick as draft (fixtures) are over
     login_as :commish
