@@ -59,6 +59,8 @@ def distill_hitters_page(res)
       hab =~ /(.*)\/(.*)/
       hit = $1
       ab = $2
+      # find out status
+      status = (line/"span[@class='status']").inner_html
       player = { 'yahoo_ref' => yahoo_ref,
         'orank' => x[5].inner_html,
         'rank' => x[6].inner_html,
@@ -71,6 +73,7 @@ def distill_hitters_page(res)
         'team' => team,
         'pos' => pos,
         'player' => name.escape_single_quotes,
+        'status' => status,
         'AVG' => x[13].inner_html }
       if player['rank'].match('-')
         player['rank'] = '1500'
@@ -102,6 +105,7 @@ def distill_pitchers_page(res)
       detail =~ /\((.*) - (.*)\)/
       pos = $2
       team = $1
+      status = (line/"span[@class='status']").inner_html
       pos.gsub!(/\,/," ")
       player = { 'yahoo_ref' => yahoo_ref,
         'orank' => x[5].inner_html,
@@ -114,6 +118,7 @@ def distill_pitchers_page(res)
         'team' => team,
         'pos' => pos,
         'player' => name.escape_single_quotes,
+        'status' => status,
         'WHIP' => x[13].inner_html }
       if player['rank'].match('-')
         player['rank'] = '1500'
@@ -157,7 +162,7 @@ end
 
 def insert_players_into_db(players)
   players.each do |p|
-    new_player = Player.create(:orank => p['orank'], :yahoo_ref => p['yahoo_ref'], :player => p['player'], :team => p['team'], :pos => p['pos'], :rank => p['rank'], :IP => p['IP'], :W => p['W'], :SV => p['SV'], :K => p['K'], :ERA => p['ERA'], :WHIP => p['WHIP'], :R => p['R'], :HR => p['HR'], :RBI => p['RBI'], :SB => p['SB'], :AVG => p['AVG'], :AB => p['AB'])
+    new_player = Player.create(:orank => p['orank'], :yahoo_ref => p['yahoo_ref'], :player => p['player'], :team => p['team'], :pos => p['pos'], :rank => p['rank'], :IP => p['IP'], :W => p['W'], :SV => p['SV'], :K => p['K'], :ERA => p['ERA'], :WHIP => p['WHIP'], :R => p['R'], :HR => p['HR'], :RBI => p['RBI'], :SB => p['SB'], :AVG => p['AVG'], :AB => p['AB'], :status => p['status'])
     if new_player.save
       "#{p['player']} saved"
     else

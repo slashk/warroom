@@ -28,8 +28,8 @@
         <tr id="player-<%= player.id  %>">
           <td align="left">
             <a href="http://sports.yahoo.com/mlb/players/<%=h player.yahoo_ref %>" target="_blank">
-              <%=h player.player  %>
-            </a>
+              <%= player.player %>
+            </a> <%= content_tag :span, player.status, :class => "status" if player.status? %>
           </td>
           <td align="center" id="watch-<%= player.id  %>" >
             <% if @watchlist.include?(player.id) %>
