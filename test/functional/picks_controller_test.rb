@@ -175,5 +175,10 @@ class PicksControllerTest < ActionController::TestCase
     assert_select 'tr.individualDraftPick', :html => /yahoo/
   end
 
+  test "should show not running when no current pick" do
+    login_as :elan
+    get :inline
+    assert_equal("draft not currently running", @response.body)
+  end
   
 end

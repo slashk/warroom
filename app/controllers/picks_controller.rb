@@ -87,7 +87,7 @@ class PicksController < ApplicationController
   def inline
     current_pick = Pick.current
     if current_pick.empty?
-      render :text => "draft is over"
+      render :text => "draft not currently running"
     else
       @upcoming = Pick.remaining(:limit => 10)
       @last_pick_time =  draft_started? ? find_last_pick_time : Time.now
