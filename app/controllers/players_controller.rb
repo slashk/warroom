@@ -23,7 +23,7 @@ class PlayersController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @player }
-      format.js { render :text => "#{@player.player}"}
+      format.js { render :text => "#{@player.player}", :layout => false}
     end
   end
 
@@ -123,6 +123,11 @@ class PlayersController < ApplicationController
     drafted_players = Pick.all(:select => "player_id").map {|x| x.player_id}
     @players = Player.all(:conditions => ['id in (?)', @watchlist - drafted_players])
     render :partial => "search"
+  end
+
+  def confirm_draftee
+    @player = Player.find(params[:id])
+    render :layout => false
   end
 
   def add_to_watchlist

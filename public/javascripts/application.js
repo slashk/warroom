@@ -16,6 +16,7 @@ $(document).ready(function(){
 		refreshComingNext();
 		isItMyPick(); // find my pick last so that watchlist is repop'd
 		playerLoop();
+		confirmDrafteeDialog();
 		addDraftButton();
 	}
 	userTable();
@@ -50,15 +51,38 @@ function removeRedAlert() {
 	$("div#asshead").removeClass("on-the-clock");
 }
 
+function confirmDrafteeDialog() {
+	$("#confirmDrafteeDialog").dialog({
+        title: "Confirm Your Draft Pick",
+        modal: true,
+        width: 450,
+        autoOpen: false,
+		closeOnEscape: false,
+		resizable: false,
+		show: 'bounce'
+    });
+}
+
 function addDraftButton(){
 	// add click handler to draft players
 	$(".watchlistPlayerIcon").livequery('click', function() { 
-			var $playerId = $(this).attr("id");
-	        $.post("/draft/", { player_id: $playerId }, function (textStatus){
-				isItMyPick();
-				refreshSidebar();
-			});
-	    });
+		var $playerId = $(this).attr("id");
+		$("#confirmDrafteeDialog").html("loading...")
+		$("#confirmDrafteeDialog").load("/players/confirm_draftee/"+$playerId) // edit
+		$("#confirmDrafteeDialog").dialog('option', 'buttons', { 
+		    "Draft": function() { 
+				$.post("/draft/", { player_id: $playerId }, function (){
+					isItMyPick();
+					refreshSidebar();
+				});
+				$(this).dialog("close"); 
+			},
+			"Cancel": function() { 
+				$(this).dialog("close"); 
+			}
+		});
+		$('#confirmDrafteeDialog').dialog('open');		
+    });
 }
 
 function getCurrentPick(){
@@ -167,6 +191,11 @@ function findPlayerById() {
 	playerId = $("input#pick_player_id")[0].value
 	$("#draftee").load("/player/show/"+playerId).highlight();
 }
+
+// function playBing() {
+// 	var snd = new Audio("");
+// 	snd.play();
+// }
 
 function playerTable(){
     $('#players').dataTable({
