@@ -85,5 +85,12 @@ class RetaineesControllerTest < ActionController::TestCase
     assert_response :success, @response.body
   end
 
+  test "should get index even without players" do
+    Player.all.each {|p| p.destroy}
+    Retainee.all.each {|p| p.destroy}
+    login_as :elan
+    get :index
+    assert_response :success, @response.body
+  end
   
 end
