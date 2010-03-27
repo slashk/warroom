@@ -67,6 +67,18 @@ class PlayersControllerTest < ActionController::TestCase
     assert_response :success, @response.body
   end
   
-  
+  test "should get redirected to admin without players" do
+    Player.all.each {|x| x.destroy}
+    login_as :commish
+    get :index
+    assert_redirected_to :controller => :admin
+  end
+
+  test "should get index without players" do
+    Player.all.each {|x| x.destroy}
+    login_as :elan
+    get :index
+    assert_redirected_to :controller => :admin
+  end
   
 end
