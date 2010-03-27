@@ -161,7 +161,6 @@ class PicksControllerTest < ActionController::TestCase
     assert_no_difference "Player.undrafted.count" do
       post :draft, :player_id => Player.undrafted.last.id, :format => :json
     end
-    # assert_response :success, @response.body
   end
 
 
