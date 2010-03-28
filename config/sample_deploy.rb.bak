@@ -23,6 +23,9 @@ role :app, "your.server.com"
 role :web, "your.server.com"
 role :db,  "your.server.com", :primary => true
  
+#########
+after "deploy:finalize_update", "db:symlink"
+
 namespace :deploy do
   desc "Restarting mod_rails with restart.txt"
   task :restart, :roles => :app, :except => { :no_release => true } do
@@ -34,6 +37,14 @@ namespace :deploy do
     task t, :roles => :app do ; end
   end
 end
+
+namespace :db do
+  desc "Updates the symlink for database.yml file to the just deployed release."
+  task :symlink, :except => { :no_release => true } do
+    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+  end
+end
+
 
 # found at http://errtheblog.com/posts/19-streaming-capistrano
 desc "tail production log files" 
