@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100222235440) do
+ActiveRecord::Schema.define(:version => 20100328201842) do
 
   create_table "picks", :force => true do |t|
     t.integer  "player_id"
@@ -18,6 +18,9 @@ ActiveRecord::Schema.define(:version => 20100222235440) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "picks", ["player_id"], :name => "index_picks_on_player_id"
+  add_index "picks", ["user_id"], :name => "index_picks_on_user_id"
 
   create_table "players", :force => true do |t|
     t.integer  "yahoo_ref",    :default => 0
@@ -57,12 +60,23 @@ ActiveRecord::Schema.define(:version => 20100222235440) do
     t.integer  "previousTeam"
   end
 
+  add_index "players", ["orank"], :name => "index_players_on_orank"
+  add_index "players", ["player"], :name => "index_players_on_player"
+  add_index "players", ["pos"], :name => "index_players_on_pos"
+  add_index "players", ["previousTeam"], :name => "index_players_on_previousTeam"
+  add_index "players", ["rank"], :name => "index_players_on_rank"
+  add_index "players", ["team"], :name => "index_players_on_team"
+  add_index "players", ["yahoo_ref"], :name => "index_players_on_yahoo_ref"
+
   create_table "retainees", :force => true do |t|
     t.integer  "user_id"
     t.integer  "player_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "retainees", ["player_id"], :name => "index_retainees_on_player_id"
+  add_index "retainees", ["user_id"], :name => "index_retainees_on_user_id"
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
@@ -95,5 +109,8 @@ ActiveRecord::Schema.define(:version => 20100222235440) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "watchlists", ["player_id"], :name => "index_watchlists_on_player_id"
+  add_index "watchlists", ["user_id"], :name => "index_watchlists_on_user_id"
 
 end
