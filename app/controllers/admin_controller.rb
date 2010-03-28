@@ -79,5 +79,9 @@ class AdminController < ApplicationController
       draft_slot.save
     end
   end
+  
+  def show_git_version
+    return system("git rev-parse HEAD")
+  end
 
 end
