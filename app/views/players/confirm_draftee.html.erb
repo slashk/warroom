@@ -1,0 +1,13 @@
+<span style="float:left;margin-right:5px;border:3px solid grey;" >
+	<%= image_tag( "http://l.yimg.com/a/i/us/sp/v/mlb/players_l/20090407/#{@player.yahoo_ref}.jpg", :size => "65x85") %>
+</span>
+<span>
+	<span style="font-size:large;"><%= @player.player %></span>
+	<%= content_tag :span, @player.status, :class => "status" if @player.status %><br />
+	<div style="color:grey;padding-left:1em;">
+		position(s): <%= @player.pos %> <br />
+		franchise: <%= @player.team %> <br />
+		rank: <%= @player.rank %><br />
+		o-rank: <%= @player.orank %><br />
+	</div>
+<span>
