@@ -2,7 +2,7 @@
 
 // global variables
 var $currentPick = {"created_at":"2010-03-16T10:26:37-07:00","updated_at":"2010-03-16T10:26:37-07:00","player_id":null,"id":0,"user_id":0,"pick_number":0};
-var $interval = 10000; // thirty second updates
+var $interval = 120000; // sixty second updates
 var playerPage = 0;
 
 // All pages
@@ -43,12 +43,12 @@ function refreshSidebar(){
 
 function addRedAlert() {
 	$("#sidebar").addClass("on-the-clock");
-	$("div#asshead").addClass("on-the-clock"); // shouldn't need div
+	$("#asshead").addClass("on-the-clock"); // shouldn't need div
 }
 
 function removeRedAlert() {
 	$("#sidebar").removeClass("on-the-clock");	
-	$("div#asshead").removeClass("on-the-clock");
+	$("#asshead").removeClass("on-the-clock");
 }
 
 function confirmDrafteeDialog() {
@@ -65,7 +65,7 @@ function confirmDrafteeDialog() {
 
 function addDraftButton(){
 	// add click handler to draft players
-	$(".watchlistPlayerIcon").livequery('click', function() { 
+	$("#watchlist img.watchlistPlayerIcon").livequery('click', function() { 
 		var $playerId = $(this).attr("id");
 		$("#confirmDrafteeDialog").html("loading...")
 		$("#confirmDrafteeDialog").load("/players/confirm_draftee/"+$playerId) // edit
