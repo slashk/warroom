@@ -210,3 +210,16 @@ div#draft_live { padding: 1px; }
   color: red;
   font-size: 75%;
 }
+table#players {
+  padding: 0;
+  margin: 0px;
+  border: 0px;
+}
+table#players tr:hover { background-color: silver; }
+table#players th { text-align: right; }
+table#players th.c { text-align: center; }
+table#players th.l { text-align: left; }
+table#players td { text-align: right; }
+table#players td.c { text-align: center; }
+table#players td.l { text-align: left; }
+img.watchlistPlayerIcon:hover { background-color: yellow; }
