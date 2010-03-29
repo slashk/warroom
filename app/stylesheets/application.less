@@ -209,14 +209,15 @@ span.player {
 
 .fg-warroom-button {
     outline: 0; margin:0 4px 0 0;
-    padding: .4em 1em; text-decoration:none !important;
-    cursor:pointer; position: relative;
+    padding: .4em .5em; text-decoration:none !important;
+    position: relative;
     text-align: center; zoom: 1;
 	color: #FFFFFF;
 }
 
 .fg-warroom-button.a,.fg-warroom-button.a:visited {
 	color: #FFFFFF;
+	cursor:pointer; 
 }
 
 #nonRetainee table {
@@ -260,6 +261,7 @@ div#inline {
 .two-thirds-right {
     width: 76%;
     float: left;
+	margin-top: .5em;
 }
 
 .nav-title {
@@ -281,8 +283,11 @@ div#inline {
 	border: 4px solid @on-the-clock-color;
 }
 
+#sidebar {
+	margin-top: .5em;
+}
 .sidebarWidget {
-	padding-bottom: 1em;
+	padding-bottom: .5em;
 }
 
 .status {
@@ -326,4 +331,8 @@ table#players td.l {
 
 img.watchlistPlayerIcon:hover {
 	background-color: yellow;
+}
+
+#playerSearchButtons {
+	padding-bottom: .5em;
 }

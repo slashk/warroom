@@ -2,18 +2,15 @@
 	playerPage = 1;
 </script>
 
-<table width="100%">
-  <tr valign="top">
-    <td width="75%">
-      <%= render :partial => 'shared/positionSearchBar' %>
-      <%= render :partial => 'shared/teamSearchBar' %>
-      <%= render :partial => 'shared/franchiseSearchBar', :object => @teams unless @teams.nil?  %>
-    </td>
-  </tr>
-</table>
-
-<div id="search_hits" class="two-thirds-right" >
-  <%=  render :partial => "search" %>
+<div class="two-thirds-right" >
+	<div id="playerSearchButtons">
+		<%= render :partial => 'shared/positionSearchBar' -%>
+	    <%= render :partial => 'shared/teamSearchBar' -%>
+	    <%= render :partial => 'shared/franchiseSearchBar', :object => @teams unless @teams.nil?  -%>
+	</div>
+	<div id="search_hits">
+		<%=  render :partial => "search" %>
+	</div>
 </div>
 
 <div id="sidebar" class="one-third">
