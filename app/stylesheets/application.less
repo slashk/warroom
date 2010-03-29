@@ -7,6 +7,8 @@
 @header_font: verdana, arial, helvetica, sans-serif;
 @main_font: "Lucida Grande", Lucida, Verdana, sans-serif;
 @on-the-clock-color: red;
+@default_color: #004000; /* dark green  */
+
 /* rounded corners */
 @radius: 8px;
 .rounded_corners (@radius: 8px) {
@@ -23,7 +25,7 @@
 /* standards */
 
 body { 
-	background-color: #fff; 
+	background-color: @background_color; 
 	color: #333; 
 }
 
@@ -45,7 +47,7 @@ pre {
 }
 
 a { 
-    color: #333366;
+	color: @default_color;
     text-decoration: none;
     font-weight: bold;
 }
