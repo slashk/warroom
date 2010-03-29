@@ -6,24 +6,20 @@
 	<div id="playerSearchButtons">
 		<%= render :partial => 'shared/positionSearchBar' -%>
 	    <%= render :partial => 'shared/teamSearchBar' -%>
-	    <%= render :partial => 'shared/franchiseSearchBar', :object => @teams unless @teams.nil?  -%>
+	    <%= render :partial => 'shared/franchiseSearchBar', :object => @teams unless @teams.nil? -%>
 	</div>
 	<div id="search_hits">
-		<%=  render :partial => "search" %>
+		<%=  render :partial => "search" -%>
 	</div>
 </div>
 
 <div id="sidebar" class="one-third">
-
 	<h3 class="fg-warroom-button ui-state-default ui-priority-secondary ui-corner-all" style="margin-top:5px;">Upcoming Picks</h3>	
   <div id="inline" class="sidebarWidget"></div>
-
 	<h3 class="fg-warroom-button ui-state-default ui-priority-secondary ui-corner-all" style="margin-top:5px;">My Team</h3>	
   <div id="myteam" class="sidebarWidget"></div>
-
 	<h3 class="fg-warroom-button ui-state-default ui-priority-secondary ui-corner-all" style="margin-top:5px;">Watchlist</h3>	
   <div id="watchlist" class="sidebarWidget"></div>
-
 	<h3 class="fg-warroom-button ui-state-default ui-priority-secondary ui-corner-all" style="margin-top:5px;">Draft Results</h3>	
   <div id="draft_live" class="sidebarWidget"></div>
 </div>
