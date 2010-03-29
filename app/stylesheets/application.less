@@ -21,6 +21,9 @@
 	-moz-box-shadow: 10px 10px 25px #ccc;
 	box-shadow: 10px 10px 25px #ccc;
 }
+.ass_border {
+	border: 1px solid @default_color;
+}
 
 /* standards */
 
@@ -201,7 +204,9 @@ span.player {
   background-color: @header_background_color;
   .rounded_corners;
   padding: 5px 5px;
-	margin-top: 2em;
+  margin-top: 2em;
+  .ass_border;
+  .shadow;
 }
 #nonRetainee {
   width: 75%;
@@ -337,4 +342,18 @@ img.watchlistPlayerIcon:hover {
 
 #playerSearchButtons {
 	padding-bottom: .5em;
+}
+
+.retaineeLegend {
+	width: 50%;
+	margin-top: 1em;
+	margin-left: 1em;
+	padding: 1em;
+	.rounded_corners;
+	.shadow;
+	.ass_border;
+}
+
+.retaineeLegend p {
+	margin: 0px;
 }

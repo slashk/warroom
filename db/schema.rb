@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100328201842) do
+ActiveRecord::Schema.define(:version => 20100329165322) do
 
   create_table "picks", :force => true do |t|
     t.integer  "player_id"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20100328201842) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "previousTeam"
+    t.boolean  "unretainable", :default => false
   end
 
   add_index "players", ["orank"], :name => "index_players_on_orank"

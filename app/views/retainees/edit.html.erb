@@ -26,6 +26,12 @@
 		<%= render :partial => "players", :collection => @players unless @players.nil? %>
 	  </tbody>
   </table>
+	<div class="retaineeLegend">
+		<p><%= image_tag "add.png" -%> adds players to your retainee list</p>
+		<p><%= image_tag "delete.png" -%> removes players to your retainee list</p>
+		<p><%= image_tag "cross.png" -%> denotes players that cannot be retained</p>	
+	</div>
+
 </div>
 
 <div id="retainee">

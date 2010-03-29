@@ -13,6 +13,7 @@
   -moz-box-shadow: 10px 10px 25px #cccccc;
   box-shadow: 10px 10px 25px #cccccc;
 }
+.ass_border { border: 1px solid #004000; }
 body {
   background-color: #ffffff;
   color: #333333;
@@ -150,6 +151,10 @@ span.player { cursor: move; }
   border-radius: 8px;
   padding: 5px 5px;
   margin-top: 2em;
+  border: 1px solid #004000;
+  -webkit-box-shadow: 10px 10px 25px #cccccc;
+  -moz-box-shadow: 10px 10px 25px #cccccc;
+  box-shadow: 10px 10px 25px #cccccc;
 }
 #nonRetainee {
   width: 75%;
@@ -231,3 +236,17 @@ table#players td.c { text-align: center; }
 table#players td.l { text-align: left; }
 img.watchlistPlayerIcon:hover { background-color: yellow; }
 #playerSearchButtons { padding-bottom: 0.5em; }
+.retaineeLegend {
+  width: 50%;
+  margin-top: 1em;
+  margin-left: 1em;
+  padding: 1em;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: 10px 10px 25px #cccccc;
+  -moz-box-shadow: 10px 10px 25px #cccccc;
+  box-shadow: 10px 10px 25px #cccccc;
+  border: 1px solid #004000;
+}
+.retaineeLegend p { margin: 0px; }
