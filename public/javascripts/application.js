@@ -206,7 +206,7 @@ function addRefreshSidebarButtonToAssy() {
 
 function playerTable(){
     $('#players').dataTable({
-        "iDisplayLength": 50,
+        "iDisplayLength": 25,
         "bJQueryUI": true,
         "sPaginationType": "full_numbers",
 		"aaSorting": [[4,'asc']],
