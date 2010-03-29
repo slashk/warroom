@@ -18,6 +18,7 @@ $(document).ready(function(){
 		playerLoop();
 		confirmDrafteeDialog();
 		addDraftButton();
+		addRefreshSidebarButtonToAssy();
 	}
 	userTable();
 	pickTable();
@@ -190,6 +191,12 @@ function toggleRetaineeButton (element) {
 function findPlayerById() {
 	playerId = $("input#pick_player_id")[0].value
 	$("#draftee").load("/player/show/"+playerId).highlight();
+}
+
+function addRefreshSidebarButtonToAssy() {
+	$("#assy").click(function(){
+		refreshSidebar();
+	});
 }
 
 // function playBing() {
