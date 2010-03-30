@@ -109,6 +109,20 @@ function isItMyPick() {
 }
 
 function setRetaineeDragAndDrop(){
+	// setup 
+	$("#retaineeFailDialog").dialog({
+        title: "Retainee Fail",
+        modal: true,
+        width: 450,
+        autoOpen: false,
+		closeOnEscape: true,
+		resizable: false,
+		buttons:{ 
+			"Cancel": function() { 
+				$(this).dialog("close"); 
+			}
+		}
+    });
 	// retainees box
 	$('.removeRetaineeButton').livequery('click', function (event) { 
 			var $element = $(this);
@@ -149,10 +163,22 @@ function setRetaineeDragAndDrop(){
 	$(".addRetaineeButton").livequery('click', function (event) {
 		var $element = $(this);
 		var $playerId = getPlayerId($element.attr("id"));
-		$.get("/retainees/add_player_to_retainee_list/"+$playerId, function (textStatus){
-			refreshMyRetaineeList();
-			toggleRetaineeButton($element);
-		});
+		$.ajax({ 
+	            type: "GET", 
+	            url: "/retainees/add_player_to_retainee_list/"+$playerId, 
+	            dataType: "html", 
+	            error: function(){ 
+	              $("#retaineeFailDialog").dialog('open');
+	          	}, 
+	          	success: function(data){ 
+	               	refreshMyRetaineeList();
+					toggleRetaineeButton($element);
+	      		} 
+	      });
+		// $.get("/retainees/add_player_to_retainee_list/"+$playerId, function (data,status){
+		// 	refreshMyRetaineeList();
+		// 	toggleRetaineeButton($element);				
+		// });
 	})
 }
 
