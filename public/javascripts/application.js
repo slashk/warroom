@@ -43,13 +43,17 @@ function refreshSidebar(){
 }
 
 function addRedAlert() {
+	$("#asshead").removeClass("off-the-clock");
+	$("#sidebar").removeClass("off-the-clock");
 	$("#sidebar").addClass("on-the-clock");
-	$("#asshead").addClass("on-the-clock"); // shouldn't need div
+	$("#asshead").addClass("on-the-clock");
 }
 
 function removeRedAlert() {
 	$("#sidebar").removeClass("on-the-clock");	
 	$("#asshead").removeClass("on-the-clock");
+	$("#asshead").addClass("off-the-clock");
+	$("#sidebar").addClass("off-the-clock");
 }
 
 function confirmDrafteeDialog() {
