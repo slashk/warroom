@@ -190,6 +190,7 @@ span.player { cursor: move; }
   padding: 5px;
   border: black;
 }
+table#nonRetainedPlayers tr:hover { background-color: silver; }
 div#draft_live { padding: 1px; }
 .title {
   background-color: #ccccff;
