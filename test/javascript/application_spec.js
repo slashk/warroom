@@ -15,13 +15,21 @@ require("../../public/javascripts/application.js");
 
 Screw.Unit(function(){
   describe("Your application javascript", function(){
-    it("does something", function(){
-      expect("hello").to(equal, "hello");
+    it("expect one #asshead", function(){
+		expect($('#asshead').length).to(equal, 1);
     });
 
-    it("accesses the DOM from fixtures/application.html", function(){
-      expect($('.select_me').length).to(equal, 2);
+
+    it("calls addRedAlert to change className", function(){
+      	addRedAlert();
+		expect($('#asshead')[0].className).to(equal, "on-the-clock");
     });
+
+    it("calls removeRedAlert to change className", function(){
+      	removeRedAlert();
+		expect($('#asshead')[0].className).to(equal, "off-the-clock");
+    });
+
   });
 });
 
