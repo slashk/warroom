@@ -20,12 +20,12 @@
   <td style="text-align:center;"><%= sprintf("%.2f",players.ERA) if (players.ERA!=nil) %></td>
   <td style="text-align:center;"><%= sprintf("%.2f",players.WHIP) if (players.WHIP!=nil)  %></td>
   <% if players.unretainable -%>
-	<td class="unretainable"><%= image_tag "cross.png" -%></td>
+	<td class="unretainable" style="text-align:center;"><%= image_tag "cross.png" -%></td>
   <% else -%>
 	  <% if @retained_pool.include?(players.id) -%>
-		  <td style="text-align:center;"><a href="#"><img src="/images/delete.png" id="<%= players.id.to_s %>-nonRetainee" class="removeRetaineeButton"></a></td>
+		  <td style="text-align:center;"><a href="#"><img src="/images/delete.png" id="<%= players.id.to_s %>-nonRetainee" class="removeRetaineeButton" border=0></a></td>
 	  <% else -%>
-		  <td style="text-align:center;"><a href="#"><img src="/images/add.png" id="<%= players.id.to_s %>-nonRetainee" class="addRetaineeButton"></a></td>
+		  <td style="text-align:center;"><a href="#" border=0><img src="/images/add.png" id="<%= players.id.to_s %>-nonRetainee" class="addRetaineeButton" border=0></a></td>
 	  <% end -%>
   <% end -%>
 </tr>
