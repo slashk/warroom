@@ -2,7 +2,7 @@ class PlayersController < ApplicationController
   before_filter :login_required
 
   def index
-    @players = Player.undrafted
+    @players = Player.undrafted.byrank.limited
     unless @players.empty?
       playerslist = @players.map {|x| x.id}
       @teams = User.draftorder
