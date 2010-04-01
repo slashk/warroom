@@ -57,7 +57,6 @@ class PlayersControllerTest < ActionController::TestCase
     assert_difference('Player.count', -1) do
       delete :destroy, :id => players(:players_001).id
     end
-
     assert_redirected_to players_path
   end
   
@@ -80,5 +79,29 @@ class PlayersControllerTest < ActionController::TestCase
     get :index
     assert_redirected_to :controller => :admin
   end
-  
+
+  test "should not add duplicate players to a single users watchlist" do
+    login_as :elan
+    get :add_to_watchlist, :id => players(:players_001)
+    assert_difference "Watchlist.find_all_by_player_id_and_user_id(players(:players_001), users(:elan)).count", 1 do
+      get :add_to_watchlist, :id => players(:players_001).id
+      assert_response :success, @response.body      
+      get :add_to_watchlist, :id => players(:players_001).id
+      assert_response 401, @response.body
+    end
+  end
+
+  test "should add and then remove player to watchlist" do
+    login_as :elan
+    player_to_watch = Player.undrafted.first
+    assert_difference "Watchlist.count", 1 do
+      get :add_to_watchlist, :id => player_to_watch.id
+      assert_response :success, @response.body
+    end
+    assert_difference "Watchlist.count", -1 do
+      get :remove_from_watchlist, :id => player_to_watch.id
+      assert_response :success, @response.body      
+    end
+  end
+
 end
