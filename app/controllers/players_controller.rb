@@ -131,13 +131,24 @@ class PlayersController < ApplicationController
   end
 
   def add_to_watchlist
-    @subject = Watchlist.new(:player_id => params[:id], :user_id => current_user.id)
-    @subject.save
+    # check to make sure he doesn't already exist
+    unless Watchlist.find_by_player_id_and_user_id(params[:id], current_user.id)
+      @subject = Watchlist.new(:player_id => params[:id], :user_id => current_user.id)
+      if @subject.save
+        status = 200
+      else
+        status = 401
+      end
+    else
+      status = 401
+    end
+    render :nothing => true, :status => status
   end
 
   def remove_from_watchlist
     @subject = Watchlist.find_by_player_id(params[:id])
     @subject.destroy
+    render :nothing => true
   end
 
 end

@@ -1,2 +1,1 @@
-<%= link_to_remote(image_tag("not_watch.gif", :border => '0', :size => "16x16"),
-  :url => {:action => 'add_to_watchlist', :id => id}) %>
+<a href="#"><%= image_tag("not_watch.gif", :border => '0', :size => "16x16", :id => "#{player.id}-watch", :class => "unwatch") -%></a>

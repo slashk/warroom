@@ -11,6 +11,8 @@ $(document).ready(function(){
 	    playerTable();
 		getCurrentPick();
 		refreshWatchlist();
+		watchPlayer();
+		unwatchPlayer();
 		refreshDraftList();
 		refreshMyTeam();
 		refreshComingNext();
@@ -175,10 +177,6 @@ function setRetaineeDragAndDrop(){
 					toggleRetaineeButton($element);
 	      		} 
 	      });
-		// $.get("/retainees/add_player_to_retainee_list/"+$playerId, function (data,status){
-		// 	refreshMyRetaineeList();
-		// 	toggleRetaineeButton($element);				
-		// });
 	})
 }
 
@@ -226,6 +224,46 @@ function findPlayerById() {
 function addRefreshSidebarButtonToAssy() {
 	$("#assy").click(function(){
 		refreshSidebar();
+	});
+}
+
+function watchPlayer() {
+	$(".unwatch").livequery('click', function(event) {
+		var $element = $(this);
+		var $playerId = getPlayerId($element.attr("id"));
+		$.ajax({
+			url:'/players/add_to_watchlist/'+$playerId,
+			error: function(){ 
+	          // should open dialog
+	      	}, 
+	      	success: function(data){ 
+				refreshWatchlist();
+				$element.attr("src","/images/watch.gif");
+				$element.removeClass("unwatch");
+				$element.addClass("watch");
+	  		}
+		}); 
+		return false;
+	});
+}
+
+function unwatchPlayer() {
+	$(".watch").livequery('click', function(event) {
+		var $element = $(this);
+		var $playerId = getPlayerId($element.attr("id"));
+		$.ajax({
+			url:'/players/remove_from_watchlist/'+$playerId,
+			error: function(){ 
+	          // should open dialog
+	      	}, 
+	      	success: function(data){ 
+				refreshWatchlist();
+				$element.attr("src","/images/not_watch.gif");
+				$element.removeClass("watch");
+				$element.addClass("unwatch");
+	  		}
+		}); 
+		return false;
 	});
 }
 
