@@ -94,10 +94,9 @@ class RetaineesControllerTest < ActionController::TestCase
   end
   
   test "should not let unretainables be retained" do
-    players = Player.find_all_by_previousTeam(users(:elan).id)
-    players[0].unretainable = true
-    first_player_id = players[0].id
-    assert players[0].save
+    player = Player.find_all_by_previousTeam(users(:elan).id).first
+    player.unretainable = true
+    assert player.save
     login_as :elan
     get :edit
     assert_response :success, @response.body
