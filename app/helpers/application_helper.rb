@@ -23,5 +23,17 @@ module ApplicationHelper
     end
     return d.gsub("0\.","\.")
   end
+
+  def flash_helper
+      f_names = [:notice, :warning, :message, :error]
+      fl = ''
+      for name in f_names
+        if flash[name]
+          fl = fl + "<div id=\"errorExplanation\">#{flash[name]}</div>"
+        end
+      flash[name] = nil;
+    end
+    return fl
+  end
   
 end

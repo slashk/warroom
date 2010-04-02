@@ -26,6 +26,7 @@ $(document).ready(function(){
 	pickTable();
 	setRetaineeDragAndDrop();
 	retaineeTable();
+	adminDraftTable();
 });
 
 function playerLoop() {
@@ -325,6 +326,21 @@ function pickTable(){
 			{ "sType": "string" },
 			{ "sType": "string" },
 			{ "sType": "string" },
+		],
+		"sPaginationType": "full_numbers"
+    });
+}
+
+function adminDraftTable(){
+    $('#adminDraft').dataTable({
+        "iDisplayLength": 15,
+        "bJQueryUI": true, 
+		"aaSorting": [[0,'asc']],
+		"aoColumns": [ 
+			{ "sType": "numeric" },
+			{ "sType": "string" },
+			{ "sType": "string" },
+			{ "sType": "html"}
 		],
 		"sPaginationType": "full_numbers"
     });

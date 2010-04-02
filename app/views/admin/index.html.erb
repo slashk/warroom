@@ -1,0 +1,27 @@
+<p>Players (undrafted/total): <%= @players_undrafted_count %>/<%= @players_total_count %></p>
+<p>Picks (undrafted/total): <%= @picks_undrafted_count unless @picks_undrafted_count.nil? %>/<%= @picks_total_count unless @picks_total_count.nil?  %></p>
+
+<table id="adminDraft" width="99%" cellpadding=0 cellspacing=0 border=0>
+	<thead>
+		<tr>
+			<th>Pick</th>
+			<th>Franchise</th>
+			<th>Player</th>
+			<th>Tool</th>
+		</tr>
+	</thead>
+	<tbody>
+	<% if !@picks.blank? %>
+	  <% for item in @picks %>
+	    <tr style="text-align:center;">
+			<td><%= item.pick_number -%></td>
+			<td><%= item.user.team %></td>
+			<td><%= item.player.nil? ? "&nbsp;" : item.player.player   %></td>
+			<td><%= link_to image_tag("add.png"), :controller => :picks, :action => :edit, :id => item.id %></td>
+		</tr>
+	  <% end %>
+	<% end %>
+	</tbody>
+</table>
+
+<%= link_to "New Draft", :action => :new %><br />
