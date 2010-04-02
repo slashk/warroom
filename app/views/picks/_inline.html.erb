@@ -1,6 +1,6 @@
 <% unless @upcoming.empty? -%>
   <% for pick in @upcoming -%>
-    <%= "#{pick.pick_number} . #{pick.user.team}" %>
+    <%= "#{pick.pick_number}. #{pick.user.team}" %>
 	<%= "(" + time_ago_in_words(@last_pick_time, true) + ")" if @last_pick_time && pick == @upcoming[0] %><br />
   <% end -%>
 <% end -%>
