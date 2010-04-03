@@ -17,7 +17,7 @@
 			<td><%= item.pick_number -%></td>
 			<td><%= item.user.team %></td>
 			<td><%= item.player.nil? ? "&nbsp;" : item.player.player   %></td>
-			<td><%= link_to image_tag("add.png"), :controller => :picks, :action => :edit, :id => item.id %></td>
+			<td><%= link_to image_tag("add.png", :border => 0), :controller => :picks, :action => :edit, :id => item.id %></td>
 		</tr>
 	  <% end %>
 	<% end %>
