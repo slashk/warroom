@@ -25,7 +25,7 @@ module ApplicationHelper
   end
 
   def flash_helper
-      f_names = [:notice, :warning, :message, :error]
+      f_names = [:warning, :message, :error]
       fl = ''
       for name in f_names
         if flash[name]
