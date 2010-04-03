@@ -281,6 +281,10 @@ div#inline {
 	margin-top: .5em;
 }
 
+#search_hits {
+	width: 100%;
+}
+
 .nav-title {
 	font-size: 14pt;
 }
@@ -317,17 +321,21 @@ div#inline {
 
 /* players table styling */
 table#players {
-	padding: 0;
+	padding: 0px;
 	margin:  0px;
 	border: 0px;
+	width: 100%;
+	clear: both;	
 }
 
 table#players tr:hover {
 	background-color: silver;
 }
 
-table#players th {
+table#players thead th {
 	text-align: right;
+	padding: 3px 0px 3px 10px;
+	cursor: pointer;
 }
 
 table#players th.c {

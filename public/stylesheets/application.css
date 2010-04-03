@@ -210,6 +210,7 @@ div#draft_live { padding: 1px; }
   float: left;
   margin-top: 0.5em;
 }
+#search_hits { width: 100%; }
 .nav-title { font-size: 14pt; }
 .one-third {
   width: 22%;
@@ -229,12 +230,18 @@ div#draft_live { padding: 1px; }
   font-size: 75%;
 }
 table#players {
-  padding: 0;
+  padding: 0px;
   margin: 0px;
   border: 0px;
+  width: 100%;
+  clear: both;
 }
 table#players tr:hover { background-color: silver; }
-table#players th { text-align: right; }
+table#players thead th {
+  text-align: right;
+  padding: 3px 0px 3px 10px;
+  cursor: pointer;
+}
 table#players th.c { text-align: center; }
 table#players th.l { text-align: left; }
 table#players td { text-align: right; }
