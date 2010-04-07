@@ -19,11 +19,11 @@
 	<% unless @retainees.empty? %>
 		<% for retainee in @retainees %>
 		  <tr>
-		    <td><%=h retainee.user.team %></td>
-		    <td><%=h retainee.player.player %></td>
+		    <td><%= retainee.user.team %></td>
+		    <td><%= retainee.player.player %> <%= content_tag :span, retainee.player.status, :class => "status" if retainee.player.status? -%></td>
 			<td align="center"><%= retainee.player.pos %></td>
 			<td align="center"><%= retainee.player.rank %></td>
-		    <td align="center"><%=h retainee.player.team %></td>
+		    <td align="center"><%= retainee.player.team %></td>
 		  </tr>
 		<% end %>
 	<% end %>

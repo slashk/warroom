@@ -3,6 +3,7 @@
     <a href="http://sports.yahoo.com/mlb/players/<%= players.yahoo_ref %>" target="_blank">
       <%= players.player -%>
     </a>
+	<%= content_tag :span, players.status, :class => "status" if players.status? -%>
   </td>
   <td><%= players.pos  %></td>
   <td><%= players.team.upcase  %></td>
