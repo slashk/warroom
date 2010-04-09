@@ -17,6 +17,10 @@ Show by position:
   :url => {:action => 'searchbywatchlist'},
   :update => "search_hits",
   :success => "playerTable();"  %>
+<%= link_to_remote 'Top150',
+  :url => {:action => 'searchbypos', :fieldPosition => "Top"},
+  :update => "search_hits",
+  :complete => "playerTable();"  %>
 <%= link_to_remote 'ALL',
   :url => {:action => 'searchbypos', :fieldPosition => "ALL"},
   :update => "search_hits",

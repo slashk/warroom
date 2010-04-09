@@ -111,6 +111,8 @@ class PlayersController < ApplicationController
       @players = Player.undrafted.pitchers
     when "ALL"
       @players = Player.undrafted(:order => "orank asc")
+    when "Top"
+      @players = Player.undrafted.byrank.limited
     else
       @players = Player.undrafted.bypos(params[:fieldPosition])
     end

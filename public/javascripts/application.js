@@ -66,8 +66,7 @@ function confirmDrafteeDialog() {
         width: 450,
         autoOpen: false,
 		closeOnEscape: false,
-		resizable: false,
-		show: 'bounce'
+		resizable: false
     });
 }
 
