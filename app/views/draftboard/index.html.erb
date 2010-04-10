@@ -1,0 +1,18 @@
+<div id="draftboardOnPodium" style="">
+	<% if @pick_announced %>
+		<div style="float:left;"><%= player_picture(@pick_announced.player.yahoo_ref) %></div>
+		<div style="padding-left:1em;"><span style="font-size:200%;"><%= @pick_announced.pick_number%>.  <%= @pick_announced.player.player %></span> (<%= @pick_announced.player.pos %> / <%= @pick_announced.player.team %>)<br />
+		<%= @pick_announced.user.team %><br /> </div>
+	<% else %>
+	Draft has not started
+	<% end %>
+</div>
+<br />
+<div id="draftboardList" style="float:left;clear:both;">
+	<% for p in @picks %>
+		<span class="draftboardPick"><%= p.pick_number %>. <%= p.player.player %> (<%= p.user.team %>)</span><br />
+		<% end %>
+	</div>
+
+<!-- <div id="draftboardOnDeck" style="border:1px blue solid;">
+</div> -->

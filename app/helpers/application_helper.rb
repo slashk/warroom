@@ -36,4 +36,8 @@ module ApplicationHelper
     return fl
   end
   
+  def player_picture(player_yahoo_ref)
+    image_tag("http://l.yimg.com/a/i/us/sp/v/mlb/players_l/20090407/#{player_yahoo_ref}.jpg", :size => "65x85")
+  end
+  
 end

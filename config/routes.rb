@@ -18,6 +18,7 @@ ActionController::Routing::Routes.draw do |map|
   #map.signup '/signup', :controller => 'users', :action => 'new'
   map.login '/login', :controller => 'session', :action => 'new'
   map.logout '/logout', :controller => 'session', :action => 'destroy'
+  map.conenct '/draftboard', :controller => 'draftboard', :action => 'index'
 
   # The priority is based upon order of creation: first created -> highest priority.
 

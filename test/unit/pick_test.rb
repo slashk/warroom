@@ -35,4 +35,8 @@ class PickTest < ActiveSupport::TestCase
     assert_equal(0, Pick.current.count)
   end
   
+  test "should get on_podium pick" do
+    assert_equal(Pick.count, Pick.on_podium.count)
+  end
+  
 end

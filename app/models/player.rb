@@ -21,5 +21,5 @@ class Player < ActiveRecord::Base
   def is_batter?
     !self.pos.include? "P"
   end
-  
+    
 end
