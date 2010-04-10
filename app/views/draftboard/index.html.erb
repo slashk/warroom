@@ -1,18 +1,32 @@
-<div id="draftboardOnPodium" style="">
-	<% if @pick_announced %>
-		<div style="float:left;"><%= player_picture(@pick_announced.player.yahoo_ref) %></div>
-		<div style="padding-left:1em;"><span style="font-size:200%;"><%= @pick_announced.pick_number%>.  <%= @pick_announced.player.player %></span> (<%= @pick_announced.player.pos %> / <%= @pick_announced.player.team %>)<br />
-		<%= @pick_announced.user.team %><br /> </div>
-	<% else %>
-	Draft has not started
-	<% end %>
-</div>
-<br />
-<div id="draftboardList" style="float:left;clear:both;">
-	<% for p in @picks %>
-		<span class="draftboardPick"><%= p.pick_number %>. <%= p.player.player %> (<%= p.user.team %>)</span><br />
-		<% end %>
-	</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<!-- <div id="draftboardOnDeck" style="border:1px blue solid;">
-</div> -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title>WarRoom: DRAFTBOARD</title>
+    <%= stylesheet_link_tag 'jquery-ui-1.7.2.custom' , 'data_table_jui' , 'application', :cache => true %>
+    <%= javascript_include_tag 'jquery-1.3.2.min', 'jquery-ui-1.7.2.custom.min', 'jrails', 'jquery.dataTables.min', 'jquery.livequery', 'application', :cache => true %>
+	<script type="text/javascript">
+		$(function(){
+		  $("table#draftboard tr:even").addClass("stripe");
+		});
+	</script>
+  </head>
+  <body>
+	<table id="draftboard" cellspacing=0><tr><thead></thead></tr></thead><tbody>
+	<% for p in @picks %>
+	<tr class="">
+		<td class="draftboardPlayerPic"><%= player_picture(p.player.yahoo_ref) %></td>
+		<td class="draftboardPickNumber"><%= p.pick_number%></td>
+		<td class="draftboardCurrentPickDetails">
+				<span class="draftboardCurrentPickName">
+				<%= p.player.player %>
+				</span><br />
+				<%= p.user.team %> / <%= p.player.pos %> / <%= p.player.team %>
+		</td>
+	</tr>
+	<% end %>
+	</tbody></table>
+  </body>
+</html>
