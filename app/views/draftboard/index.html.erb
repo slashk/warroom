@@ -10,23 +10,13 @@
 	<script type="text/javascript">
 		$(function(){
 		  $("table#draftboard tr:even").addClass("stripe");
+		  setInterval(function(){ 
+			 window.location.reload();
+		   }, 30000);	
 		});
 	</script>
   </head>
   <body>
-	<table id="draftboard" cellspacing=0><tr><thead></thead></tr></thead><tbody>
-	<% for p in @picks %>
-	<tr class="">
-		<td class="draftboardPlayerPic"><%= player_picture(p.player.yahoo_ref) %></td>
-		<td class="draftboardPickNumber"><%= p.pick_number%></td>
-		<td class="draftboardCurrentPickDetails">
-				<span class="draftboardCurrentPickName">
-				<%= p.player.player %>
-				</span><br />
-				<%= p.user.team %> / <%= p.player.pos %> / <%= p.player.team %>
-		</td>
-	</tr>
-	<% end %>
-	</tbody></table>
+	<%= render :partial => 'picks' %>
   </body>
 </html>

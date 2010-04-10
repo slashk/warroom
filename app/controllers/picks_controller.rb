@@ -89,7 +89,7 @@ class PicksController < ApplicationController
     if current_pick.empty?
       render :text => "draft not currently running"
     else
-      @upcoming = Pick.all(:conditions => "player_id IS NULL", :order => "pick_number asc", :include =>  :user, :limit => 10)
+      @upcoming = Pick.all(:conditions => "player_id IS NULL", :order => "pick_number asc", :include =>  :user, :limit => 5)
       @last_pick_time =  draft_started? ? find_last_pick_time : Time.now
       render :partial => "inline"
     end

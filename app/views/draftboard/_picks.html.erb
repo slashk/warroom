@@ -1,0 +1,16 @@
+<table id="draftboard" cellspacing=0>
+	<!-- <thead><tr><th></th><th></th><th></th></tr></thead> -->
+	<tbody>
+<% for p in @picks %>
+	<tr>
+		<td class="draftboardPlayerPic"><%= player_picture(p.player.yahoo_ref) %></td>
+		<td class="draftboardPickNumber"><%= p.pick_number%></td>
+		<td class="draftboardCurrentPickDetails">
+			<span class="draftboardCurrentPickName">
+			<%= p.player.player %>
+			</span><br />
+			<%= p.user.team %> / <%= p.player.pos %> / <%= p.player.team %>
+		</td>
+	</tr>
+<% end %>
+</tbody></table>

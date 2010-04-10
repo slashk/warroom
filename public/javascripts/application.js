@@ -2,7 +2,7 @@
 
 // global variables
 var $currentPick = {"created_at":"2010-03-16T10:26:37-07:00","updated_at":"2010-03-16T10:26:37-07:00","player_id":null,"id":0,"user_id":0,"pick_number":0};
-var $interval = 120000; // sixty second updates
+var $interval = 15000; // sixty second updates
 var playerPage = 0;
 
 // All pages
@@ -285,7 +285,6 @@ function playerTable(){
 			{ "asSorting": [ "asc", "desc" ] }, // team
 			{ "asSorting": [ "asc", "desc" ] }, // rank
 			{ "asSorting": [ "asc", "desc" ] }, // orank
-			{ "asSorting": [ "asc", "desc" ] }, // depth
 			{ "asSorting": [ "desc", "asc" ] }, // R
 			{ "asSorting": [ "desc", "asc" ] }, // HR
 			{ "asSorting": [ "desc", "asc" ] }, // RBI

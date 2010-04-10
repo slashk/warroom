@@ -9,7 +9,7 @@ class DraftboardControllerTest < ActionController::TestCase
   
   test "should get draftboard on_podium player" do
     get :index
-    assert assigns(:pick_announced)
+    # assert assigns(:pick_announced)
     assert assigns(:picks)
     # pick current is nil since draft is done
     assert_equal(nil, assigns(:pick_current))
@@ -20,9 +20,9 @@ class DraftboardControllerTest < ActionController::TestCase
     x.player_id = nil
     x.save
     get :index
-    assert assigns(:pick_announced)
+    # assert assigns(:pick_announced)
     assert assigns(:picks)
-    assert assigns(:pick_current)
+    # assert assigns(:pick_current)
   end
   
 end

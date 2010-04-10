@@ -261,7 +261,7 @@ img.watchlistPlayerIcon:hover { background-color: yellow; }
 }
 .draftboardCurrentPickDetails {
   font-size: 150%;
-  color: green;
+  color: darkgreen;
   text-align: left;
   margin-left: 2em;
 }
@@ -280,5 +280,6 @@ img.watchlistPlayerIcon:hover { background-color: yellow; }
 .draftboardPickNumber {
   font-size: 250%;
   padding: 0.25em;
+  padding-right: 1em;
 }
 .stripe { background-color: silver; }
