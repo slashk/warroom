@@ -206,14 +206,14 @@ div#draft_live { padding: 1px; }
   margin-left: auto;
 }
 .two-thirds-right {
-  width: 76%;
+  width: 80%;
   float: left;
   margin-top: 0.5em;
 }
 #search_hits { width: 100%; }
 .nav-title { font-size: 14pt; }
 .one-third {
-  width: 22%;
+  width: 18%;
   float: right;
   padding-left: 10px;
   background-color: #b3caa5;
