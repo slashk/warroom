@@ -15,8 +15,7 @@ class Pick < ActiveRecord::Base
   named_scope :current, 
         :conditions => "player_id IS NULL", 
         :order => 'pick_number asc', 
-        :limit => 1
-        
+        :limit => 1        
   named_scope :on_podium, 
     :conditions => "player_id IS NOT NULL", 
     :order => "pick_number desc",
