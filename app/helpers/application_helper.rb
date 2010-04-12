@@ -40,4 +40,9 @@ module ApplicationHelper
     image_tag("http://l.yimg.com/a/i/us/sp/v/mlb/players_l/20090407/#{player_yahoo_ref}.jpg", :size => "65x85")
   end
   
+  def round_number(pick_number, teams)
+    # return round number
+    (pick_number/teams).to_i
+  end
+  
 end
