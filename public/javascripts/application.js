@@ -8,39 +8,37 @@ var playerPage = 0;
 // All pages
 $(document).ready(function(){
 	if (playerPage == 1){
-	    playerTable();
 		getCurrentPick();
-		refreshWatchlist();
+		refreshMyTeam();
+		playerTable();
 		watchPlayer();
 		unwatchPlayer();
-		refreshDraftList();
-		refreshMyTeam();
-		refreshComingNext();
-		isItMyPick(); // find my pick last so that watchlist is repop'd
 		playerLoop();
 		confirmDrafteeDialog();
 		addDraftButton();
 		addRefreshSidebarButtonToAssy();
+	} else {
+		userTable();
+		pickTable();
+		setRetaineeDragAndDrop();
+		retaineeTable();
+		adminDraftTable();
 	}
-	userTable();
-	pickTable();
-	setRetaineeDragAndDrop();
-	retaineeTable();
-	adminDraftTable();
 });
 
 function playerLoop() {
 	// poll every $interval millseconds for new sidebar data
 	setInterval(function(){ 
-		refreshSidebar();
+		// we used to refresh entire sidebar but now just when 
+		getCurrentPick();
 		}, $interval);
 }
 
 function refreshSidebar(){
-		getCurrentPick();
+		// getCurrentPick();
 		refreshWatchlist();
 		refreshDraftList();
-		refreshMyTeam();
+		// refreshMyTeam();
 		refreshComingNext();
 		isItMyPick(); // find my pick last so that watchlist is repop'd
 }
@@ -80,6 +78,7 @@ function addDraftButton(){
 		    "Draft": function() { 
 				$.post("/draft/", { player_id: $playerId }, function (){
 					isItMyPick();
+					refreshMyTeam();
 					refreshSidebar();
 				});
 				$(this).dialog("close"); 
@@ -95,19 +94,24 @@ function addDraftButton(){
 function getCurrentPick(){
 	 // sets a Pick object to $currentPick 
 	$.getJSON( '/currentpick', function( json ) {
-			$currentPick = json.pick;
+		if ($currentPick.pick_number != json.pick.pick_number) {
+			$currentPick = json.pick;			
+			refreshSidebar(); // refresh sidebar if pick_number changed
+		}
 	});
 }
 
 function isItMyPick() {
 	// returns 1 or 0, which is true or false 
-	x = $.get('/isitmypick', function(data) {
-		if (data == 1) {
-			addRedAlert(); // make background red to alert user
-		} else {
-			removeRedAlert();
-		};
-	});
+	// x = $.get('/isitmypick', function(data) {
+   	x = $.cookie('team');
+	if (x == $currentPick.user_id) {
+		addRedAlert(); // make background red to alert user
+		playBing();
+	} else {
+		removeRedAlert();
+	};
+	// });
 }
 
 function setRetaineeDragAndDrop(){
@@ -267,10 +271,10 @@ function unwatchPlayer() {
 	});
 }
 
-// function playBing() {
-// 	var snd = new Audio("");
-// 	snd.play();
-// }
+function playBing() {
+	var snd = new Audio("bing.wav");
+	snd.play();
+}
 
 function playerTable(){
     $('#players').dataTable({

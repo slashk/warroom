@@ -3,6 +3,7 @@ class PlayersController < ApplicationController
 
   def index
     @players = Player.undrafted.byrank.limited
+    cookies[:team] = current_user.id.to_i # set this cookie for js 
     unless @players.empty?
       playerslist = @players.map {|x| x.id}
       @teams = User.draftorder
