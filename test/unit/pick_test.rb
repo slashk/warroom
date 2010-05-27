@@ -36,7 +36,8 @@ class PickTest < ActiveSupport::TestCase
   end
   
   test "should get on_podium pick" do
-    assert_equal(Pick.count, Pick.on_podium.count)
+    # since draft is over, the person on podium is the last pick
+    assert_equal(Pick.last.pick_number, Pick.on_podium.first.pick_number)
   end
   
 end
