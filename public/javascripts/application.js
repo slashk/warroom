@@ -10,13 +10,13 @@ $(document).ready(function(){
 	if (playerPage == 1){
 		getCurrentPick();
 		refreshMyTeam();
-		playerTable();
 		watchPlayer();
 		unwatchPlayer();
 		playerLoop();
 		confirmDrafteeDialog();
 		addDraftButton();
 		addRefreshSidebarButtonToAssy();
+		playerTable();
 	} else {
 		userTable();
 		pickTable();
