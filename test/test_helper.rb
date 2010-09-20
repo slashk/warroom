@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
 require 'test_help'
 require 'test/unit'
 # use TURN if available http://github.com/TwP/turn
-# begin; require 'turn'; rescue LoadError; end
+# require 'turn'
 
 class ActiveSupport::TestCase
   # Transactional fixtures accelerate your tests by wrapping each test method
