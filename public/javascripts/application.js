@@ -278,6 +278,7 @@ function playBing() {
 
 function playerTable(){
     $('#players').dataTable({
+		"sDom": '<"H"Cfr>t<"F"ip>',
         "iDisplayLength": 25,
         "bJQueryUI": true,
         "sPaginationType": "full_numbers",
