@@ -8,7 +8,7 @@ require 'cgi'
 # batter and pitching stats are displayed differently and at different URLs
 # some stats are combined in one table cell and need further regex parsing
 
-LEAGUE_ID = 151603 # change this to your new league number
+LEAGUE_ID = 17633 # change this to your new league number
 path = "/b1/#{LEAGUE_ID}/players?status=A&pos=B&cut_type=33&stat1=S_S_2009&sort=OR"
 SITE = "http://baseball.fantasysports.yahoo.com"
 # Cookies are hard. find the Yahoo! cookies for B, Y and T
