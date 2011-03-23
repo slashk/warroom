@@ -347,3 +347,5 @@ function adminDraftTable(){
 		"sPaginationType": "full_numbers"
     });
 }
+
+$("#login_button").button();
