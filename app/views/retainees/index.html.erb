@@ -1,7 +1,11 @@
 <table width="100%">
 <tr>
 	<td><h1>Retainees List</h1></td>
-	<td align="center"><p>You have retained <%= @mine %> of 6 players.</p><%= link_to 'Edit Your Retainees', {:action => 'edit', :id => current_user}, :class => "fg-warroom-button ui-state-default ui-priority-secondary ui-corner-all" %></td>
+	<td align="center"><p>You have retained <%= @mine %> of 6 players.</p>
+	<span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button">
+	  <%= link_to 'Edit Your Retainees', {:action => 'edit', :id => current_user}, :class => "ui-button-text" %>
+  </span>
+	  </td>
 </tr>
 </table>
 <div style="padding:1em;">
