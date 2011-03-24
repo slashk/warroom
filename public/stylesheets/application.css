@@ -17,6 +17,7 @@
 body {
   background-color: #ffffff;
   color: #333333;
+  margin: 0px;
 }
 h2 {
   background-color: #b3caa5;
@@ -79,11 +80,7 @@ th {
   list-style: square;
 }
 div#asshead {
-  background-color: #b3caa5;
   color: #000033;
-  -moz-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  border-radius: 8px;
   padding: 5px;
 }
 div#left { text-align: left; }
@@ -171,6 +168,7 @@ span.player { cursor: move; }
   position: relative;
   text-align: center;
   zoom: 1;
+  color: #ffffff;
 }
 .fg-warroom-button.a {
   color: #ffffff;
@@ -208,24 +206,22 @@ div#draft_live { padding: 1px; }
   width: 80%;
   float: left;
   margin-top: 0.5em;
+  margin-left: 5px;
 }
 #search_hits { width: 100%; }
 .nav-title { font-size: 14pt; }
 .one-third {
-  width: 18%;
+  width: 17%;
   float: right;
   padding-left: 10px;
   background-color: #b3caa5;
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
   border-radius: 8px;
+  margin-right: 5px;
 }
-.on-the-clock { 
-  border: 2px solid red; 
-}
-.off-the-clock { 
-  border: 1px solid #004000; 
-}
+.on-the-clock { background-color: lightred; }
+.off-the-clock { background-color: #b3caa5; }
 #sidebar { margin-top: 0.5em; }
 .sidebarWidget { padding-bottom: 0.5em; }
 .status {
