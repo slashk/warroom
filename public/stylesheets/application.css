@@ -282,3 +282,4 @@ img.watchlistPlayerIcon:hover { background-color: yellow; }
   padding-right: 1em;
 }
 .stripe { background-color: silver; }
+.inner { margin: 5px; }
