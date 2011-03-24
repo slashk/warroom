@@ -220,8 +220,12 @@ div#draft_live { padding: 1px; }
   -webkit-border-radius: 8px;
   border-radius: 8px;
 }
-.on-the-clock { border: 2px solid red; }
-.off-the-clock { border: 1px solid #004000; }
+.on-the-clock { 
+  border: 2px solid red; 
+}
+.off-the-clock { 
+  border: 1px solid #004000; 
+}
 #sidebar { margin-top: 0.5em; }
 .sidebarWidget { padding-bottom: 0.5em; }
 .status {

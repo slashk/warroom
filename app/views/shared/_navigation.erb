@@ -1,4 +1,4 @@
-<div id="asshead" class="ui-widget-header off-the-clock">
+<div id="asshead" class="off-the-clock">
   <table width="100%">
     <tr>
       <td>
@@ -10,7 +10,6 @@
       </td>
       <td style="text-align:right;padding-right:1em;">
         <% if logged_in? %>
-          <%#= "Welcome #{current_user.login} [#{current_user.role}] !" %>
           <div class="ui-buttonset">
           	<span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button">
               <%= link_to "Players", {:controller => "players"}, :class => "ui-button-text" %>
