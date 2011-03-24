@@ -12,35 +12,31 @@
         <% if logged_in? %>
           <%#= "Welcome #{current_user.login} [#{current_user.role}] !" %>
           <div class="ui-buttonset">
-            <div class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only' role="button">
-              <span class="ui-button-text"><%= link_to "Players", :controller => "players" %></span>
-            </div>
+          	<span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button">
+              <%= link_to "Players", {:controller => "players"}, :class => "ui-button-text" %>
+            </span>
             <% unless draft_started? %>
-              <div class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only'>
-                  <span class="ui-button-text">
-                      <%= link_to "Retainees", :controller => 'retainees' %>
-                  </span>
-              </div>
+              <span class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only'  role="button">
+                      <%= link_to "Retainees", {:controller => 'retainees'}, :class => "ui-button-text"  %>
+              </span>
             <% end %>
-            <div class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only'>
+            <span class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only' role="button">
               <span class="ui-button-text"><%= link_to "Picks", :controller => "picks" %></span>
-            </div>
+            </span>
             <% if is_admin? then -%>
-              <div class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only'>          
-                <span class="ui-button-text"><%= link_to "Entry", :controller => "entry"  %></span>
-              </div>
-              <div class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only'>          
-                <span class="ui-button-text"><%= link_to "Users", :controller => "users" %></span>
-              </div>
-              <div class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only'>          
-                <span class="ui-button-text"><%= link_to "Admin", :controller => "admin" %></span>
-              </div>
+              <span class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only' role="button">          
+                <%= link_to "Entry", {:controller => "entry"}, :class => "ui-button-text"   %>
+              </span>
+              <span class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only' role="button">          
+                <%= link_to "Users", {:controller => "users"}, :class => "ui-button-text" %>
+              </span>
+              <span class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only' role="button">          
+                <%= link_to "Admin", {:controller => "admin"}, :class => "ui-button-text" %>
+              </span>
               <% end %>
-              <div class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only'>
-                <span class="ui-button-text">
-                <%= link_to "Logout", :controller=>'session', :action => 'destroy', :id => current_user %>
-                </span>
-              </div>
+              <span class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only' role="button">
+                <%= link_to "Logout", {:controller=>'session', :action => 'destroy', :id => current_user}, :class => "ui-button-text"  %>
+              </span>
             </div>
         <% end %>
       </td>
