@@ -24,6 +24,7 @@ $(document).ready(function(){
 		retaineeTable();
 		adminDraftTable();
 	}
+	$("#login_button").button();
 });
 
 function playerLoop() {
@@ -347,5 +348,3 @@ function adminDraftTable(){
 		"sPaginationType": "full_numbers"
     });
 }
-
-$("#login_button").button();

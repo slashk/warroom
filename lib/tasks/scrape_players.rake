@@ -8,13 +8,18 @@ require 'cgi'
 # batter and pitching stats are displayed differently and at different URLs
 # some stats are combined in one table cell and need further regex parsing
 
+# http://baseball.fantasysports.yahoo.com/b1/17633/players?status=A&pos=B&cut_type=33&stat1=S_S_2010&myteam=0&sort=OR&sdir=1&count=25
+
 LEAGUE_ID = 17633 # change this to your new league number
-path = "/b1/#{LEAGUE_ID}/players?status=A&pos=B&cut_type=33&stat1=S_S_2009&sort=OR"
+# path = "/b1/#{LEAGUE_ID}/players?status=A&pos=B&cut_type=33&stat1=S_S_2010&sort=OR&sdir=1&count=25"
+path = "/b1/#{LEAGUE_ID}/players?status=A&pos=B&cut_type=33&stat1=S_S_2010&myteam=0&sort=OR&sdir=1&count=0"
 SITE = "http://baseball.fantasysports.yahoo.com"
 # Cookies are hard. find the Yahoo! cookies for B, Y and T
 # you need your own, otherwise you can't grab for your league
-Y_COOKIE = "B=bc84uqh2p5s7i&b=4&d=KKDnTGtpYEKQNNEcM2nBJ5BPPuX2gvUwRMCnCg--&s=0b; Y=v=1&n=4t90ciibh0ajb&l=af4ffb440hj7b8dad4j/o&p=m242tgi4f33f0200&r=0u&lg=en-US&intl=us; T=z=t0dlJBtIFqJBvRqyb5enWF6MjVOBjUyNzY1MTUxMw--&a=YAE&sk=DAAiZsesPWdjMr&ks=EAAGE_L__xd9f0CBGh3RHgiJg--~C&d=c2wBTlRJNUFUSTFNREV5TmpJMk5BLS0BYQFZQUUBb2sBWlcwLQFhbAFrcGVwcGxlAXRpcAFGTi4xWUIBenoBdDBkbEpCQTdFAWcBT1FSWENPUkpQUjQyVVM2WUdRS09DUkFCRTQ-"
-  
+Y_COOKIE = "B=a6f0sd56olptb&b=4&d=KKDnTGtpYEKQNNEcM2nBJ5BPPuX2gvUwRMCnCg--&s=02&i=XNHJH5hjAhNAFzxz8sB6;Y=v=1&n=4t90ciibh0ajb&l=af4ffb440hj7b8dad4j/o&p=m242tgi4f33f0200&r=0u&lg=en-US&intl=us&np=1;T=z=2euiNB2yVnNBIKjLXyVUo.LNjU2MAY1Mjc2NTE1MTM-&a=YAE&sk=DAAKUpaCj7GEHV&ks=EAAnCRtaHBFFAntVmaV6eKcpg--~E&d=c2wBTVRJeE53RXlOVEF4TWpZeU5qUS0BYQFZQUUBZwFPUVJYQ09SSlBSNDJVUzZZR1FLT0NSQUJFNAFvawFaVzAtAWFsAWtwZXBwbGUBdGlwAWp4MmtTRAF6egEyZXVpTkJBN0U-"
+
+DEBUG = true
+
 class String
   def escape_single_quotes
     self.gsub(/[']/, '\\\\\'')
@@ -140,7 +145,7 @@ def get_next_page_path(res)
   end
 end
 
-def spit(players, format)
+def spit(players)
   # this is old method for printing out SQL
   categories = ["orank", "yahoo_ref", "player", "team", "pos", "rank", "IP", "W", "SV", "K", "ERA", "WHIP", "R", "HR", "RBI", "SB", "AVG", "AB"]
   case format
@@ -162,12 +167,13 @@ end
 
 def insert_players_into_db(players)
   players.each do |p|
+    # puts "#{p['player']}"
     new_player = Player.create(:orank => p['orank'], :yahoo_ref => p['yahoo_ref'], :player => p['player'], :team => p['team'], :pos => p['pos'], :rank => p['rank'], :IP => p['IP'], :W => p['W'], :SV => p['SV'], :K => p['K'], :ERA => p['ERA'], :WHIP => p['WHIP'], :R => p['R'], :HR => p['HR'], :RBI => p['RBI'], :SB => p['SB'], :AVG => p['AVG'], :AB => p['AB'], :status => p['status'])
     if new_player.save
-      "#{p['player']} saved"
+      puts "#{p['player']} saved"
     else
       new_player.touch
-      "#{p['player']} updated"
+      puts "#{p['player']} updated"
     end
   end
 end
@@ -181,7 +187,7 @@ task :scrape_players => :environment do
     path = get_next_page_path(page)
     page = nil
   end
-  path = "/b1/#{LEAGUE_ID}/players?status=A&pos=P&stat1=S_S_2009&sort=OR"
+  path = "/b1/#{LEAGUE_ID}/players?status=A&pos=P&stat1=S_S_2010&sort=OR"
   until path.nil? do
     page = get_player_page(SITE, path, Y_COOKIE)
     path = nil
