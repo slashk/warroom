@@ -25,6 +25,14 @@ $(document).ready(function(){
 		adminDraftTable();
 	}
 	$("#login_button").button();
+	$("a.ui-button-text").hover(
+         function(){ 
+             $(this).addClass("ui-state-hover"); 
+         },
+         function(){ 
+             $(this).removeClass("ui-state-hover"); 
+         }
+    );
 });
 
 function playerLoop() {
