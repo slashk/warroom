@@ -38,14 +38,14 @@
 </div>
 
 <div id="retainee" class="inner">
-  <h3 class="fg-warroom-button ui-state-default ui-priority-secondary ui-corner-all" style="margin-top:5px;">Retainees</h3>	
+  <span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only sidebar-header" ><span class="ui-button-text">Retainees</span></span>	
 	<ol id="retainedPlayers" class="retaineeBox">
 		    <%= render(:partial => "selectedPlayers", :collection => @retainees) unless @retainees.nitems < 1 %>
 	</ol>
-	<div id="retaineeComplete">
-		<p style="text-align:center;">
-		<%= link_to "Done", retainees_path, :class => "fg-warroom-button ui-state-default ui-priority-secondary ui-corner-all" %>
-		</p>
+	<div id="retaineeComplete" style="width: 95%;text-align:center;">
+	  <span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button">
+  		<%= link_to "Done", retainees_path, :class => "ui-button-text" %>
+    </span>
 	</div>
 	<div id="retainee-instructions">
 	  <p>
