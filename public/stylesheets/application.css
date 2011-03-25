@@ -294,18 +294,29 @@ img.watchlistPlayerIcon:hover { background-color: yellow; }
   vertical-align: bottom;
   padding: 1px;
   border: 0px;
-  width: 100%;
+  width: 92%;
   margin: 0px;
+  border-spacing: 0px;
 }
-#baseball-diamond thead tr th {
-  border: none;
+#baseball-diamond th {
   margin: 0px;
   padding: 0px;
-  line-height: 10px;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  border-width: 0px;
+  border-style: none;
+  border-collapse: collapse;
+  border-color: #004000;
+  background-color: #004000;
+  color: #ffffff;
 }
-#baseball-diamond tbody tr td {
-  border: none;
+#baseball-diamond td {
   margin: 0px;
   padding: 0px;
-  line-height: 10px;
+  line-height: 12px;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  border-width: 0px;
+  border-style: none;
+  border-collapse: collapse;
 }
