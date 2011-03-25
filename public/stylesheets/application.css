@@ -290,3 +290,22 @@ img.watchlistPlayerIcon:hover { background-color: yellow; }
   cursor: default;
   border: 1px solid #ffffff;
 }
+.my-team {
+  vertical-align: bottom;
+  padding: 1px;
+  border: 0px;
+  width: 100%;
+  margin: 0px;
+}
+#baseball-diamond thead tr th {
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  line-height: 10px;
+}
+#baseball-diamond tbody tr td {
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  line-height: 10px;
+}

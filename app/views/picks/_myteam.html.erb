@@ -1,25 +1,19 @@
-<table id="baseball-diamond" style="vertical-align:bottom;">
- <tr>
-   <td style="text-align:right;">SS: <%= @myTeamCount['SS'] %> </td>
-   <td style="text-align:center;"> <%= @myTeamCount['2B']  %> </td>
-   <td style="text-align: left;">OF: <%= @myTeamCount['OF'] %> </td>
- </tr>
- <tr>
-   <td>&nbsp;</td>
-   <td rowspan="3"><%= image_tag('diamond.gif', :size => '73x74') %></td>
-   <td>&nbsp;</td>
- </tr>
- <tr>
-   <td style="text-align:right;"> <%= @myTeamCount['3B']  %> </td>
-   <td style="text-align:left;"> <%= @myTeamCount['1B'] %> </td>
- </tr>
- <tr>
-   <td style="vertical-align:bottom;">RP: <%= @myTeamCount['RP'] %>/2 </td>
-   <td style="vertical-align:bottom;">P: <%= @myTeamCount['P'] %>/7</td>
- </tr>
- <tr>
-   <td>SP: <%= @myTeamCount['SP'] %>/2 </td>
-   <td style="text-align: center;"><%= @myTeamCount['C'] %></td>
-   <td>Tot: <%= @myTeamCount['Total'] %>/22 </td>
- </tr>
+<table id="baseball-diamond" class="my-team">
+  <thead>
+<tr><th style="text-align:left;">Pos</th><th>Current</th><th>Needed</th></tr>
+  </thead>
+  <tbody>
+<% requirement = {' C' => 1, '1B' => 1, '2B' => 1, 'SS' => 1, '3B' => 1, 
+                  'SP' => 2, 'RP' => 2, 'P' => 7, 'Total' => 22} %>
+<% for pos in requirement.keys.sort %>
+  </tr><td style="text-align:left;"><%= pos %></td>
+       <% if @myTeamCount[pos] < requirement[pos] %>
+          <td style="text-align:center;color: red;">
+       <% else %>
+          <td style="text-align:center;">
+       <% end %>     
+       <%= @myTeamCount[pos] %></td>
+       <td style="text-align:center;"><%= requirement[pos] %></td></tr>
+<% end %>
+  </tbody>
 </table>
