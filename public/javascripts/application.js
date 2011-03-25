@@ -57,6 +57,9 @@ function addRedAlert() {
 	$("#sidebar").removeClass("off-the-clock");
 	$("#sidebar").addClass("on-the-clock");
 	$("#asshead").addClass("on-the-clock");
+	$.sound.play('bing.wav', {
+       timeout: 4000
+    });
 }
 
 function removeRedAlert() {
