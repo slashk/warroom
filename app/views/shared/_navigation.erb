@@ -20,7 +20,7 @@
               </span>
             <% end %>
             <span class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only' role="button">
-              <span class="ui-button-text"><%= link_to "Picks", :controller => "picks" %></span>
+              <%= link_to "Picks", {:controller => "picks"}, :class => "ui-button-text"  %>
             </span>
             <% if is_admin? then -%>
               <span class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only' role="button">          
