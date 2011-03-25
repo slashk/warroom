@@ -55,9 +55,9 @@ th {
   margin-bottom: 20px;
   margin-top: 10px;
   background-color: #f0f0f0;
-  -moz-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  border-radius: 8px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
   margin-right: 30%;
   margin-left: 30%;
 }
@@ -111,9 +111,9 @@ form#login_form {
   -webkit-box-shadow: 10px 10px 25px #cccccc;
   -moz-box-shadow: 10px 10px 25px #cccccc;
   box-shadow: 10px 10px 25px #cccccc;
-  -moz-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  border-radius: 8px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
 }
 form#login_form_label { font-size: 80%; }
 form#login_form td label { float: right; }
@@ -146,9 +146,9 @@ span.player { cursor: move; }
   width: 20%;
   float: right;
   background-color: #b3caa5;
-  -moz-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  border-radius: 8px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
   padding: 5px 5px;
   margin-right: 1em;
   border: 1px solid #004000;
@@ -215,9 +215,9 @@ div#draft_live { padding: 1px; }
   float: right;
   padding-left: 10px;
   background-color: #b3caa5;
-  -moz-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  border-radius: 8px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
   margin-right: 5px;
 }
 .on-the-clock { background-color: lightred; }
@@ -283,3 +283,8 @@ img.watchlistPlayerIcon:hover { background-color: yellow; }
 }
 .stripe { background-color: silver; }
 .inner { margin: 5px; }
+.sidebar-header {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 95%;
+}
