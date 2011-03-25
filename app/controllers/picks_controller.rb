@@ -1,5 +1,5 @@
 class PicksController < ApplicationController
-  before_filter :login_required, :except => :current_pick
+  before_filter :login_required, :except => [:current_pick]
   
   def index
     @picks = Pick.taken
