@@ -5,6 +5,10 @@ class EntryController < ApplicationController
   def index
     @pick = find_current_pick
     @teams = User.all
+    if @pick.nil? 
+      flash[:error] = "Draft has not been seeded yet"
+      redirect_to :controller => "picks" 
+    end
   end
 
   def create

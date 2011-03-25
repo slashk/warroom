@@ -1,37 +1,38 @@
-<table width="100%">
-<tr>
-	<td><h1>Retainees List</h1></td>
-	<td align="center"><p>You have retained <%= @mine %> of 6 players.</p>
-	<span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button">
-	  <%= link_to 'Edit Your Retainees', {:action => 'edit', :id => current_user}, :class => "ui-button-text" %>
-  </span>
-	  </td>
-</tr>
-</table>
-<div style="padding:1em;">
-	<table width="100%" cellpadding=0 cellspacing=0 id="retaineesTable">
-	<thead>
-	  <tr>
-	    <th>Franchise</th>
-	    <th>Player</th>
-	    <th align="center">Pos</th>
-		<th align="center">Rank</th>		
-		<th align="center">Team</th>
-	  </tr>
-	</thead>
-	<tbody>
-	<% unless @retainees.empty? %>
-		<% for retainee in @retainees %>
-		  <tr>
-		    <td><%= retainee.user.team %></td>
-		    <td><%= retainee.player.player %> <%= content_tag :span, retainee.player.status, :class => "status" if retainee.player.status? -%></td>
-			<td align="center"><%= retainee.player.pos %></td>
-			<td align="center"><%= retainee.player.rank %></td>
-		    <td align="center"><%= retainee.player.team %></td>
-		  </tr>
-		<% end %>
-	<% end %>
-	</tbody>
-</table>
+<div class="inner">
+  <table width="100%">
+  <tr>
+  	<td><h1>Retainees List</h1></td>
+  	<td align="center"><p>You have retained <%= @mine %> of 6 players.</p>
+  	<span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button">
+  	  <%= link_to 'Edit Your Retainees', {:action => 'edit', :id => current_user}, :class => "ui-button-text" %>
+    </span>
+  	  </td>
+  </tr>
+  </table>
+  <div style="padding:1em;">
+  	<table width="100%" cellpadding=0 cellspacing=0 id="retaineesTable">
+  	<thead>
+  	  <tr>
+  	    <th>Franchise</th>
+  	    <th>Player</th>
+  	    <th align="center">Pos</th>
+  		<th align="center">Rank</th>		
+  		<th align="center">Team</th>
+  	  </tr>
+  	</thead>
+  	<tbody>
+  	<% unless @retainees.empty? %>
+  		<% for retainee in @retainees %>
+  		  <tr>
+  		    <td><%= retainee.user.team %></td>
+  		    <td><%= retainee.player.player %> <%= content_tag :span, retainee.player.status, :class => "status" if retainee.player.status? -%></td>
+  			<td align="center"><%= retainee.player.pos %></td>
+  			<td align="center"><%= retainee.player.rank %></td>
+  		    <td align="center"><%= retainee.player.team %></td>
+  		  </tr>
+  		<% end %>
+  	<% end %>
+  	</tbody>
+  </table>
+  </div>
 </div>
-<br />

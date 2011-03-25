@@ -1,30 +1,32 @@
-<h1>Teams</h1>
-<div style="padding:1em;">
-<table id="usersTable" width="100%" cellpadding=0 cellspacing=0>
-	<thead>
-	  <tr>
-	    <th align="left">Login</th>
-	    <th align="left">Email</th>
-	    <th align="left">Team Name</th>
-	    <th align="left">Role</th>
-	    <th align="left">Draft Order</th>
-	    <th align="left">Last Login</th>
-	    <th></th>
-	  </tr>
-	</thead>
-	<tbody>
-	  <% for user in @teams %>
-	    <tr class="ListLine<%= cycle("1", "0") %>">
-	      <td align="left"><%=h user.login  %></td>
-	      <td align="left"><%=h user.email  %></td>
-	      <td align="left"><%=h user.team unless user.team.nil? %></td>
-	      <td align="left"><%=h user.role  %></td>
-	      <td align="center"><%=h user.draft_order  %></td>
-	      <td align="left"><%=h user.updated_at.to_s(:short)  %></td>
-	      <td><%= link_to('Edit', :action => 'edit', :id => user.id) if is_admin? %></td>
-	    </tr>
-	  <% end %>
-	</tbody>
-</table>
+<div class="inner">
+  <h1>Teams</h1>
+  <table id="usersTable" width="100%" cellpadding=0 cellspacing=0>
+  	<thead>
+  	  <tr>
+  	    <th align="left">Login</th>
+  	    <th align="left">Email</th>
+  	    <th align="left">Team Name</th>
+  	    <th align="left">Role</th>
+  	    <th align="left">Draft Order</th>
+  	    <th align="left">Last Login</th>
+  	    <th></th>
+  	  </tr>
+  	</thead>
+  	<tbody>
+  	  <% for user in @teams %>
+  	    <tr class="ListLine<%= cycle("1", "0") %>">
+  	      <td align="left"><%=h user.login  %></td>
+  	      <td align="left"><%=h user.email  %></td>
+  	      <td align="left"><%=h user.team unless user.team.nil? %></td>
+  	      <td align="left"><%=h user.role  %></td>
+  	      <td align="center"><%=h user.draft_order  %></td>
+  	      <td align="left"><%=h user.updated_at.to_s(:short)  %></td>
+  	      <td><%= link_to('Edit', :action => 'edit', :id => user.id) if is_admin? %></td>
+  	    </tr>
+  	  <% end %>
+  	</tbody>
+  </table>
+  <span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button">
+    <%=  link_to('New Team', {:action => 'new'}, :class => "ui-button-text") if is_admin? %>
+  </span>
 </div>
-<h3 class="fg-warroom-button ui-state-default ui-priority-secondary ui-corner-all" style="margin-top:5px;"><%=  link_to('New Team', :action => 'new') if is_admin? %></h3>	
