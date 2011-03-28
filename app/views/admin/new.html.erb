@@ -1,11 +1,15 @@
-<% form_tag '/admin/create' do -%>
-	<%= label_tag 'Rounds' %>
-	<%= text_field_tag 'rounds', nil, :maxlength => 5 %><br />
-	<%= label_tag 'Draft Type' %>
-	<%= select_tag "draft_type", "<option>straight</option><option>snake</option>" %><br />
-	<%= label_tag 'Drop Current Draft' %>
-	<%= check_box_tag 'drop_draft', true, true %><br />	
-	<%= label_tag 'Copy Retainees' %>
-	<%= check_box_tag 'copy_retainee', true, true %><br />	
-	<%= submit_tag "Create Draft" %>
-<% end %>
+<div class="inner">
+  <% form_tag '/admin/create' do -%>
+  	<%= label_tag 'Rounds' %>
+  	<%= text_field_tag 'rounds', nil, :maxlength => 5 %><br />
+  	<%= label_tag 'Draft Type' %>
+  	<%= select_tag "draft_type", "<option>straight</option><option>snake</option>" %><br />
+  	<%= label_tag 'Drop Current Draft' %>
+  	<%= check_box_tag 'drop_draft', true, true %><br />	
+  	<%= label_tag 'Copy Retainees' %>
+  	<%= check_box_tag 'copy_retainee', true, true %><br />	
+  	<span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button">
+    	<%= submit_tag "Create Draft", :class => "ui-button-text" %>
+    </span>
+  <% end %>
+</div>

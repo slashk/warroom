@@ -1,4 +1,5 @@
 <div class="inner">
+  
   <p>Players (undrafted/total): <%= @players_undrafted_count %>/<%= @players_total_count %></p>
   <p>Picks (undrafted/total): <%= @picks_undrafted_count unless @picks_undrafted_count.nil? %>/<%= @picks_total_count unless @picks_total_count.nil?  %></p>
 
@@ -24,7 +25,9 @@
   	<% end %>
   	</tbody>
   </table>
-	<span class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button">
+  
+	<div class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button">
     <%= link_to "New Draft", {:action => :new}, :class => "ui-button-text" %>
-  </span>
+  </div>
+
 </div>

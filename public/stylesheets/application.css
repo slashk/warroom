@@ -219,8 +219,9 @@ div#draft_live { padding: 1px; }
   -webkit-border-radius: 6px;
   border-radius: 6px;
   margin-right: 5px;
+  padding-bottom: 1em;
 }
-.on-the-clock { background-color: lightred; }
+.on-the-clock { background-color: #e9967a; }
 .off-the-clock { background-color: #b3caa5; }
 #sidebar { margin-top: 0.5em; }
 .sidebarWidget { padding-bottom: 0.5em; }
