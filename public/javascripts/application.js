@@ -37,7 +37,7 @@ $(document).ready(function(){
 
 function playerLoop() {
 	// poll every $interval millseconds for new sidebar data
-	setInterval(function(){ 
+	setInterval(function(){
 		// we used to refresh entire sidebar but now just when 
 		getCurrentPick();
 		}, $interval);
@@ -198,6 +198,7 @@ function setRetaineeDragAndDrop(){
 
 function refreshWatchlist() {
 	$("#watchlist").load("/watchlist/show/").highlight();
+    // addDraftButton();
 }
 
 function refreshMyTeam() {
