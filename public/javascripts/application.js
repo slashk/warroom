@@ -293,7 +293,7 @@ function playerTable(){
 		"aaSorting": [[4,'asc']],
 		"aoColumns": [
 			{ "asSorting": [ "asc", "desc" ], "sType": "html" }, // name
-			{ "bSortable": false }, // watch
+			{ "asSorting": [ "desc", "asc" ], "sType": "html" }, // watch
 			{ "asSorting": [ "desc", "asc" ] }, // pos
 			{ "asSorting": [ "asc", "desc" ] }, // team
 			{ "asSorting": [ "asc", "desc" ] }, // rank
