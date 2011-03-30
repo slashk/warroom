@@ -57,9 +57,6 @@ function addRedAlert() {
 	$("#sidebar").removeClass("off-the-clock");
 	$("#sidebar").addClass("on-the-clock");
 	$("#asshead").addClass("on-the-clock");
-	$.sound.play('bing.wav', {
-       timeout: 4000
-    });
 }
 
 function removeRedAlert() {
@@ -198,7 +195,6 @@ function setRetaineeDragAndDrop(){
 
 function refreshWatchlist() {
 	$("#watchlist").load("/watchlist/show/").highlight();
-    // addDraftButton();
 }
 
 function refreshMyTeam() {
@@ -285,7 +281,7 @@ function unwatchPlayer() {
 }
 
 function playBing() {
-	var snd = new Audio("bing.wav");
+	var snd = new Audio("nav.wav");
 	snd.play();
 }
 
