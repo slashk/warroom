@@ -4,7 +4,7 @@
   </thead>
   <tbody>
 <% requirement = {' C' => 1, '1B' => 1, '2B' => 1, 'SS' => 1, '3B' => 1, 
-                  'SP' => 2, 'RP' => 2, 'P' => 7, 'Total' => 22} %>
+                  'SP' => 2, 'RP' => 2, 'P' => 7, 'OF' => 3, 'Total' => 22} %>
 <% for pos in requirement.keys.sort %>
   </tr><td style="text-align:left;"><%= pos %></td>
        <% if @myTeamCount[pos] < requirement[pos] %>
